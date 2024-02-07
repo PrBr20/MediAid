@@ -15,7 +15,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { set } from "date-fns";
 import AvgStar from "@/assets/images/avgstar.png";
 
-const Doctors = () => {
+const Medilab = () => {
   const { state, setState } = useContext(AuthContext);
   // console.log(state);
 
@@ -100,7 +100,7 @@ const Doctors = () => {
     <div className="mx-[180px] mt-[40px] flex">
       <div className="flex flex-col w-2/3">
         <div className="flex justify-between">
-          <h1 className="font-bold text-3xl text">All Doctors</h1>
+          <h1 className="font-bold text-3xl text">All Lab Test</h1>
           <div className="flex">
             <input
               type="text"
@@ -140,7 +140,7 @@ const Doctors = () => {
                 </div>
                 <div className="flex space-x-1 items-center justify-center">
                   <img src={AvgStar} className="w-[30px] h-[30px]" alt="" />
-                  { <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p> }
+                  {/* <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p> */}
                 </div>
               </div>
               <div className="flex my-[10px]">
@@ -273,4 +273,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default Medilab;

@@ -3,7 +3,8 @@ import React from "react";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import Doctors from "../pages/Doctors/Doctors";
-// import MediShop from "../pages/MediShop/MediShop";
+import MediShop from "../pages/MediShop/MediShop";
+import Medilab from "../pages/MediLab/Medilab";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
 import Login from "../pages/Login";
 import UserDoctorProfile from "../pages/DoctorProfile/UserDoctorProfile";
@@ -20,7 +21,8 @@ const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/doctors" element={<Doctors />} />
-      {/* <Route path="/medishop" element={<MediShop />} /> */}
+      <Route path="/medishop" element={<MediShop />} />
+      <Route path="/medilab" element={<Medilab />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
       {state?.role == "patient" && (
