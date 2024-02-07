@@ -140,7 +140,7 @@ const Doctors = () => {
                 </div>
                 <div className="flex space-x-1 items-center justify-center">
                   <img src={AvgStar} className="w-[30px] h-[30px]" alt="" />
-                  { <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p> }
+                  {/* { <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p> } */}
                 </div>
               </div>
               <div className="flex my-[10px]">
