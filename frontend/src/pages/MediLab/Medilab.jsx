@@ -102,7 +102,7 @@ const Medilab = () => {
         <div
           key={index}
           className="bg-white p-4 rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out"
-          style={{ backgroundColor: '#f3f4f6' }} // Set background color here
+          style={{ backgroundColor: '#fff4f6' }} // Set background color here
         
         >
           <div className="flex justify-center mb-2">
