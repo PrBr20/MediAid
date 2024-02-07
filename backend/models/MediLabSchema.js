@@ -10,12 +10,12 @@ const MediLabSchema = new mongoose.Schema({
   role: {
     type: String,
   },
-  gender: { type: String, enum: ["male", "female", "other"] },
 
-  // Fields for doctors only
-  specialization: {
+
+  // Fields for Lab only
+  tests: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Specialization",
+    ref: "tests",
   },
   qualifications: {
     type: Array,
@@ -28,9 +28,7 @@ const MediLabSchema = new mongoose.Schema({
     type: Array,
   },
 
-  bio: { type: String, maxLength: 50 },
   about: { type: String },
-  fee: {type: Number},
   
   isApproved: {
     type: String,
@@ -41,4 +39,4 @@ const MediLabSchema = new mongoose.Schema({
 { timestamps: true }
 );
 
-export default mongoose.model("Doctor", DoctorSchema)
+export default mongoose.model("MediLab", MediLabSchema)
