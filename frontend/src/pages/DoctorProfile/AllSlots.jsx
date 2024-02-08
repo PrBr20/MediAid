@@ -78,7 +78,7 @@ const AllSlots = () => {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
-            <TableCell >onek din</TableCell>
+            <TableCell >All days</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

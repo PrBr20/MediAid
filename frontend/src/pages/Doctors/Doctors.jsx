@@ -39,7 +39,7 @@ const Doctors = () => {
       // Conditionally add parameters to the object
       if (search.name != "") params.name = search.name;
       if (search.rating) params.rating = search.rating;
-      if (search.feeLower > -1) params.feeLower = search.feeLower;
+      if (search.feeLower >= 1) params.feeLower = search.feeLower;
       if (search.feeUpper) params.feeUpper = search.feeUpper;
       if (search.specialization != "all")
         params.specialization = search.specialization;
@@ -135,12 +135,12 @@ const Doctors = () => {
                 <div>
                   <h1 className="font-bold ">{doctor.name}</h1>
                   <h1 className="font-bold text-xl">
-                    {doctor.specialization.name} Specialist
+                    {doctor.specialization?.name} Specialist
                   </h1>
                 </div>
                 <div className="flex space-x-1 items-center justify-center">
                   <img src={AvgStar} className="w-[30px] h-[30px]" alt="" />
-                  {/* { <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p> } */}
+                  <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p>
                 </div>
               </div>
               <div className="flex my-[10px]">

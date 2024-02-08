@@ -25,9 +25,13 @@ import {
 } from "@/components/ui/select";
 import uploadImagetoCloudinary from "@/utils/uploadCloudinary";
 import { Navigate } from "react-router-dom";
+import Loader from "@/assets/gifs/loader.gif";
+import { useToast } from "@/components/ui/use-toast";
 
 const Login = () => {
   const { state, setState } = useContext(AuthContext);
+  const [loading, setLoading] = React.useState(false);
+  const {toast} = useToast();
 
   const [loginData, setloginData] = React.useState({
     email: "",
@@ -50,7 +54,9 @@ const Login = () => {
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
 
+    setLoading(true);
     const data = await uploadImagetoCloudinary(file);
+    setLoading(false);
 
     console.log(data.url);
     setsignupData({ ...signupData, photo: data.url });
@@ -79,11 +85,16 @@ const Login = () => {
       throw new Error(result.message);
     }
 
-    console.log(result.data);
+    console.log(result);
 
     setState({ user: result.data, role: result.role, token: result.token });
-    
+
     navigate("/doctors");
+
+    toast({
+      title: "Logged in successfully",
+      description: "You have successfully logged in",
+    })
   };
 
   const handleSignup = async (e) => {
@@ -104,13 +115,7 @@ const Login = () => {
       throw new Error(result.message);
     }
 
-    console.log(result.data);
-
-    setState({ user: result.data, role: result.role, token: result.token });
-
-    navigate("/doctors");
-
-    console.log(result.message);
+    console.log(result);
   };
 
   return (
@@ -143,13 +148,11 @@ const Login = () => {
                     className="border-black"
                     placeholder="yahoo@gmail.com"
                     value={loginData.email}
-                    onChange={(e) =>
-                      handleLoginChange("email", e.target.value)
-                    }
+                    onChange={(e) => handleLoginChange("email", e.target.value)}
                   />
                 </div>
                 <div className="space-y-1">
-                <Label htmlFor="new">Password</Label>
+                  <Label htmlFor="new">Password</Label>
                   <Input
                     type="password"
                     className="border-black"
@@ -161,12 +164,14 @@ const Login = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button onClick={handleLogin} className="w-full">Login</Button>
+                <Button onClick={handleLogin} className="w-full">
+                  Login
+                </Button>
               </CardFooter>
             </Card>
           </TabsContent>
           <TabsContent value="SignUp" className="w-full">
-            <Card className="h-[550px]">
+            <Card className="h-[600px]">
               <CardHeader>
                 <CardTitle>SignUp</CardTitle>
                 <CardDescription>
@@ -242,11 +247,22 @@ const Login = () => {
                 </div>
                 <div className="grid w-full max-w-sm items-center gap-1.5">
                   <Label htmlFor="picture">Picture</Label>
-                  <Input id="picture" type="file" onChange={handleFileChange} />
+                  <Input
+                    id="picture"
+                    type="file"
+                    onChange={handleFileChange}
+                  ></Input>
+                  <div className="flex items-center justify-center">
+                    {loading && (
+                      <img src={Loader} alt="" className="w-[20px] h-[20px]" />
+                    )}
+                  </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button onClick={handleSignup} className="w-full">SignUp</Button>
+                <Button onClick={handleSignup} className="w-full">
+                  SignUp
+                </Button>
               </CardFooter>
             </Card>
           </TabsContent>

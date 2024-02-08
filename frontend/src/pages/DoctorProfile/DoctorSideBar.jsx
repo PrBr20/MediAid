@@ -20,8 +20,8 @@ const DoctorSideBar = ({handleClick}) => {
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className="items-center">
-          <h1 className="text-md">Protoy Barai</h1>
-          <p className="text-[12px] text-gray-500">Eye Specialist</p>
+          <h1 className="text-md">{state?.user.name}</h1>
+          <p className="text-[12px] text-gray-500">Specialist</p>
         </div>
       </div>
       <div

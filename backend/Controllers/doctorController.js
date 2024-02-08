@@ -156,16 +156,23 @@ export const searchDoctors = async(req, res) => {
 
 export const addTimeSlot = async(req, res) => {
     const id = req.userId
-    const {starthr, endhr, startmin, endmin, slotDate, patientCount} = req.body
+    let {starthr, endhr, startmin, endmin, slotDate, patientCount} = req.body
+    console.log(slotDate)
 
     try {
+        slotDate = new Date(slotDate)
+        console.log(slotDate)
+        slotDate.setDate(slotDate.getDate() + 1)
+        slotDate.setHours(0, 0, 0)
+        console.log(slotDate)
+
         const newSlot = new Slot({
             doctor: id,
             starthr, 
             endhr, 
             startmin, 
             endmin, 
-            date: new Date(slotDate),
+            date: slotDate,
             patientCount
         })
         newSlot.save()
