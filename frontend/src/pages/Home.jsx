@@ -14,9 +14,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 const Home = () => {
-  const history = useHistory();
+  // const history = useHistory();
   return (
     <div className="mx-[150px]">
       <div
@@ -89,7 +89,8 @@ const Home = () => {
               We help patients reducing the hassles the face in our conventional
               medical systems
             </p>
-            <Button className="my-2 h-12 w-12 rounded-full"  onClick={() => history.push('/medilab')}>
+            <Button className="my-2 h-12 w-12 rounded-full"  >
+            {/* onClick={() => history.push('/medilab')} */}
               <BsArrowRight className="h-10 w-10" />
             </Button>
           </div>
