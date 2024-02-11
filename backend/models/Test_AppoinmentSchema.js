@@ -2,17 +2,22 @@ import mongoose from "mongoose";
 
 const test_appointment_schema = new mongoose.Schema(
   {
-    doctor: {
+    LabId: {
       type: mongoose.Types.ObjectId,
-      ref: "Doctor",
+      ref: "Lab",
       required: true,
+    },
+    TestId:{
+        type:mongoose.Types.ObjectId,
+        ref:"Test",
+        required:true,
     },
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    ticketPrice: { type: Number, required: true },
+    testPrice: { type: Number, required: true },
 
     slot: {
       type: mongoose.Types.ObjectId,
