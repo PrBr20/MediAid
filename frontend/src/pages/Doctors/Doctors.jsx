@@ -14,10 +14,23 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { set } from "date-fns";
 import AvgStar from "@/assets/images/avgstar.png";
+import Loader from "@/assets/gifs/page_loader.json";
+import Lottie from 'react-lottie';
 
 const Doctors = () => {
   const { state, setState } = useContext(AuthContext);
   // console.log(state);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: Loader,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+
+  const [loading, setLoading] = useState(false);
 
   const [specialization, setSpecialization] = useState([]);
 
@@ -47,6 +60,8 @@ const Doctors = () => {
 
       const queryString = new URLSearchParams(params).toString();
 
+      setLoading(true);
+
       const res1 = await fetch(`${BASE_URL}/doctor/search?${queryString}`, {
         method: "GET",
         headers: {
@@ -54,6 +69,8 @@ const Doctors = () => {
           Authorization: `Bearer ${state.token}`,
         },
       });
+
+      setLoading(false);
 
       console.log(queryString);
 
@@ -115,6 +132,13 @@ const Doctors = () => {
             </Button>
           </div>
         </div>
+
+        {loading && (
+          <div className="flex justify-center items-center">
+            {" "}
+            <Lottie options={defaultOptions} height={50} width={50} />{" "}
+          </div>
+        )}
 
         {doctors.map((doctor, index) => (
           <div

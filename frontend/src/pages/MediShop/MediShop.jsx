@@ -32,9 +32,22 @@ import { useNavigate } from "react-router-dom";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { set } from "date-fns";
+import Loader from "@/assets/gifs/page_loader.json";
+import Lottie from "react-lottie";
 
 const MediShop = () => {
   const { state, setState } = useContext(AuthContext);
+
+  const [loading, setLoading] = useState(false);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Loader,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const navigate = useNavigate();
 
@@ -81,6 +94,8 @@ const MediShop = () => {
 
         const queryString = new URLSearchParams(params).toString();
 
+        setLoading(true);
+
         const res1 = await fetch(`${BASE_URL}/medicine/search?${queryString}`, {
           method: "GET",
           headers: {
@@ -88,6 +103,8 @@ const MediShop = () => {
             Authorization: `Bearer ${state.token}`,
           },
         });
+
+        setLoading(false);
 
         const result1 = await res1.json();
 
@@ -119,6 +136,8 @@ const MediShop = () => {
 
       const queryString = new URLSearchParams(params).toString();
 
+      setLoading(true);
+
       const res1 = await fetch(`${BASE_URL}/medicine/search?${queryString}`, {
         method: "GET",
         headers: {
@@ -126,6 +145,8 @@ const MediShop = () => {
           Authorization: `Bearer ${state.token}`,
         },
       });
+
+      setLoading(false);
 
       const result1 = await res1.json();
 
@@ -300,7 +321,7 @@ const MediShop = () => {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="flex flex-col w-3/5 min-h-[300px]">
+      <div className="flex flex-col w-3/5 min-h-[500px]">
         <div className="flex justify-between">
           <h1 className="font-bold text-3xl text">All Medicine</h1>
           {addedappointments.length == 0 && (
@@ -321,6 +342,13 @@ const MediShop = () => {
             </div>
           )}
         </div>
+
+        {loading && (
+          <div className="flex justify-center items-center">
+            {" "}
+            <Lottie options={defaultOptions} height={50} width={50} />{" "}
+          </div>
+        )}
 
         <div className="flex flex-row flex-wrap">
           {medicines.map((med, index) => (
