@@ -4,9 +4,7 @@ const DoctorSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   name: { type: String, required: true },
-  phone: { type: Number },
   photo: { type: String },
-  ticketPrice: { type: Number },
   role: {
     type: String,
   },
@@ -37,6 +35,10 @@ const DoctorSchema = new mongoose.Schema({
     enum: ["pending", "approved", "cancelled"],
     default: "approved", //TODO: Change to pending
   },
+
+  avgStars: { type: Number, default: 0 },
+  reviewCount: { type: Number, default: 0 },
+  patientCount: { type: Number, default: 0 },
 },
 { timestamps: true }
 );

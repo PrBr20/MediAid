@@ -62,7 +62,17 @@ const Appointment = ({ apps , doctor}) => {
     });
 
     if (!res.ok) {
+      toast({
+        title: "Appointment not scheduled",
+        description: "Try again",
+      })
       throw new Error(result.message);
+    }
+    else {
+      toast({
+        title: "Appointment scheduled",
+        description: "You can view your appointments in your profile",
+      })
     }
 
     const result = await res.json();

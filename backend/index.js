@@ -11,6 +11,7 @@ import specializationRoutes from "./Routes/specialization.js"
 import reviewRoutes from "./Routes/review.js"
 import appointmentRoutes from "./Routes/appointment.js"
 import prescriptionRoutes from "./Routes/prescription.js"
+import medicineRoutes from "./Routes/medicine.js"
 
 dotenv.config()
 
@@ -29,7 +30,8 @@ const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            ignoreUndefined: true
         })
         console.log("MongoDB connected")
     } catch (err) {
@@ -49,6 +51,7 @@ app.use("/api/specialization", specializationRoutes)
 app.use("/api/review", reviewRoutes)
 app.use("/api/appointment", appointmentRoutes)
 app.use("/api/prescription", prescriptionRoutes)
+app.use("/api/medicine", medicineRoutes)
 
 app.listen(port, () => {
     connectDB();

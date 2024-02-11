@@ -130,9 +130,6 @@ const Prescription = () => {
     console.log(newPresArr);
   }, [newPresArr]);
 
-  // setNewPresArr(app.prescription);
-
-  // console.log(app);
 
   console.log(app._id);
   const handleSubmitPrescription = async () => {
@@ -148,7 +145,17 @@ const Prescription = () => {
     const result = await res.json();
 
     if (!res.ok) {
+      toast({
+        title: "Prescription not submitted",
+        description: "Try again",
+      })
       throw new Error(result.message);
+    }
+    else {
+      toast({
+        title: "Prescription submitted",
+        description: "Sent to the patient",
+      })
     }
 
     console.log(result.data);

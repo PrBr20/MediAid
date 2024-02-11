@@ -48,37 +48,40 @@ const AllSlots = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex-col space-y-5">
+      <h1 className="font-bold text-3xl">All Slots</h1>
+      <hr className="border-black" />
+      
       <Table>
         <TableCaption>A list of your slots.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead >Date</TableHead>
+            <TableHead>Date</TableHead>
             <TableHead>Start Time</TableHead>
             <TableHead>End Time</TableHead>
-            <TableHead >Status</TableHead>
+            <TableHead>Status</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {slots.map((slot, index) => (
             <TableRow key={index}>
-              <TableCell className="font-medium">{slot.date.split('T')[0]}</TableCell>
+              <TableCell className="font-medium">
+                {slot.date.split("T")[0]}
+              </TableCell>
               <TableCell>
                 {slot.starthr}:{slot.startmin}
               </TableCell>
               <TableCell>
                 {slot.endhr}:{slot.endmin}
               </TableCell>
-              <TableCell >
-                {slot.done == 0 ? "Available" : "Booked"}
-              </TableCell>
+              <TableCell>{slot.done == 0 ? "Available" : "Booked"}</TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
-            <TableCell >All days</TableCell>
+            <TableCell>All days</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

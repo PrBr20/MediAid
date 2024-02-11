@@ -1,5 +1,6 @@
 import Appointment from '../models/AppointmentSchema.js';
 import Slot from '../models/SlotSchema.js';
+import Doctor from '../models/DoctorSchema.js';
 
 export const addAppointment = async (req, res) => {
     const id = req.userId
@@ -19,8 +20,12 @@ export const addAppointment = async (req, res) => {
                 appointment.serial = allAppointments[i].serial + 1
         }
         appointment.status = "approved"
-
         await appointment.save()
+
+        const doctor = await Doctor.findOne({_id: appointment.doctor})
+        doctor.patientCount = doctor.patientCount + 1
+        await doctor.save()
+
         res.status(200).json({success: true, msg: "Appointment added succesfully", appointment})
     } catch(err) {
         console.log(err)

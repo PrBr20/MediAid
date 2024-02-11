@@ -260,7 +260,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"p1@gmail.com\",\n    \"password\": \"12345\"\n}",
+							"raw": "{\n    \"email\": \"medoctor@gmail.com\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2450,7 +2450,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/doctor/timeslots/:doctorId",
+							"raw": "localhost:5000/api/doctor/timeslots/:doctorId?date=\"2024-02-15\"",
 							"host": [
 								"localhost"
 							],
@@ -2461,10 +2461,16 @@
 								"timeslots",
 								":doctorId"
 							],
+							"query": [
+								{
+									"key": "date",
+									"value": "\"2024-02-15\""
+								}
+							],
 							"variable": [
 								{
 									"key": "doctorId",
-									"value": "65955c510d5db82f28dae508"
+									"value": "65b37da6078e72d6a64b7949"
 								}
 							]
 						}
@@ -2476,7 +2482,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:5000/api/doctor/timeslots/:doctorId",
+									"raw": "localhost:5000/api/doctor/timeslots/:doctorId?date=\"2024-02-15\"",
 									"host": [
 										"localhost"
 									],
@@ -2487,10 +2493,16 @@
 										"timeslots",
 										":doctorId"
 									],
+									"query": [
+										{
+											"key": "date",
+											"value": "\"2024-02-15\""
+										}
+									],
 									"variable": [
 										{
 											"key": "doctorId",
-											"value": "65955c510d5db82f28dae508"
+											"value": "65b37da6078e72d6a64b7949"
 										}
 									]
 								}
@@ -2513,15 +2525,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "941"
+									"value": "1070"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"3ad-5zYMiHHJCPhLReS8R2HvYNq14C0\""
+									"value": "W/\"42e-SbFxizNQ7AYGwwGQYybBpLOZ5uw\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 25 Jan 2024 09:14:55 GMT"
+									"value": "Thu, 08 Feb 2024 15:20:58 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2533,7 +2545,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"Time slots fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65b20dfb8fac4094d9f8ac6a\",\n            \"doctor\": \"65955c510d5db82f28dae508\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-01-28T00:00:00.000Z\",\n            \"patientCount\": 10,\n            \"createdAt\": \"2024-01-25T07:30:03.027Z\",\n            \"updatedAt\": \"2024-01-25T07:30:03.027Z\",\n            \"__v\": 0,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"appointments\": [\n                {\n                    \"_id\": \"65b21fd7409d4cb353007796\",\n                    \"doctor\": \"65955c510d5db82f28dae508\",\n                    \"user\": \"65965da4e6b3eddbc75645ed\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65b20dfb8fac4094d9f8ac6a\",\n                    \"serial\": 1,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-01-25T08:46:15.506Z\",\n                    \"updatedAt\": \"2024-01-25T08:46:15.506Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"65b22079409d4cb3530077a2\",\n                    \"doctor\": \"65955c510d5db82f28dae508\",\n                    \"user\": \"65b2159697898a8611a6beba\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65b20dfb8fac4094d9f8ac6a\",\n                    \"serial\": 2,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-01-25T08:48:57.893Z\",\n                    \"updatedAt\": \"2024-01-25T08:48:57.893Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Time slots fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0,\n            \"appointments\": [\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"Napa 500 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                            },\n                            {\n                                \"medicineName\": \"Napa Extend 665 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"0+1+0\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                            }\n                        ],\n                        \"symptoms\": [\n                            \"fever\"\n                        ],\n                        \"diagnosis\": [\n                            \"viral fever\"\n                        ],\n                        \"advice\": [\n                            \"eat more\"\n                        ],\n                        \"tests\": [\n                            \"blood test\"\n                        ]\n                    },\n                    \"_id\": \"65c4dbe082bdab1e48e64e20\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65965da4e6b3eddbc75645ed\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 1,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n                    \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -3561,7 +3573,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTU1YzUxMGQ1ZGI4MmYyOGRhZTUwOCIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE3MDQ0NDkyNjIsImV4cCI6MTcwNTc0NTI2Mn0._ihLZoEYCS3kBq3-sMfw1rtSUT6qShl4dscxEGNhHDE",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YjM3ZGE2MDc4ZTcyZDZhNjRiNzk0OSIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE3MDY0NDM4MzMsImV4cCI6MTcwNzczOTgzM30.eDQngnlzwSodYzZF2FOOrzK6TTxds9axsHwtZ3O7q60",
 						"type": "string"
 					}
 				]
@@ -4635,144 +4647,19 @@
 			"name": "Medicine",
 			"item": [
 				{
-					"name": "Search for medicine",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:5000/api/medicine/search?name=\"Napa\"",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"medicine",
-								"search"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "\"Napa\""
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "localhost:5000/api/medicine/search?name=\"Napa\"",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"api",
-										"medicine",
-										"search"
-									],
-									"query": [
-										{
-											"key": "name",
-											"value": "\"Napa\""
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"medicines found\",\n    \"data\": [\n        {\n            \"name\": \"Napa\",\n            \"category\": \"Paracetamol\",\n            \"description\": \"Description for napa\",\n            \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Tylenol_rapid_release_pills.jpg/300px-Tylenol_rapid_release_pills.jpg\",\n            \"prices\": [\n                {\n                    \"price\": 1,\n                    \"unit\": \"1 pc\"\n                },\n                {\n                    \"price\": 20,\n                    \"unit\": \"Set of 20\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Napa Extend\",\n            \"category\": \"Paracetamol\",\n            \"description\": \"Description for napa\",\n            \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Tylenol_rapid_release_pills.jpg/300px-Tylenol_rapid_release_pills.jpg\",\n            \"prices\": [\n                {\n                    \"price\": 2,\n                    \"unit\": \"1 pc\"\n                },\n                {\n                    \"price\": 40,\n                    \"unit\": \"Set of 20\"\n                }\n            ]\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Fetch medicine by id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:5000/api/medicine/fetch/:id",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"medicine",
-								"fetch",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "localhost:5000/api/medicine/fetch/:id",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"api",
-										"medicine",
-										"fetch",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": ""
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"medicine fetched successfully\",\n    \"data\":{\n        \"name\": \"Napa\",\n        \"category\": \"Paracetamol\",\n        \"description\": \"Description for napa\",\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Tylenol_rapid_release_pills.jpg/300px-Tylenol_rapid_release_pills.jpg\",\n        \"prices\": [\n            {\n                \"price\": 1,\n                \"unit\": \"1 pc\"\n            },\n            {\n                \"price\": 20,\n                \"unit\": \"Set of 20\"\n            }\n        ]\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Create new test",
+					"name": "Create new medicine",
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Napa 500 mg\",\n    \"type\": \"Tablet\",\n    \"category\": \"Paracetamol\",\n    \"manufacturer\": \"Beximco Pharmaceuticals Ltd.\",\n    \"image\": \"https://medeasy.health/_next/image?url=https%3A%2F%2Fcdn.medeasy.health%2Fmedia%2Fmedicines%2FIMG-20231023-WA0137.jpg&w=1920&q=75\",\n    \"overview\": \"Indications of Napa 500 mg\\n\\nNapa 500 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa 500 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa 500 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa 500 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa 500 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa 500 mg. Alcohol can increase the hepatotoxicity of Napa 500 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa 500 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa 500 mg.\\nSide Effects of Napa 500 mg\\n\\nSide effects of Napa 500 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa 500 mg should be given with caution to patients with impaired kidney or liver function. Napa 500 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa 500 mg\\n\\nSymptoms of Napa 500 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa 500 mg is excreted in breast milk. Maternal ingestion of Napa 500 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:5000/api/medicine",
 							"host": [
@@ -4790,17 +4677,10 @@
 							"name": "Success",
 							"originalRequest": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Napa\",\n    \"category\": \"Paracetamol\",\n    \"description\": \"Description for napa\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Tylenol_rapid_release_pills.jpg/300px-Tylenol_rapid_release_pills.jpg\",\n    \"prices\": [\n        {\n            \"price\": 1,\n            \"unit\": \"1 pc\"\n        },\n        {\n            \"price\": 20,\n            \"unit\": \"Set of 20\"\n        }\n    ]\n}",
+									"raw": "{\n    \"name\": \"Napa 500 mg\",\n    \"category\": \"Paracetamol\",\n    \"company\": \"Beximco Pharmaceuticals Ltd.\",\n    \"overview\": \"Indications of Napa 500 mg\\n\\nNapa 500 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa 500 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa 500 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa 500 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa 500 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa 500 mg. Alcohol can increase the hepatotoxicity of Napa 500 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa 500 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa 500 mg.\\nSide Effects of Napa 500 mg\\n\\nSide effects of Napa 500 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa 500 mg should be given with caution to patients with impaired kidney or liver function. Napa 500 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa 500 mg\\n\\nSymptoms of Napa 500 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa 500 mg is excreted in breast milk. Maternal ingestion of Napa 500 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4824,25 +4704,50 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5494"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1576-ZNSIc/d48ONif4Z5W52U47qEy30\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Feb 2024 12:48:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"medicine added successfully\"\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"name\": \"Napa 500 mg\",\n        \"category\": \"Paracetamol\",\n        \"overview\": \"Indications of Napa 500 mg\\n\\nNapa 500 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa 500 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa 500 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa 500 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa 500 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa 500 mg. Alcohol can increase the hepatotoxicity of Napa 500 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa 500 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa 500 mg.\\nSide Effects of Napa 500 mg\\n\\nSide effects of Napa 500 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa 500 mg should be given with caution to patients with impaired kidney or liver function. Napa 500 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa 500 mg\\n\\nSymptoms of Napa 500 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa 500 mg is excreted in breast milk. Maternal ingestion of Napa 500 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\",\n        \"_id\": \"65c4cdaab99af264ac497f56\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				},
 				{
-					"name": "Edit medicine by id",
+					"name": "Search for medicine",
 					"request": {
-						"method": "PATCH",
+						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/medicine/:id",
+							"raw": "localhost:5000/api/medicine/search?name=Napa&category=paracetamol&type=tablet&manufacturer=Beximco Pharmaceuticals Ltd.",
 							"host": [
 								"localhost"
 							],
@@ -4850,12 +4755,24 @@
 							"path": [
 								"api",
 								"medicine",
-								":id"
+								"search"
 							],
-							"variable": [
+							"query": [
 								{
-									"key": "id",
-									"value": ""
+									"key": "name",
+									"value": "Napa"
+								},
+								{
+									"key": "category",
+									"value": "paracetamol"
+								},
+								{
+									"key": "type",
+									"value": "tablet"
+								},
+								{
+									"key": "manufacturer",
+									"value": "Beximco Pharmaceuticals Ltd."
 								}
 							]
 						}
@@ -4864,26 +4781,10 @@
 						{
 							"name": "Success",
 							"originalRequest": {
-								"method": "PATCH",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"description\": \"updated description\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
+								"method": "GET",
+								"header": [],
 								"url": {
-									"raw": "localhost:5000/api/medicine/:id",
+									"raw": "localhost:5000/api/medicine/search?name=Napa&category=paracetamol&type=tablet&manufacturer=Beximco Pharmaceuticals Ltd.",
 									"host": [
 										"localhost"
 									],
@@ -4891,12 +4792,24 @@
 									"path": [
 										"api",
 										"medicine",
-										":id"
+										"search"
 									],
-									"variable": [
+									"query": [
 										{
-											"key": "id",
-											"value": ""
+											"key": "name",
+											"value": "Napa"
+										},
+										{
+											"key": "category",
+											"value": "paracetamol"
+										},
+										{
+											"key": "type",
+											"value": "tablet"
+										},
+										{
+											"key": "manufacturer",
+											"value": "Beximco Pharmaceuticals Ltd."
 										}
 									]
 								}
@@ -4906,25 +4819,264 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11618"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d62-1m/m1rYFy4luMGsa8CISemPDwQA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Feb 2024 09:54:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"updated successfully\",\n    \"data\": {\n        \"name\": \"Napa\",\n        \"category\": \"Paracetamol\",\n        \"description\": \"updated description\",\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Tylenol_rapid_release_pills.jpg/300px-Tylenol_rapid_release_pills.jpg\",\n        \"prices\": [\n            {\n                \"price\": 1,\n                \"unit\": \"1 pc\"\n            },\n            {\n                \"price\": 20,\n                \"unit\": \"Set of 20\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"65c4cdaab99af264ac497f56\",\n            \"name\": \"Napa 500 mg\",\n            \"type\": \"Tablet\",\n            \"category\": \"Paracetamol\",\n            \"manufacturer\": \"Beximco Pharmaceuticals Ltd.\",\n            \"image\": \"https://medeasy.health/_next/image?url=https%3A%2F%2Fcdn.medeasy.health%2Fmedia%2Fmedicines%2FIMG-20231023-WA0137.jpg&w=1920&q=75\",\n            \"overview\": \"Indications of Napa 500 mg\\n\\nNapa 500 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa 500 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa 500 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa 500 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa 500 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa 500 mg. Alcohol can increase the hepatotoxicity of Napa 500 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa 500 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa 500 mg.\\nSide Effects of Napa 500 mg\\n\\nSide effects of Napa 500 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa 500 mg should be given with caution to patients with impaired kidney or liver function. Napa 500 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa 500 mg\\n\\nSymptoms of Napa 500 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa 500 mg is excreted in breast milk. Maternal ingestion of Napa 500 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\",\n            \"avgStars\": 4,\n            \"reviewCount\": 1,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65c4ce05b99af264ac497f58\",\n            \"name\": \"Napa Extend 665 mg\",\n            \"type\": \"Tablet\",\n            \"category\": \"Paracetamol\",\n            \"manufacturer\": \"Beximco Pharmaceuticals Ltd.\",\n            \"image\": \"https://medeasy.health/_next/image?url=https%3A%2F%2Fcdn.medeasy.health%2Fmedia%2Fmedicines%2FIMG-20231023-WA0128.jpg&w=1920&q=75\",\n            \"overview\": \"Indications of Napa Extend 665 mg\\n\\nNapa Extend 665 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa Extend 665 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa Extend 665 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa Extend 665 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa Extend 665 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa Extend 665 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa Extend 665 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa Extend 665 mg. Alcohol can increase the hepatotoxicity of Napa Extend 665 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa Extend 665 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa Extend 665 mg.\\nSide Effects of Napa Extend 665 mg\\n\\nSide effects of Napa Extend 665 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa Extend 665 mg should be given with caution to patients with impaired kidney or liver function. Napa Extend 665 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa Extend 665 mg\\n\\nSymptoms of Napa Extend 665 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa Extend 665 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa Extend 665 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa Extend 665 mg is excreted in breast milk. Maternal ingestion of Napa Extend 665 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\",\n            \"avgStars\": 0,\n            \"reviewCount\": 0,\n            \"__v\": 0\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "Delete medicine by id",
+					"name": "Search from prescription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/medicine/presc/:apptid",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicine",
+								"presc",
+								":apptid"
+							],
+							"variable": [
+								{
+									"key": "apptid",
+									"value": "65c4dbe082bdab1e48e64e20"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/medicine/presc/:apptid",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"medicine",
+										"presc",
+										":apptid"
+									],
+									"variable": [
+										{
+											"key": "apptid",
+											"value": "65c4dbe082bdab1e48e64e20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11618"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d62-1m/m1rYFy4luMGsa8CISemPDwQA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Feb 2024 09:54:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"65c4cdaab99af264ac497f56\",\n            \"name\": \"Napa 500 mg\",\n            \"type\": \"Tablet\",\n            \"category\": \"Paracetamol\",\n            \"manufacturer\": \"Beximco Pharmaceuticals Ltd.\",\n            \"image\": \"https://medeasy.health/_next/image?url=https%3A%2F%2Fcdn.medeasy.health%2Fmedia%2Fmedicines%2FIMG-20231023-WA0137.jpg&w=1920&q=75\",\n            \"overview\": \"Indications of Napa 500 mg\\n\\nNapa 500 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa 500 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa 500 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa 500 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa 500 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa 500 mg. Alcohol can increase the hepatotoxicity of Napa 500 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa 500 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa 500 mg.\\nSide Effects of Napa 500 mg\\n\\nSide effects of Napa 500 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa 500 mg should be given with caution to patients with impaired kidney or liver function. Napa 500 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa 500 mg\\n\\nSymptoms of Napa 500 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa 500 mg is excreted in breast milk. Maternal ingestion of Napa 500 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\",\n            \"avgStars\": 4,\n            \"reviewCount\": 1,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65c4ce05b99af264ac497f58\",\n            \"name\": \"Napa Extend 665 mg\",\n            \"type\": \"Tablet\",\n            \"category\": \"Paracetamol\",\n            \"manufacturer\": \"Beximco Pharmaceuticals Ltd.\",\n            \"image\": \"https://medeasy.health/_next/image?url=https%3A%2F%2Fcdn.medeasy.health%2Fmedia%2Fmedicines%2FIMG-20231023-WA0128.jpg&w=1920&q=75\",\n            \"overview\": \"Indications of Napa Extend 665 mg\\n\\nNapa Extend 665 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa Extend 665 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa Extend 665 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa Extend 665 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa Extend 665 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa Extend 665 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa Extend 665 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa Extend 665 mg. Alcohol can increase the hepatotoxicity of Napa Extend 665 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa Extend 665 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa Extend 665 mg.\\nSide Effects of Napa Extend 665 mg\\n\\nSide effects of Napa Extend 665 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa Extend 665 mg should be given with caution to patients with impaired kidney or liver function. Napa Extend 665 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa Extend 665 mg\\n\\nSymptoms of Napa Extend 665 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa Extend 665 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa Extend 665 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa Extend 665 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa Extend 665 mg is excreted in breast milk. Maternal ingestion of Napa Extend 665 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\",\n            \"avgStars\": 0,\n            \"reviewCount\": 0,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create new review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY1ZGE0ZTZiM2VkZGJjNzU2NDVlZCIsInJvbGUiOiJwYXRpZW50IiwiaWF0IjoxNzA3NDcxNjI0LCJleHAiOjE3MDg3Njc2MjR9.RY7IF8gN96JcYE06_2WZngUxDO47vAvz2OqF_CYmNlU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reviewText\": \"Good\",\n    \"rating\": 4.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/medicine/review/:medid",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicine",
+								"review",
+								":medid"
+							],
+							"variable": [
+								{
+									"key": "medid",
+									"value": "65c4cdaab99af264ac497f56"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reviewText\": \"Bad\",\n    \"rating\": 1.0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/api/medicine/review/:medid",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"medicine",
+										"review",
+										":medid"
+									],
+									"variable": [
+										{
+											"key": "medid",
+											"value": "65c4cdaab99af264ac497f56"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f6-0AwQ5xU3vg2YI4boHFtVJUMyo0E\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Feb 2024 09:48:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"medicine\": \"65c4cdaab99af264ac497f56\",\n        \"user\": \"65965da4e6b3eddbc75645ed\",\n        \"reviewText\": \"Bad\",\n        \"rating\": 1,\n        \"_id\": \"65c5f4f09cfc82e06406b34a\",\n        \"createdAt\": \"2024-02-09T09:48:32.093Z\",\n        \"updatedAt\": \"2024-02-09T09:48:32.093Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Review",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/medicine/:id",
+							"raw": "localhost:5000/api/medicine/review/:revid",
 							"host": [
 								"localhost"
 							],
@@ -4932,33 +5084,55 @@
 							"path": [
 								"api",
 								"medicine",
-								":id"
+								"review",
+								":revid"
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": ""
+									"key": "revid",
+									"value": "65c5f4f09cfc82e06406b34a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/medicine/review?medid=65c4cdaab99af264ac497f56&user=65965da4e6b3eddbc75645ed",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicine",
+								"review"
+							],
+							"query": [
+								{
+									"key": "medid",
+									"value": "65c4cdaab99af264ac497f56"
+								},
+								{
+									"key": "user",
+									"value": "65965da4e6b3eddbc75645ed"
 								}
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Success",
+							"name": "Fetch all",
 							"originalRequest": {
-								"method": "DELETE",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "localhost:5000/api/medicine/:id",
+									"raw": "localhost:5000/api/medicine/review",
 									"host": [
 										"localhost"
 									],
@@ -4966,12 +5140,18 @@
 									"path": [
 										"api",
 										"medicine",
-										":id"
+										"review"
 									],
-									"variable": [
+									"query": [
 										{
-											"key": "id",
-											"value": ""
+											"key": "medid",
+											"value": "65c4cdaab99af264ac497f56",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "65965da4e6b3eddbc75645ed",
+											"disabled": true
 										}
 									]
 								}
@@ -4981,15 +5161,201 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-hH7IaGXfD1FY2rGdN0klSHvhLcU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Feb 2024 10:02:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"medicine deleted successfully\"\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"65c5f4a29cfc82e06406b346\",\n            \"medicine\": \"65c4cdaab99af264ac497f56\",\n            \"user\": \"65965da4e6b3eddbc75645ed\",\n            \"reviewText\": \"Good\",\n            \"rating\": 4,\n            \"createdAt\": \"2024-02-09T09:47:14.387Z\",\n            \"updatedAt\": \"2024-02-09T09:47:14.387Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/medicine/review?medid=65c4cdaab99af264ac497f56&user=65965da4e6b3eddbc75645ed",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"medicine",
+										"review"
+									],
+									"query": [
+										{
+											"key": "medid",
+											"value": "65c4cdaab99af264ac497f56"
+										},
+										{
+											"key": "user",
+											"value": "65965da4e6b3eddbc75645ed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "490"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ea-ddGHaCN9IX0B9EXlGzbMPfITs5s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 12:26:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"65c5f4a29cfc82e06406b346\",\n            \"medicine\": \"65c4cdaab99af264ac497f56\",\n            \"user\": {\n                \"_id\": \"65965da4e6b3eddbc75645ed\",\n                \"email\": \"p1@gmail.com\",\n                \"password\": \"$2a$10$5UtJRUzKma2yo3yLRZkaLO6Kk1zL7YV8XBmlQ9o.TLI5A1gxJgFoi\",\n                \"name\": \"patient 1\",\n                \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                \"role\": \"patient\",\n                \"gender\": \"male\",\n                \"__v\": 0\n            },\n            \"reviewText\": \"Good\",\n            \"rating\": 4,\n            \"createdAt\": \"2024-02-09T09:47:14.387Z\",\n            \"updatedAt\": \"2024-02-09T09:47:14.387Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Fetch single medicine",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/medicine/fetchone/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicine",
+								"fetchone",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65c4cdaab99af264ac497f56"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/medicine/fetchone/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"medicine",
+										"fetchone",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65c4cdaab99af264ac497f56"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5725"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"165d-9TjZPs0/9baPpI5z8DtB9FkaJng\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 15:27:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"65c4cdaab99af264ac497f56\",\n        \"name\": \"Napa 500 mg\",\n        \"type\": \"Tablet\",\n        \"category\": \"Paracetamol\",\n        \"manufacturer\": \"Beximco Pharmaceuticals Ltd.\",\n        \"image\": \"https://medeasy.health/_next/image?url=https%3A%2F%2Fcdn.medeasy.health%2Fmedia%2Fmedicines%2FIMG-20231023-WA0137.jpg&w=1920&q=75\",\n        \"overview\": \"Indications of Napa 500 mg\\n\\nNapa 500 mg is indicated for fever, common cold and influenza, headache, toothache, earache, bodyache, myalgia, neuralgia, dysmenorrhoea, sprains, colic pain, back pain, post-operative pain, postpartum pain, inflammatory pain and post vaccination pain in children. It is also indicated for rheumatic & osteoarthritic pain and stiffness of joints.\\nTheropeutic Class\\n\\nNon opioid analgesics\\nPharmacology\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nDosage & Administration of Napa 500 mg\\nTablet:\\n\\n    Adult: 1-2 tablets every 4 to 6 hours up to a maximum of 4 gm (8 tablets) daily.\\n    Children (6-12 years): ½ to 1 tablet 3 to 4 times daily. For long term treatment it is wise not to exceed the dose beyond 2.6 gm/day.\\n\\nExtended Release Tablet:\\n\\n    Adults & Children over 12 years: Two tablets, swallowed whole, every 6 to 8 hours (maximum of 6 tablets in any 24 hours).The tablet must not be crushed.\\n\\nSyrup/Suspension:\\n\\n    Children under 3 months: 10 mg/kg body weight (reduce to 5 mg/kg if jaundiced) 3 to 4 times daily.\\n    3 months to below 1 year: ½ to 1 teaspoonful 3 to 4 times daily.\\n    1-5 years: 1 -2 teaspoonful 3 to 4 times daily.\\n    6-12 years: 2-A teaspoonful 3 to 4 times daily.\\n    Adults: 4-8 teaspoonful 3 to 4 times daily.\\n\\nSuppository:\\n\\n    Children 3-12 months: 60-120 mg,4 times daily.\\n    Children 1-5 years: 125-250 mg 4 times daily.\\n    Children 6-12 years: 250-500 mg 4 times daily.\\n    Adults & children over 12 years: 0.5-1 gm 4 times daily.\\n\\nPaediatric Drop:\\n\\n    Children Upto 3 months: 0.5 ml (40 mg)\\n    4 to 11 months: 1.0 ml (80 mg)\\n    7 to 2 years: 1.5 ml (120 mg). Do not exceed more than 5 dose daily for a maximum of 5 days.\\n\\nNapa 500 mg tablet with actizorb technology: It dissolves up to five times faster than standard Napa 500 mg tablets. It is a fast acting and safe analgesic with marked antipyretic property. It is specially suitable for patients who, for any reason, can not tolerate aspirin or other analgesics.\\n\\n    Adults and children (aged 12 years and over): Take 1 to 2 Tablets every four to six hours as needed. Do not take more than 8 caplets in 24 hours.\\n    Children (7 to 11 years): Take ½-1 Tablet every four to six hours as needed. Do not take more than 4 caplets in 24 hours. Not recommended in children under 7 years.\\n\\nInteraction of Napa 500 mg\\n\\nPatients who have taken barbiturates, tricyclic antidepressants and alcohol may show diminished ability to metabolise large doses of Napa 500 mg. Alcohol can increase the hepatotoxicity of Napa 500 mg overdosage. Chronic ingestion of anticonvulsants or oral steroid contraceptives induce liver enzymes and may prevent attainment of therapeutic Napa 500 mg levels by increasing first-pass metabolism or clearance.\\nContraindications\\n\\nIt is contraindicated in known hypersensitivity to Napa 500 mg.\\nSide Effects of Napa 500 mg\\n\\nSide effects of Napa 500 mg are usually mild, though haematological reactions including thrombocytopenia, leucopenia, pancytopenia, neutropenia, and agranulocytosis have been reported. Pancreatitis, skin rashes, and other allergic reactions occur occasionally.\\nPregnancy & Lactation\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed\\nPrecautions & Warnings\\n\\nNapa 500 mg should be given with caution to patients with impaired kidney or liver function. Napa 500 mg should be given with care to patients taking other drugs that affect the liver.\\nOverdose Effects of Napa 500 mg\\n\\nSymptoms of Napa 500 mg overdose in the first 24 hours are pallor, nausea, vomiting, anorexia and abdominal pain. Liver damage may become apparent 12-48 hours after ingestion. Abnormalities of glucose metabolism and metabolic acidosis may occur.\\nStorage Conditions\\n\\nKeep in a dry place away from light and heat. Keep out of the reach of children.\\nDrug Classes\\n\\nNon opioid analgesics\\nMode Of Action\\n\\nNapa 500 mg has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg (Acetaminophen) is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1, COX-2, and COX-3 enzymes involved in prostaglandin (PG) synthesis. Napa 500 mg is a para aminophenol derivative, has analgesic and antipyretic properties with weak anti-inflammatory activity. Napa 500 mg is one of the most widely used, safest and fast acting analgesic. It is well tolerated and free from various side effects of aspirin.\\nPregnancy\\n\\nPregnancy category B according to USFDA. This drug should be used during pregnancy only if clearly needed.  Napa 500 mg is excreted in breast milk. Maternal ingestion of Napa 500 mg in normal therapeutic doses does not appear to present a risk to the nursing infant.\",\n        \"avgStars\": 4,\n        \"reviewCount\": 1,\n        \"__v\": 0\n    }\n}"
 						}
 					]
 				}

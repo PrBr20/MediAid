@@ -7,8 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { BASE_URL } from "@/config";
 import { set } from "date-fns";
+import { useToast } from "@/components/ui/use-toast"
+
+
 
 const Reviews = ({ doctor }) => {
+  const {toast} = useToast();
   const { state } = useContext(AuthContext);
 
   const [reviews, setReviews] = useState({
@@ -54,7 +58,17 @@ const Reviews = ({ doctor }) => {
     const result = await res.json();
     
     if (!res.ok) {
+      toast({
+        title: "Review not posted",
+        description: "Fillup all fields and try again",
+      })
       throw new Error(result.message);
+    }
+    else {
+      toast({
+        title: "Review posted",
+        description: "Your review has been posted successfully",
+      })
     }
     window.location.reload();
   };

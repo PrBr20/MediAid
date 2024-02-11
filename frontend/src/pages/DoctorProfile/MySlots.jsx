@@ -4,6 +4,7 @@ import AddSlots from "./AddSlots";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import AllSlots from "./AllSlots";
+import { Outlet } from "react-router-dom";
 
 const MySlots = () => {
   const [navClass, setNavClass] = useState("All Slots");
@@ -40,8 +41,7 @@ const MySlots = () => {
         </ul>
         <hr className="border-black" />
         <div>
-          {navClass == "All Slots" && <AllSlots />}
-          {navClass == "Add Slots" && <AddSlots />}
+          <Outlet></Outlet>
         </div>
       </div>
     </div>

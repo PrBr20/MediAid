@@ -75,7 +75,17 @@ const AddSlots = () => {
       const result = await res.json();
 
       if (!res.ok) {
+        toast({
+          title: "Slot not added",
+          description: "Try again",
+        })
         throw new Error(result.message);
+      }
+      else {
+        toast({
+          title: "Slot added",
+          description: "You can view your slots in all slots",
+        })
       }
 
       console.log(result);
@@ -84,6 +94,8 @@ const AddSlots = () => {
 
   return (
     <div className="flex-col space-y-10 p-2">
+      <h1 className="font-bold text-3xl">Add Slots</h1>
+      <hr className="border-black" />
       <div className="flex-col space-y-1">
         <label className="font-medium leading-none" htmlFor="">
           Pick Date Range :

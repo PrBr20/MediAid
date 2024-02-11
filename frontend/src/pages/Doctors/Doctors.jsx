@@ -94,8 +94,6 @@ const Doctors = () => {
   };
   console.log(search);
 
-  // console.log(state);
-
   return (
     <div className="mx-[180px] mt-[40px] flex">
       <div className="flex flex-col w-2/3">
@@ -140,6 +138,11 @@ const Doctors = () => {
                 </div>
                 <div className="flex space-x-1 items-center justify-center">
                   <img src={AvgStar} className="w-[30px] h-[30px]" alt="" />
+                  <p className="font-bold pt-2">
+                    {doctor.averageStars != null
+                      ? doctor.averageStars.toFixed(2)
+                      : (0.0).toFixed(2)}
+                  </p>
                   <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p>
                 </div>
               </div>

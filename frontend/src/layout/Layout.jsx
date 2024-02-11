@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Routers from "../routes/Routers";
-import UserProfile from "@/pages/User/UserProfile";
 import Prescription from "@/components/Prescription/Prescription";
 import { Toaster } from "@/components/ui/toaster";
+import MedicineDetails from "../pages/MediShop/MedicineDetails";
 
 const Layout = () => {
   return (
@@ -12,8 +12,6 @@ const Layout = () => {
       <Header />
       <main>
         <Routers />
-        {/* <UserProfile/> */}
-        {/* <Prescription></Prescription> */}
       </main>
       <Toaster />
       <Footer />

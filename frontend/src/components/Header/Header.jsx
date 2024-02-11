@@ -9,8 +9,10 @@ import { RiH1 } from "react-icons/ri";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const Header = () => {
+  const { toast } = useToast();
   const { state, setState } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -21,6 +23,11 @@ const Header = () => {
     localStorage.removeItem("role");
 
     setState({ token: null, user: null, role: null });
+
+    toast({
+      title: "Logged Out",
+      description: "You have been logged out successfully!",
+    })
 
     navigate("/");
   };
@@ -101,7 +108,7 @@ const Header = () => {
 
             {state.token && state.user ? (
               <div className="flex space-x-2">
-                <Link to="/user">
+                <Link to="/user/dashboard">
                   <Avatar className="w-[40px] h-[40px]">
                     <AvatarImage src={state.user?.photo} />
                     <AvatarFallback>CN</AvatarFallback>

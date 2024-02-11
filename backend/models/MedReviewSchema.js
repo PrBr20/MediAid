@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-const reviewSchema = new mongoose.Schema(
+const medReviewSchema = new mongoose.Schema(
   {
-    doctor: {
+    medicine: {
       type: mongoose.Types.ObjectId,
-      ref: "Doctor",
+      ref: "Medicine",
       required: true,
     },
     user: {
@@ -28,4 +28,4 @@ const reviewSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Review", reviewSchema);
+export default mongoose.model("MedReview", medReviewSchema);

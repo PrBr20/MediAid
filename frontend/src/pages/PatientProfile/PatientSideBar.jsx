@@ -7,9 +7,12 @@ import { TbReport } from "react-icons/tb";
 import { IoSettingsOutline } from "react-icons/io5";
 import AuthContext from "@/context/AuthContext";
 import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-const PatientSideBar = ({handleClick}) => {
+const PatientSideBar = () => {
   const { state } = useContext(AuthContext);
+
+  const [navClass, setNavClass] = useState("dashboard");
 
   return (
     <div className="w-1/5 h-[500px] flex flex-col space-y-2">
@@ -23,46 +26,94 @@ const PatientSideBar = ({handleClick}) => {
           <p className="text-[12px] text-gray-500">{state?.user?.specialization}</p>
         </div>
       </div>
-      <div
-        id="Dash"
-        onClick={handleClick}
-        className="flex items-center space-x-2 hover:bg-orange-500 hover:text-white p-2 rounded-full cursor-pointer"
+      <NavLink
+        to="dashboard"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("dashboard") : null
+        }
       >
-        <RiDashboard3Line className="w-[25px] h-[25px]" />
-        <h1 className="font-semibold">Dashboard</h1>
-      </div>
-      <div
-        id="Docs"
-        onClick={handleClick}
-        className="flex items-center space-x-2 hover:bg-orange-500 hover:text-white p-2 rounded-full cursor-pointer"
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "dashboard"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <RiDashboard3Line className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">Dashboard</h1>
+        </div>
+      </NavLink>
+      <NavLink
+        to="doctors"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("doctors") : null
+        }
       >
-        <AiOutlineMedicineBox className="w-[25px] h-[25px]" />
-        <h1 className="font-semibold">My Doctors</h1>
-      </div>
-      <div
-        id="Appoints"
-        onClick={handleClick}
-        className="flex items-center space-x-2 hover:bg-orange-500 hover:text-white p-2 rounded-full cursor-pointer"
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "doctors"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <AiOutlineMedicineBox className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">My Doctors</h1>
+        </div>
+      </NavLink>
+
+      <NavLink
+        to="appointments"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("appointments") : null
+        }
       >
-        <MdOutlineEventNote className="w-[25px] h-[25px]" />
-        <h1 className="font-semibold">My Appointments</h1>
-      </div>
-      <div
-        id="Reps"
-        onClick={handleClick}
-        className="flex items-center space-x-2 hover:bg-orange-500 hover:text-white p-2 rounded-full cursor-pointer"
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "appointments"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <MdOutlineEventNote className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">Appointments</h1>
+        </div>
+      </NavLink>
+
+      <NavLink
+        to="reports"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("reports") : null
+        }
       >
-        <TbReport className="w-[25px] h-[25px]" />
-        <h1 className="font-semibold">My Reports</h1>
-      </div>
-      <div
-        id="Sets"
-        onClick={handleClick}
-        className="flex items-center space-x-2 hover:bg-orange-500 hover:text-white p-2 rounded-full cursor-pointer"
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "reports"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <TbReport className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">My Reports</h1>
+        </div>
+      </NavLink>
+
+      <NavLink
+        to="settings"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("settings") : null
+        }
       >
-        <IoSettingsOutline className="w-[25px] h-[25px]" />
-        <h1 className="font-semibold">Settings</h1>
-      </div>
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "settings"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <IoSettingsOutline className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">Settings</h1>
+        </div>
+      </NavLink>
     </div>
   );
 };

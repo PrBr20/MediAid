@@ -11,7 +11,6 @@ const Footer = () => {
       <div className="flex flex-col w-1/3 items-center justify-center">
         <img src={logo} className="px-auto w-[120px]" alt="" />
         <p>copyright 2023, developed by pb, afsh, ta</p>
-        
       </div>
 
       <div className="flex flex-col w-1/3 pl-[200px] justify-center">

@@ -21,6 +21,6 @@ router.delete('/:id', authenticate, restrict(['doctor', 'admin']), deleteDoctor)
 router.post('/timeslots', authenticate, restrict(['doctor']), addTimeSlot)
 router.delete('/timeslots/:id', authenticate, restrict(['doctor']), deleteTimeSlot)
 router.patch('/timeslots/:id', authenticate, restrict(['doctor']), updateTimeSlot)
-router.get('/timeslots/:id', authenticate, getTimeSlotsById)
+router.get('/timeslots/:id', getTimeSlotsById)
 
 export default router

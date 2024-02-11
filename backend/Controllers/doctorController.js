@@ -70,58 +70,28 @@ export const searchDoctors = async(req, res) => {
         const query = req.query
         let doctors
 
-        if(query.name != undefined && query.name != null) {
-            doctors = await Doctor.find({
-                isApproved: "approved",
-                name: { $regex: query.name, $options: "i" }
-            }).select('-password').populate('specialization')
-        }
+        let obj = []
+        if(query.name) obj.push({name: { $regex: query.name, $options: "i" }})
+        if(query.specialization) obj.push({specialization: query.specialization})
+        if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
+        if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})
+        if(query.rating) obj.push({avgStars: {$gte: query.rating}})
+
+        if(obj.length > 0)
+            doctors = await Doctor.find({isApproved: "approved", $and: obj}).select('-password').populate('specialization')
         else
             doctors = await Doctor.find({isApproved: "approved"}).select('-password').populate('specialization')
-        // console.log(doctors)
-
-        if(query.specialization != undefined && query.specialization != null) {
-            const specId = new ObjectId(query.specialization)
-            doctors = doctors.filter(doctor => doctor.specialization._id.equals(specId))
-        }
-
-        if(query.feeLower != undefined && query.feeLower != null) {
-            const feeLower = query.feeLower
-            doctors = doctors.filter(doctor => doctor.fee >= feeLower)
-        }
-
-        if(query.feeUpper != undefined && query.feeUpper != null) {
-            const feeUpper = query.feeUpper
-            doctors = doctors.filter(doctor => doctor.fee <= feeUpper)
-        }
 
         for(let i = 0; i < doctors.length; i++) {
-            const doctorReviews = await Review.find({doctor: doctors[i]._id}).populate('user')
-            let avgStars = 0
-            for (let i = 0; i < doctorReviews.length; i++)
-                avgStars += doctorReviews[i].rating
-            if(doctorReviews.length > 0)
-                avgStars /= doctorReviews.length
-
             const currDate = new Date()
             const id = doctors[i]._id
             const scount = await Slot.find({
                 doctor: id,
                 date: {$gte: currDate},
             }).count()
-            // const count = slots.length
-
-            const pcount = await Appointment.find({
-                doctor: id,
-            }).count()
 
             doctors[i] = doctors[i].toObject()
-            doctors[i] = {...doctors[i], averageStars: avgStars, slotCount: scount, patientCount: pcount}
-        }
-
-        if(query.rating != undefined && query.rating != null) {
-            const rating = 1.00 * query.rating
-            doctors = doctors.filter(doctor => doctor.averageStars >= rating)
+            doctors[i] = {...doctors[i], averageStars: doctors[i].avgStars, slotCount: scount}
         }
 
         if(query.timerange != undefined && query.timerange != null) {
@@ -209,12 +179,16 @@ export const updateTimeSlot = async(req, res) => {
 export const getTimeSlotsById = async(req, res) => {
     let id = req.params.id
     id = new ObjectId(id)
+    let date = new Date(req.query.date)
+    date.setDate(date.getDate() + 1)
+    // console.log(date)
     try {
-        const currDate = new Date()
-        const slots = await Slot.find({
-            doctor: id,
-            // date: {$gte: currDate}
-        }).sort({date: -1})
+        let obj = {
+            doctor: id
+        }
+        if(req.query.date != undefined && req.query.date != null)
+            obj.date = date
+        const slots = await Slot.find(obj).sort({date: -1})
 
         for(let i=0; i<slots.length; i++) {
             const appointments = await Appointment.find({
