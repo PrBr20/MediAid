@@ -106,7 +106,7 @@ export const searchMediLabs = async(req, res) => {
                 finalDate = addDays(currDate, 8)
 
             for(let i = 0; i < MediLabs.length; i++) {
-                const MediLabSlots = await Slot.find({
+                const MediLabSlots = await LabSlot.find({
                     MediLab: MediLabs[i]._id,
                     date: {$gte: currDate, $lt: finalDate}
                 })
@@ -136,7 +136,7 @@ export const addTimeSlot = async(req, res) => {
         slotDate.setHours(0, 0, 0)
         console.log(slotDate)
 
-        const newSlot = new Slot({
+        const newSlot = new LabSlot({
             MediLab: id,
             starthr, 
             endhr, 
@@ -146,7 +146,7 @@ export const addTimeSlot = async(req, res) => {
             patientCount
         })
         newSlot.save()
-        res.status(200).json({success: true, msg: "Time slot added successfully", data: newSlot})
+        res.status(200).json({success: true, msg: "Time slot added successfully", data: newLabSlot})
     } catch(err) {
         console.log(err)
         res.status(500).json({success: false, msg: "Time slot addition failed", error: err})
@@ -157,7 +157,7 @@ export const deleteTimeSlot = async(req, res) => {
     const remId = req.params.id
 
     try {
-        Slot.findByIdAndDelete(remId)
+        LabSlot.findByIdAndDelete(remId)
         res.status(200).json({success: true, msg: "Time slot deleted successfully"})
     } catch(error) {
         console.log(error)
@@ -168,7 +168,7 @@ export const deleteTimeSlot = async(req, res) => {
 export const updateTimeSlot = async(req, res) => {
     const id = req.params.id
     try {
-        const updatedSlot = Slot.findByIdAndUpdate(id, {$set: req.body}, {new: true})
+        const updatedSlot = LabSlot.findByIdAndUpdate(id, {$set: req.body}, {new: true})
         res.status(200).json({success: true, msg: "Time slot updated successfully", data: updatedSlot})
     } catch(err) {
         console.log(err)
@@ -188,10 +188,10 @@ export const getTimeSlotsById = async(req, res) => {
         }
         if(req.query.date != undefined && req.query.date != null)
             obj.date = date
-        const slots = await Slot.find(obj).sort({date: -1})
+        const slots = await LabSlot.find(obj).sort({date: -1})
 
         for(let i=0; i<slots.length; i++) {
-            const appointments = await Appointment.find({
+            const appointments = await Test_Appointment.find({
                 slot: slots[i]._id,
                 status: "approved"
             })
