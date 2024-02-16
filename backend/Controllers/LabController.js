@@ -72,15 +72,15 @@ export const searchMediLabs = async(req, res) => {
 
         let obj = []
         if(query.name) obj.push({name: { $regex: query.name, $options: "i" }})
-        if(query.specialization) obj.push({specialization: query.specialization})
-        if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
-        if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})
+        // if(query.specialization) obj.push({specialization: query.specialization})
+        // if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
+        // if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})
         if(query.rating) obj.push({avgStars: {$gte: query.rating}})
 
         if(obj.length > 0)
-            MediLabs = await MediLab.find({isApproved: "approved", $and: obj}).select('-password').populate('specialization')
+            MediLabs = await MediLab.find({isApproved: "approved", $and: obj}).select('-password')
         else
-            MediLabs = await MediLab.find({isApproved: "approved"}).select('-password').populate('specialization')
+            MediLabs = await MediLab.find({isApproved: "approved"}).select('-password')
 
         for(let i = 0; i < MediLabs.length; i++) {
             const currDate = new Date()
