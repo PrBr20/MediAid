@@ -3,7 +3,6 @@ import React from "react";
 import About from "../pages/About";
 import Home from "../pages/Home";
 import Doctors from "../pages/Doctors/Doctors";
-import Medilab from "../pages/MediLab/Medilab";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
 import Login from "../pages/Login";
 import UserDoctorProfile from "../pages/DoctorProfile/UserDoctorProfile";
@@ -15,6 +14,8 @@ import Prescription from "@/components/Prescription/Prescription";
 import MediShop from "@/pages/MediShop/MediShop";
 import Dashboard from "@/pages/Profile/Dashboard";
 import MyAppointments from "@/pages/Profile/MyAppointments";
+import LabDashboard from "@/pages/Profile/LabDashBoard";
+import MyLabAppointments from "@/pages/Profile/MyLabAppointments";
 import Settings from "@/pages/Profile/Settings";
 import MyDoctors from "@/pages/PatientProfile/MyDoctors";
 import MyPatients from "@/pages/DoctorProfile/MyPatients";
@@ -24,6 +25,13 @@ import AddSlots from "@/pages/DoctorProfile/AddSlots";
 import MedicineDetails from "../pages/MediShop/MedicineDetails";
 import Overview from "../pages/MediShop/Overview";
 import MedReview from "../pages/MediShop/MedReview";
+import Medilab from "../pages/MediLab/Medilab";
+import MediLabDetails from "../pages/MediLab/MediLabDetails";
+import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
+import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
+import AlLlabSlots from "@/pages/MediLabProfile/MediAllSlots";
+import AddLabSlots from "@/pages/MediLabProfile/MediAddSlots";
+
 
 const Routers = () => {
   const { state } = useContext(AuthContext);
@@ -51,6 +59,16 @@ const Routers = () => {
           <Route path="doctors" element={<MyDoctors />} />
           <Route path="appointments" element={<MyAppointments />} />
           <Route path="reports" element={<MyReports />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      )}
+      {state?.role == "mediLab" && (
+        <Route path="/user" element={<UserMediLabProfile />}>
+          <Route path="LabDashboard" element={<LabDashboard />} />
+          <Route path="LabPatients" element={<MyLabPatients />} />
+          <Route path="LabAppoinments" element={<MyLabAppointments />} />
+          <Route path="allLabslots" element={<AlLlabSlots />} />
+          <Route path="addLabslots" element={<AddLabSlots />} />
           <Route path="settings" element={<Settings />} />
         </Route>
       )}

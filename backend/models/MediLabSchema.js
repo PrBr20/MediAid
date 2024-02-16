@@ -18,9 +18,7 @@ const MediLabSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "tests",
   },
-  qualifications: {
-    type: Array,
-  },
+
   certificates: {
     type: Array,
   },
@@ -34,7 +32,7 @@ const MediLabSchema = new mongoose.Schema({
   isApproved: {
     type: String,
     enum: ["pending", "approved", "cancelled"],
-    default: "approved", //TODO: Change to pending
+    default: "pending", //TODO: Change to pending
   },
 },
 { timestamps: true }
