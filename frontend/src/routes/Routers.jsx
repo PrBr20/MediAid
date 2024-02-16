@@ -1,5 +1,4 @@
 import React from "react";
-
 import About from "../pages/About";
 import Home from "../pages/Home";
 import Doctors from "../pages/Doctors/Doctors";
@@ -29,7 +28,7 @@ import Medilab from "../pages/MediLab/Medilab";
 import MediLabDetails from "../pages/MediLab/MediLabDetails";
 import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
-import AlLlabSlots from "@/pages/MediLabProfile/MediAllSlots";
+import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
 import AddLabSlots from "@/pages/MediLabProfile/MediAddSlots";
 
 
@@ -42,7 +41,9 @@ const Routers = () => {
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/medilab" element={<Medilab />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
+      <Route path="/medilab/:id" element={<MediLabDetails />} />
       <Route path="/login" element={<Login />} />
+
       {state?.role == "doctor" && (
         <Route path="/user" element={<UserDoctorProfile />}>
           <Route path="dashboard" element={<Dashboard />} />
@@ -53,6 +54,7 @@ const Routers = () => {
           <Route path="settings" element={<Settings />} />
         </Route>
       )}
+
       {state?.role == "patient" && (
         <Route path="/user" element={<UserPatientProfile />}>
           <Route path="dashboard" element={<Dashboard />} />
@@ -62,16 +64,18 @@ const Routers = () => {
           <Route path="settings" element={<Settings />} />
         </Route>
       )}
+
       {state?.role == "mediLab" && (
         <Route path="/user" element={<UserMediLabProfile />}>
           <Route path="LabDashboard" element={<LabDashboard />} />
           <Route path="LabPatients" element={<MyLabPatients />} />
           <Route path="LabAppoinments" element={<MyLabAppointments />} />
-          <Route path="allLabslots" element={<AlLlabSlots />} />
+          <Route path="allLabslots" element={<AllLabSlots />} />
           <Route path="addLabslots" element={<AddLabSlots />} />
           <Route path="settings" element={<Settings />} />
         </Route>
       )}
+
       <Route path="/prescription" element={<Prescription />} />
       <Route path="/medishop" element={<MediShop />} />
       <Route path="/medicine/:medid" element={<MedicineDetails />}>
