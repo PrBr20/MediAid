@@ -19,35 +19,37 @@ const Medilab = () => {
   const { state, setState } = useContext(AuthContext);
   // console.log(state);
 
-  const [specialization, setSpecialization] = useState([]);
+  // const [specialization, setSpecialization] = useState([]);
 
   const [doctors, setDoctors] = useState([]);
+  const [mediLab, setMediLab]= useState([]);
 
   const [search, setSearch] = useState({
     name: "",
     rating: 0,
-    feeLower: 0,
-    feeUpper: 1000,
-    specialization: "all",
+    // feeLower: 0,
+    // feeUpper: 1000,
+    // specialization: "all",
     timerange: "all",
   });
 
   useEffect(() => {
-    const fetchDoctors = async () => {
+    const fetchMediLab = async () => {
       let params = {};
 
       // Conditionally add parameters to the object
       if (search.name != "") params.name = search.name;
       if (search.rating) params.rating = search.rating;
-      if (search.feeLower > -1) params.feeLower = search.feeLower;
-      if (search.feeUpper) params.feeUpper = search.feeUpper;
-      if (search.specialization != "all")
-        params.specialization = search.specialization;
+      // if (search.feeLower > -1) params.feeLower = search.feeLower;
+      // if (search.feeUpper) params.feeUpper = search.feeUpper;
+      // if (search.specialization != "all")
+      //   params.specialization = search.specialization;
+      // if(search.phone) params.phone = search.phone;
       if (search.timerange != "all") params.timerange = search.timerange;
 
       const queryString = new URLSearchParams(params).toString();
 
-      const res1 = await fetch(`${BASE_URL}/doctor/search?${queryString}`, {
+      const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -57,42 +59,42 @@ const Medilab = () => {
 
       console.log(queryString);
 
-      const res2 = await fetch(`${BASE_URL}/specialization`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${state.token}`,
-        },
-      });
+      // const res2 = await fetch(`${BASE_URL}/specialization`, {
+      //   method: "GET",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${state.token}`,
+      //   },
+      // });
 
       if (!res1.ok) {
         throw new Error(result1.message);
       }
-      if (!res2.ok) {
-        throw new Error(result.message);
-      }
+      // if (!res2.ok) {
+      //   throw new Error(result.message);
+      // }
 
       const result1 = await res1.json();
-      const result2 = await res2.json();
+      // const result2 = await res2.json();
 
       console.log(result1.data);
 
-      setDoctors(result1.data);
-      setSpecialization(result2.data);
+      setMediLab(result1.data);
+      // setSpecialization(result2.data);
     };
 
     if (state.user) {
-      fetchDoctors();
+      fetchMediLab();
     }
   }, [search]);
 
-  const handleChange = (name, value) => {
-    if (name == "feeUpper") {
-      setSearch({ ...search, feeLower: 0 });
-      setSearch({ ...search, [name]: value[0] });
-    } else setSearch({ ...search, [name]: value });
-  };
-  console.log(search);
+  // const handleChange = (name, value) => {
+  //   if (name == "feeUpper") {
+  //     setSearch({ ...search, feeLower: 0 });
+  //     setSearch({ ...search, [name]: value[0] });
+  //   } else setSearch({ ...search, [name]: value });
+  // };
+  // console.log(search);
 
   // console.log(state);
 

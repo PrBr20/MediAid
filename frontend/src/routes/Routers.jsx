@@ -24,8 +24,8 @@ import AddSlots from "@/pages/DoctorProfile/AddSlots";
 import MedicineDetails from "../pages/MediShop/MedicineDetails";
 import Overview from "../pages/MediShop/Overview";
 import MedReview from "../pages/MediShop/MedReview";
-import Medilab from "../pages/MediLab/Medilab";
-import MediLabDetails from "../pages/MediLab/MediLabDetails";
+import Medilab from "../pages/MediLab/MediLab";
+// import MediLabDetails from "../pages/MediLab/MediLabDetails";
 import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
 import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
@@ -39,9 +39,8 @@ const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/doctors" element={<Doctors />} />
-      <Route path="/medilab" element={<Medilab />} />
+      <Route path="/mediLab" element={<Medilab />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
-      <Route path="/medilab/:id" element={<MediLabDetails />} />
       <Route path="/login" element={<Login />} />
 
       {state?.role == "doctor" && (
