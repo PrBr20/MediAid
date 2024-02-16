@@ -282,36 +282,6 @@ const Login = () => {
                     </SelectContent>
                   </Select>
 
-
-                  {/* <Select
-                    name="gender"
-
-                    value={signupData.gender}
-                    onChange={(value) =>
-                      handleSelectChange("gender", value)
-
-                    }
-              
-
-
-                  >
-
-
-                    <SelectTrigger className={` ${signupData.role == "mediLab" ? "border-gray text-gray" : "border-black"
-                      // signupData.role != "medilab" ? "text-gray" : "border-black"
-                      }`}>
-                      <Label
-                        htmlFor="gender"
-                        className={`${signupData.role == "mediLab" ? "text-gray" : "text-black"
-                          }`}
-                      ></Label>
-                      <SelectValue placeholder="Gender" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
-                    </SelectContent>
-                  </Select>  */}
                   {signupData.role !== "mediLab" && (
                     <Select
                       name="gender"
@@ -327,34 +297,27 @@ const Login = () => {
                       </SelectContent>
                     </Select>
                   )}
+                  {signupData.role === "mediLab" && (
+                    <Select>
+                        <Input
+                        type="text"
+                        value={signupData.phone}
+                        onChange={(e) =>
+                          setsignupData({ ...signupData, phone: e.target.value })
+                        }
+                        placeholder={
+                          "Mobile"
+                        }
+                        // readOnly={signupData.role === "mediLab"}
+                        className={"border-black"}
+                      />
+                      
+
+
+                    </Select>
+                  )}
 
                 </div>
-                {/* <div className="space-y-1">
-                  <Label
-                    htmlFor="new"
-                    className={`${signupData.role == "mediLab"
-                        ? "text-gray-400"
-                        : "text-black"
-                      }`}
-                  >
-                    Gender
-                  </Label>
-                  <SelectTrigger
-                    // type="text"
-                    value={signupData.gender}
-                    onChange={(e) =>
-                      setsignupData({ ...signupData, gender: e.target.value })
-                    }
-                    placeholder={
-                      signupData.role == "mediLab" ? "" : "Select gender"
-                    }
-                    readOnly={signupData.role != "doctor"}
-                    className={`border ${signupData.role != "doctor"
-                        ? "border-gray"
-                        : "border-black"
-                      }`}
-                  />
-                </div> */}
                 <div className="space-y-1">
                   <Label
                     htmlFor="new"
