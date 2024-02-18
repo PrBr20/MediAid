@@ -24,7 +24,7 @@ import AddSlots from "@/pages/DoctorProfile/AddSlots";
 import MedicineDetails from "../pages/MediShop/MedicineDetails";
 import Overview from "../pages/MediShop/Overview";
 import MedReview from "../pages/MediShop/MedReview";
-import Medilab from "../pages/MediLab/MediLab";
+import MediLabs from "../pages/MediLab/MediLabs";
 // import MediLabDetails from "../pages/MediLab/MediLabDetails";
 // import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 // import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
@@ -39,7 +39,7 @@ const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/doctors" element={<Doctors />} />
-      <Route path="/mediLab" element={<Medilab />} />
+      <Route path="/medilabs" element={<MediLabs />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
 

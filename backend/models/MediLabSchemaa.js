@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-const MediLabSchema = new mongoose.Schema({
-  // Labid:{type:Number,required:true,unique:true},
+const MediLabSchemaa = new mongoose.Schema({
+
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   name: { type: String, required: true },
@@ -32,7 +32,7 @@ const MediLabSchema = new mongoose.Schema({
   isApproved: {
     type: String,
     enum: ["pending", "approved", "cancelled"],
-    default: "pending", //TODO: Change to pending
+    default: "approved", //TODO: Change to pending
   },
   avgStars: { type: Number, default: 0 },
   reviewCount: { type: Number, default: 0 },
@@ -41,4 +41,4 @@ const MediLabSchema = new mongoose.Schema({
 { timestamps: true }
 );
 
-export default mongoose.model("MediLab", MediLabSchema)
+export default mongoose.model("MediLab", MediLabSchemaa)

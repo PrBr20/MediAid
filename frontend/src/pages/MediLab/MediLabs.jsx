@@ -15,13 +15,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { set } from "date-fns";
 import AvgStar from "@/assets/images/avgstar.png";
 
-const Medilab = () => {
+const MediLabs = () => {
   const { state, setState } = useContext(AuthContext);
   // console.log(state);
 
   // const [specialization, setSpecialization] = useState([]);
 
-   const [doctors, setDoctors] = useState([]);
+  //  const [doctors, setDoctors] = useState([]);
   const [mediLabs, setMediLabs]= useState([]);
 
   const [search, setSearch] = useState({
@@ -49,9 +49,11 @@ const Medilab = () => {
       // if(search.phone) params.phone = search.phone;
       // if (search.timerange != "all") params.timerange = search.timerange;
 
-      const queryString = new URLSearchParams(params).toString();
+      // const queryString = new URLSearchParams(params).toString();
 
-      const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
+      // const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
+        console.log("check medilab")
+        const res1 = await fetch(`${BASE_URL}/mediLab/search`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +61,7 @@ const Medilab = () => {
         },
       });
 
-      console.log(queryString);
+      // console.log(queryString);
 
       // const res2 = await fetch(`${BASE_URL}/specialization`, {
       //   method: "GET",
@@ -153,4 +155,4 @@ const Medilab = () => {
   );
 };
 
-export default Medilab;
+export default MediLabs;

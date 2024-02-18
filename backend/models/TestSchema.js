@@ -2,8 +2,8 @@ import mongoose from "mongoose"
 
 const testSchema = new mongoose.Schema(
     {
-        Labid: { type: Number, required: true },
-        TestId:{type:Number,required:true,unique:true},
+        // Labid: { type: Number, required: true },
+        // TestId:{type:Number,required:true,unique:true},
         name: { type: String, required: true },
         description : { type: String, required: true },
         image: {type: String},

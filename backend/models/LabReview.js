@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 const lab_reviewSchema = new mongoose.Schema(
   {
     lab: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Lab",
       required: true,
     },
     user: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },

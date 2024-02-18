@@ -1,6 +1,6 @@
 import User from '../models/UserSchema.js'
 import Doctor from '../models/DoctorSchema.js'
-import MediLab from '../models/MediLabSchema.js'
+import MediLab from '../models/MediLabSchemaa.js'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 

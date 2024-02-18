@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import Doctor from '../models/DoctorSchema.js'
-import MediLab from '../models/MediLabSchema.js'
+import MediLab from '../models/MediLabSchemaa.js'
 import User from '../models/UserSchema.js'
 
 export const authenticate = async(req, res, next) => {

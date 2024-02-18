@@ -2,16 +2,16 @@ import mongoose from "mongoose";
 
 const test_appointment_schema = new mongoose.Schema(
   {
-    LabId: {
-      type: mongoose.Types.ObjectId,
+     lab: {
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Lab",
       required: true,
     },
-    TestId:{
-        type:mongoose.Types.ObjectId,
-        ref:"Test",
-        required:true,
-    },
+    // TestId:{
+    //     type:mongoose.Types.ObjectId,
+    //     ref:"Test",
+    //     required:true,
+    // },
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
