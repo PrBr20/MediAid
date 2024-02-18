@@ -45,7 +45,7 @@ const Login = () => {
     email: "",
     password: "",
     photo: "",
-    // phone:"",
+    phone:"Enter the Number",
     gender: "male",
     role: "",
     fee: "",
@@ -74,7 +74,7 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    if (signupData.role == "patient") {
+    if (signupData.role == "patient" || signupData == "mediLab") {
       setsignupData({ ...signupData, fee: "" });
     }
   }, [signupData.role]);
@@ -298,7 +298,7 @@ const Login = () => {
                       </SelectContent>
                     </Select>
                   )}
-                  {/* {signupData.role === "mediLab" && (
+                 {signupData.role === "mediLab" && (
                     <Select>
                         <Input
                         type="text"
@@ -316,7 +316,7 @@ const Login = () => {
 
 
                     </Select>
-                  )} */}
+                  )} 
 
                 </div>
                 <div className="space-y-1">

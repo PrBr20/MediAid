@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
 export const register = async(req, res) => {
-    const {email, password, name, role, photo, gender, fee, specialization} = req.body
+    const {email, password, name, role, photo, gender, fee, specialization,phone} = req.body
     
     try {
         let user = null
@@ -45,13 +45,13 @@ export const register = async(req, res) => {
                 specialization
             })
         }
-        else if(role === 'medilab')
+        else if(role === 'mediLab')
         {
             user= new MediLab({
-                name,email,
+                name,
+                email,
                 password: hashPassword,
                 photo:"",
-                gender,
                 phone,
                 role
 

@@ -54,7 +54,7 @@ const Routers = () => {
         </Route>
       )}
 
-      {/* {state?.role == "patient" && (
+     {state?.role == "patient" && (
         <Route path="/user" element={<UserPatientProfile />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="doctors" element={<MyDoctors />} />
@@ -62,9 +62,9 @@ const Routers = () => {
           <Route path="reports" element={<MyReports />} />
           <Route path="settings" element={<Settings />} />
         </Route>
-      )} */}
+      )} 
 
-      {state?.role == "mediLab" && (
+      {/* {state?.role == "mediLab" && (
         <Route path="/user" element={<UserMediLabProfile />}>
           <Route path="LabDashboard" element={<LabDashboard />} />
           <Route path="LabPatients" element={<MyLabPatients />} />
@@ -73,7 +73,8 @@ const Routers = () => {
           <Route path="addLabslots" element={<AddLabSlots />} />
           <Route path="settings" element={<Settings />} />
         </Route>
-      )}
+      )} */}
+      
 
       <Route path="/prescription" element={<Prescription />} />
       <Route path="/medishop" element={<MediShop />} />

@@ -21,12 +21,13 @@ const Medilab = () => {
 
   // const [specialization, setSpecialization] = useState([]);
 
-  // const [doctors, setDoctors] = useState([]);
-  const [mediLab, setMediLab]= useState([]);
+   const [doctors, setDoctors] = useState([]);
+  const [mediLabs, setMediLabs]= useState([]);
 
   const [search, setSearch] = useState({
     name: "",
     rating: 0,
+    phone: "",
     // feeLower: 0,
     // feeUpper: 1000,
     // specialization: "all",
@@ -38,14 +39,15 @@ const Medilab = () => {
       let params = {};
 
       // Conditionally add parameters to the object
-      if (search.name != "") params.name = search.name;
-      if (search.rating) params.rating = search.rating;
+      // if (search.name != "") params.name = search.name;
+      // if (search.rating) params.rating = search.rating;
+      // if (search.phone != "") params.phone = search.phone;
       // if (search.feeLower > -1) params.feeLower = search.feeLower;
       // if (search.feeUpper) params.feeUpper = search.feeUpper;
       // if (search.specialization != "all")
       //   params.specialization = search.specialization;
       // if(search.phone) params.phone = search.phone;
-      if (search.timerange != "all") params.timerange = search.timerange;
+      // if (search.timerange != "all") params.timerange = search.timerange;
 
       const queryString = new URLSearchParams(params).toString();
 
@@ -79,7 +81,7 @@ const Medilab = () => {
 
       console.log(result1.data);
 
-      setMediLab(result1.data);
+      setMediLabs(result1.data);
       // setSpecialization(result2.data);
     };
 
@@ -100,7 +102,7 @@ const Medilab = () => {
 
   return (
     <div className="mx-4 my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {doctors.map((doctor, index) => (
+      {mediLabs.map((mediLab, index) => (
         <div
           key={index}
           className="bg-white p-4 rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out"
@@ -109,38 +111,40 @@ const Medilab = () => {
         >
           <div className="flex justify-center mb-2">
             <img
-              src={doctor.photo}
-              alt="Doctor"
+              src={mediLab.photo}
+              alt="mediLab"
               className="w-24 h-24 object-cover rounded-full"
             />
           </div>
           <div className="mb-2">
-            <h2 className="text-xl font-bold">{doctor.name}</h2>
-            <p className="text-gray-500">{doctor.specialization.name} Specialist</p>
+            <h2 className="text-xl font-bold">{mediLab.name}</h2>
+            <p className="text-gray-500">{mediLab.phone} Phone</p>
           </div>
           <div className="flex items-center mb-2">
             <img src={AvgStar} alt="Average Star" className="w-6 h-6 mr-2" />
-            <p className="font-bold">{doctor.averageStars.toFixed(2)}</p>
+            <p className="font-bold">{mediLab.averageStars.toFixed(2)}</p>
           </div>
           <div className="flex items-center mb-2">
             <PiClockCountdownFill className="text-orange-400 mr-1" />
-            <p className="text-xs">{doctor.patientCount} Patients</p>
+            <p className="text-xs">{mediLab.patientCount} Patients</p>
           </div>
           <div className="flex items-center mb-2">
             <TbCalendarStats className="text-orange-400 mr-1" />
-            <p className="text-xs">Joined on {doctor.createdAt.split("T")[0]}</p>
+            <p className="text-xs">Joined on {mediLab.createdAt.split("T")[0]}</p>
           </div>
           <div className="flex items-center mb-2">
             <TbDeviceWatchStats2 className="text-orange-400 mr-1" />
-            <p className="text-xs">{doctor.slotCount} slots available</p>
+            <p className="text-xs">{mediLab.slotCount} slots available</p>
           </div>
           <hr className="border-gray-200 my-2" />
           <div className="flex justify-between">
             <h1 className="text-red-500 font-extrabold">
-              Fee: {doctor.fee} Taka
+              {/* Fee: {doctor.fee} Taka */}
+              Fee: 500 Taka
             </h1>
             <h1 className="font-bold hover:scale-110 transition-transform">
-              <Link to={`/doctors/${doctor._id}`}>View More</Link>
+              {/* <Link to={`/doctors/${doctor._id}`}>View More</Link> */}
+              View More
             </h1>
           </div>
         </div>
