@@ -22,6 +22,9 @@ const MediLabSchemaa = new mongoose.Schema({
   certificates: {
     type: Array,
   },
+  address:{
+    type: String
+  },
 
   experiences: {
     type: Array,

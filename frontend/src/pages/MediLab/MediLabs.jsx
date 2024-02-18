@@ -22,7 +22,7 @@ const MediLabs = () => {
   // const [specialization, setSpecialization] = useState([]);
 
   //  const [doctors, setDoctors] = useState([]);
-  const [mediLabs, setMediLabs]= useState([]);
+  const [mediLabs, setMediLabs] = useState([]);
 
   const [search, setSearch] = useState({
     name: "",
@@ -39,7 +39,7 @@ const MediLabs = () => {
       let params = {};
 
       // Conditionally add parameters to the object
-      // if (search.name != "") params.name = search.name;
+      if (search.name != "") params.name = search.name;
       // if (search.rating) params.rating = search.rating;
       // if (search.phone != "") params.phone = search.phone;
       // if (search.feeLower > -1) params.feeLower = search.feeLower;
@@ -49,18 +49,18 @@ const MediLabs = () => {
       // if(search.phone) params.phone = search.phone;
       // if (search.timerange != "all") params.timerange = search.timerange;
 
-      // const queryString = new URLSearchParams(params).toString();
+      const queryString = new URLSearchParams(params).toString();
 
-      // const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
-       
-        const res1 = await fetch(`${BASE_URL}/mediLab/search`, {
+      const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
+
+      // const res1 = await fetch(`${BASE_URL}/mediLab/search`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${state.token}`,
         },
       });
-      const temp="check medilab"
+      const temp = "check medilab"
       console.log(temp)
       // console.log(queryString);
 
@@ -71,7 +71,7 @@ const MediLabs = () => {
       //     Authorization: `Bearer ${state.token}`,
       //   },
       // });
-      
+
       if (!res1.ok) {
         throw new Error(result1.message);
       }
@@ -79,7 +79,7 @@ const MediLabs = () => {
       //   throw new Error(result.message);
       // }
 
-   
+
       // const result2 = await res2.json();
       const result1 = await res1.json();
 
@@ -105,55 +105,81 @@ const MediLabs = () => {
   // console.log(state);
 
   return (
-    <div className="mx-4 my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {mediLabs.map((mediLab, index) => (
-        <div
-          key={index}
-          className="bg-white p-4 rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out"
-          style={{ backgroundColor: '#fff4f6' }} // Set background color here
-        
-        >
-          <div className="flex justify-center mb-2">
-            <img
-              src={mediLab.photo}
-              alt="mediLab"
-              className="w-24 h-24 object-cover rounded-full"
-            />
-          </div>
-          <div className="mb-2">
-            <h2 className="text-xl font-bold">{mediLab.name}</h2>
-            <p className="text-gray-500">Phone: 0{mediLab.phone} </p>
-          </div>
-          <div className="flex items-center mb-2">
-            <img src={AvgStar} alt="Average Star" className="w-6 h-6 mr-2" />
-            <p className="font-bold">{mediLab.averageStars.toFixed(2)}</p>
-          </div>
-          <div className="flex items-center mb-2">
-            <PiClockCountdownFill className="text-orange-400 mr-1" />
-            <p className="text-xs">{mediLab.patientCount} Patients</p>
-          </div>
-          <div className="flex items-center mb-2">
-            <TbCalendarStats className="text-orange-400 mr-1" />
-            <p className="text-xs">Joined on {mediLab.createdAt.split("T")[0]}</p>
-          </div>
-          <div className="flex items-center mb-2">
-            <TbDeviceWatchStats2 className="text-orange-400 mr-1" />
-            <p className="text-xs">{mediLab.slotCount} slots available</p>
-          </div>
-          <hr className="border-gray-200 my-2" />
-          <div className="flex justify-between">
-            <h1 className="text-red-500 font-extrabold">
-              {/* Fee: {doctor.fee} Taka */}
-              Fee: 500 Taka
-            </h1>
-            <h1 className="font-bold hover:scale-110 transition-transform">
-              {/* <Link to={`/doctors/${doctor._id}`}>View More</Link> */}
-              View More
-            </h1>
-          </div>
+    <div className="flex">
+
+      <div className="w-5/6 p-4">
+        <h1 className="text-3xl font-bold my-8 pl-10">ALL MEDILAB</h1>
+        <div className="mx-4 my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
+          {mediLabs.map((mediLab, index) => (
+            <div
+              key={index}
+              className="bg-white p-4 rounded-md shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+              style={{ backgroundColor: '#fff4f6' }} // Set background color here
+
+            >
+              <div className="flex justify-center mb-2">
+                <img
+                  src={mediLab.photo}
+                  alt="mediLab"
+                  className="w-full h-full object-cover "
+                />
+              </div>
+              <div className="mb-2">
+                <h2 className="text-xl font-bold">{mediLab.name}</h2>
+                <p className="text-gray-500">Phone: 0{mediLab.phone} </p>
+              </div>
+              <div className="flex items-center mb-2">
+                <img src={AvgStar} alt="Average Star" className="w-6 h-6 mr-2" />
+                <p className="font-bold">{mediLab.averageStars.toFixed(2)}</p>
+              </div>
+              <div className="flex items-center mb-2">
+                <PiClockCountdownFill className="text-orange-400 mr-1" />
+                <p className="text-xs">{mediLab.patientCount} Patients</p>
+              </div>
+              <div className="flex items-center mb-2">
+                <TbCalendarStats className="text-orange-400 mr-1" />
+                <p className="text-xs">Joined on {mediLab.createdAt.split("T")[0]}</p>
+              </div>
+              <div className="flex items-center mb-2">
+                <TbDeviceWatchStats2 className="text-orange-400 mr-1" />
+                <p className="text-xs">{mediLab.slotCount} slots available</p>
+              </div>
+              <hr className="border-gray-200 my-2" />
+              <div className="flex justify-between">
+                <h1 className="text-red-500 font-extrabold">
+                  {/* Fee: {doctor.fee} Taka */}
+                  Fee: 500 Taka
+                </h1>
+                <h1 className="font-bold hover:scale-110 transition-transform">
+                  {/* <Link to={`/doctors/${doctor._id}`}>View More</Link> */}
+                  View More
+                </h1>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+
+      <div className="w-1/6 p-4">
+        <div className="flex mt-10 mb-10">
+    
+      <input
+        type="text"
+        placeholder="Search by name"
+        value={search.name}
+        onChange={(e) => handleChange("name", e.target.value)}
+        className="border-b-2 border-black focus:outline-none w-[300px]"
+      />
+      <button  className="rounded-full bg-orange-500 hover:bg-orange-600">
+        <FaSearch />
+      </button>
+        </div>
+
+      </div>
+
+
     </div>
+
   );
 };
 
