@@ -45,7 +45,7 @@ const Login = () => {
     email: "",
     password: "",
     photo: "",
-    phone:"Enter the Number",
+    phone:"",
     gender: "male",
     role: "",
     fee: "",

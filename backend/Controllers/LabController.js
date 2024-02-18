@@ -67,7 +67,7 @@ export const getSingleMediLab = async(req, res) => {
 
 export const searchMediLabs = async(req, res) => {
     try {
-        console.log("allah")
+     
         const query = req.query
         let MediLabs
 
