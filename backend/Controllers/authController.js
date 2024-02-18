@@ -51,7 +51,7 @@ export const register = async(req, res) => {
                 name,
                 email,
                 password: hashPassword,
-                photo:"",
+                photo,
                 phone,
                 role
 

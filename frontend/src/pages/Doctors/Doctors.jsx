@@ -83,10 +83,11 @@ const Doctors = () => {
       });
 
       if (!res1.ok) {
+        
         throw new Error(result1.message);
       }
       if (!res2.ok) {
-        throw new Error(result.message);
+        throw new Error(result2.message);
       }
 
       const result1 = await res1.json();

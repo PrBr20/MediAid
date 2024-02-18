@@ -67,6 +67,7 @@ export const getSingleMediLab = async(req, res) => {
 
 export const searchMediLabs = async(req, res) => {
     try {
+        console.log("allah")
         const query = req.query
         let MediLabs
 
@@ -76,7 +77,7 @@ export const searchMediLabs = async(req, res) => {
         // if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
         // if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})
         // if(query.rating) obj.push({avgStars: {$gte: query.rating}})
-        console.log("allah")
+
 
         if(obj.length > 0)
             MediLabs = await MediLab.find({isApproved: "approved", $and: obj}).select('-password')
@@ -117,7 +118,6 @@ export const searchMediLabs = async(req, res) => {
 
         //     MediLabs = newMediLabs
         // }
-        console.log(MediLabs.length)
         res.status(200).json({success: true, msg: "MediLabs found", data: MediLabs})
     } catch(err) {
         console.log(err)

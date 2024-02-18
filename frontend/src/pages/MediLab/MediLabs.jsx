@@ -52,7 +52,7 @@ const MediLabs = () => {
       // const queryString = new URLSearchParams(params).toString();
 
       // const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
-        console.log("check medilab")
+       
         const res1 = await fetch(`${BASE_URL}/mediLab/search`, {
         method: "GET",
         headers: {
@@ -60,7 +60,8 @@ const MediLabs = () => {
           Authorization: `Bearer ${state.token}`,
         },
       });
-
+      const temp="check medilab"
+      console.log(temp)
       // console.log(queryString);
 
       // const res2 = await fetch(`${BASE_URL}/specialization`, {
@@ -70,7 +71,7 @@ const MediLabs = () => {
       //     Authorization: `Bearer ${state.token}`,
       //   },
       // });
-
+      
       if (!res1.ok) {
         throw new Error(result1.message);
       }
@@ -78,8 +79,9 @@ const MediLabs = () => {
       //   throw new Error(result.message);
       // }
 
-      const result1 = await res1.json();
+   
       // const result2 = await res2.json();
+      const result1 = await res1.json();
 
       console.log(result1.data);
 
@@ -120,7 +122,7 @@ const MediLabs = () => {
           </div>
           <div className="mb-2">
             <h2 className="text-xl font-bold">{mediLab.name}</h2>
-            <p className="text-gray-500">{mediLab.phone} Phone</p>
+            <p className="text-gray-500">Phone: 0{mediLab.phone} </p>
           </div>
           <div className="flex items-center mb-2">
             <img src={AvgStar} alt="Average Star" className="w-6 h-6 mr-2" />
