@@ -13,8 +13,8 @@ import Prescription from "@/components/Prescription/Prescription";
 import MediShop from "@/pages/MediShop/MediShop";
 import Dashboard from "@/pages/Profile/Dashboard";
 import MyAppointments from "@/pages/Profile/MyAppointments";
-import LabDashboard from "@/pages/Profile/LabDashBoard";
-import MyLabAppointments from "@/pages/Profile/MyLabAppointments";
+// import LabDashboard from "@/pages/Profile/LabDashBoard";
+// import MyLabAppointments from "@/pages/Profile/MyLabAppointments";
 import Settings from "@/pages/Profile/Settings";
 import MyDoctors from "@/pages/PatientProfile/MyDoctors";
 import MyPatients from "@/pages/DoctorProfile/MyPatients";
@@ -26,10 +26,10 @@ import Overview from "../pages/MediShop/Overview";
 import MedReview from "../pages/MediShop/MedReview";
 import Medilab from "../pages/MediLab/MediLab";
 // import MediLabDetails from "../pages/MediLab/MediLabDetails";
-import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
-import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
-import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
-import AddLabSlots from "@/pages/MediLabProfile/MediAddSlots";
+// import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
+// import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
+// import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
+// import AddLabSlots from "@/pages/MediLabProfile/MediAddSlots";
 
 
 const Routers = () => {
@@ -54,7 +54,7 @@ const Routers = () => {
         </Route>
       )}
 
-      {state?.role == "patient" && (
+      {/* {state?.role == "patient" && (
         <Route path="/user" element={<UserPatientProfile />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="doctors" element={<MyDoctors />} />
@@ -62,7 +62,7 @@ const Routers = () => {
           <Route path="reports" element={<MyReports />} />
           <Route path="settings" element={<Settings />} />
         </Route>
-      )}
+      )} */}
 
       {state?.role == "mediLab" && (
         <Route path="/user" element={<UserMediLabProfile />}>

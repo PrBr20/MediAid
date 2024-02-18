@@ -44,8 +44,9 @@ const Login = () => {
     name: "",
     email: "",
     password: "",
-    photo: null,
-    gender: "",
+    photo: "",
+    // phone:"",
+    gender: "male",
     role: "",
     fee: "",
     specialization: "",
@@ -297,7 +298,7 @@ const Login = () => {
                       </SelectContent>
                     </Select>
                   )}
-                  {signupData.role === "mediLab" && (
+                  {/* {signupData.role === "mediLab" && (
                     <Select>
                         <Input
                         type="text"
@@ -315,7 +316,7 @@ const Login = () => {
 
 
                     </Select>
-                  )}
+                  )} */}
 
                 </div>
                 <div className="space-y-1">

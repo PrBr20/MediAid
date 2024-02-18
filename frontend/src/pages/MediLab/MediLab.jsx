@@ -21,7 +21,7 @@ const Medilab = () => {
 
   // const [specialization, setSpecialization] = useState([]);
 
-  const [doctors, setDoctors] = useState([]);
+  // const [doctors, setDoctors] = useState([]);
   const [mediLab, setMediLab]= useState([]);
 
   const [search, setSearch] = useState({
