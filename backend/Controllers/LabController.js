@@ -72,7 +72,7 @@ export const searchMediLabs = async(req, res) => {
         let MediLabs
 
         let obj = []
-        // if(query.name) obj.push({name: { $regex: query.name, $options: "i" }})
+        if(query.name) obj.push({name: { $regex: query.name, $options: "i" }})
         // if(query.specialization) obj.push({specialization: query.specialization})
         // if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
         // if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})

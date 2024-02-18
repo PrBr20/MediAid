@@ -16,6 +16,7 @@ import { set } from "date-fns";
 import AvgStar from "@/assets/images/avgstar.png";
 
 const MediLabs = () => {
+  const [loading, setLoading] = useState(false);
   const { state, setState } = useContext(AuthContext);
   // console.log(state);
 
@@ -53,16 +54,16 @@ const MediLabs = () => {
 
       const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
 
-      // const res1 = await fetch(`${BASE_URL}/mediLab/search`, {
+ 
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${state.token}`,
         },
       });
-      const temp = "check medilab"
-      console.log(temp)
-      // console.log(queryString);
+      // const temp = "check medilab"
+      // console.log(temp)
+      console.log(queryString);
 
       // const res2 = await fetch(`${BASE_URL}/specialization`, {
       //   method: "GET",
@@ -109,6 +110,14 @@ const MediLabs = () => {
 
       <div className="w-5/6 p-4">
         <h1 className="text-3xl font-bold my-8 pl-10">ALL MEDILAB</h1>
+
+        {loading && (
+          <div className="flex justify-center items-center">
+            {" "}
+            <Lottie options={defaultOptions} height={50} width={50} />{" "}
+          </div>
+        )}
+
         <div className="mx-4 my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
           {mediLabs.map((mediLab, index) => (
             <div
