@@ -358,7 +358,7 @@ const Login = () => {
                   <Select
                     name="specialization"
                     onValueChange={(value) =>
-                      setsignupData({ ...signupData, sp_id: value._id })
+                      setsignupData({ ...signupData, specialization: value._id })
                     }
                     className={`border ${signupData.role != "doctor"
                       ? "border-gray-400"

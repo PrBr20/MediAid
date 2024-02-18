@@ -269,52 +269,57 @@ const MediShop = () => {
                 Click Add to search for the medicines
               </SheetDescription>
             </SheetHeader>
-            <div className="flex space-x-2 mt-5">
-              {appointments.map(
-                (app, index) =>
-                  addedappointments.includes(app._id) == false && (
-                    <Card className="w-full" key={index}>
-                      <CardHeader>
-                        <CardTitle className="text-xl">
-                          {app.doctor.name}
-                        </CardTitle>
-                        <CardDescription className="text-xs">
-                          {new Date(app.slot.date).toUTCString()}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="flex flex-row flex-wrap space-x-3">
-                          {app.prescription.prescribedMeds.map((med, index) => (
-                            <div className="flex" key={index}>
-                              <img
-                                src={BlueIcon}
-                                className="w-[20px] h-[20px]"
-                                alt=""
-                              />
-                              <p className="text-sm">{med.medicineName}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                      <CardFooter>
-                        <Button
-                          type="submit"
-                          className="w-full"
-                          onClick={() => {
-                            setAddedAppointments([
-                              ...addedappointments,
-                              app._id,
-                            ]);
-                            setOpenSheet(false);
-                          }}
-                        >
-                          Add Prescription
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  )
-              )}
-            </div>
+            {state.role == "patient" ? (
+              <div className="flex-col space-y-2 mt-5">
+                {appointments.map(
+                  (app, index) =>
+                    addedappointments.includes(app._id) == false && (
+                      <Card className="w-full" key={index}>
+                        <CardHeader>
+                          <CardTitle className="text-xl">
+                            {app.doctor.name}
+                          </CardTitle>
+                          <CardDescription className="text-xs">
+                            {new Date(app.slot.date).toUTCString()}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="flex flex-row flex-wrap space-x-3">
+                            {app.prescription.prescribedMeds.map(
+                              (med, index) => (
+                                <div className="flex" key={index}>
+                                  <img
+                                    src={BlueIcon}
+                                    className="w-[20px] h-[20px]"
+                                    alt=""
+                                  />
+                                  <p className="text-sm">{med.medicineName}</p>
+                                </div>
+                              )
+                            )}
+                          </div>
+                        </CardContent>
+                        <CardFooter>
+                          <Button
+                            type="submit"
+                            className="w-full"
+                            onClick={() => {
+                              setAddedAppointments([
+                                ...addedappointments,
+                                app._id,
+                              ]);
+                              setOpenSheet(false);
+                            }}
+                          >
+                            Add Prescription
+                          </Button>
+                        </CardFooter>
+                      </Card>
+                    )
+                )}
+              </div>
+            ) : null}
+
             <SheetFooter>
               <SheetClose asChild></SheetClose>
             </SheetFooter>
