@@ -95,13 +95,13 @@ const MediLabs = () => {
     }
   }, [search]);
 
-  // const handleChange = (name, value) => {
-  //   if (name == "feeUpper") {
-  //     setSearch({ ...search, feeLower: 0 });
-  //     setSearch({ ...search, [name]: value[0] });
-  //   } else setSearch({ ...search, [name]: value });
-  // };
-  // console.log(search);
+  const handleChange = (name, value) => {
+    if (name == "feeUpper") {
+      setSearch({ ...search, feeLower: 0 });
+      setSearch({ ...search, [name]: value[0] });
+    } else setSearch({ ...search, [name]: value });
+  };
+  console.log(search);
 
   // console.log(state);
 

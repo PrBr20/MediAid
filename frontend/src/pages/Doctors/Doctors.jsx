@@ -168,7 +168,7 @@ const Doctors = () => {
                       ? doctor.averageStars.toFixed(2)
                       : (0.0).toFixed(2)}
                   </p>
-                  <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p>
+                  {/* <p className="font-bold pt-2">{doctor.averageStars.toFixed(2)}</p> */}
                 </div>
               </div>
               <div className="flex my-[10px]">
