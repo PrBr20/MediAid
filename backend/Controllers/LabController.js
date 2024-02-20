@@ -76,7 +76,7 @@ export const searchMediLabs = async(req, res) => {
         // if(query.specialization) obj.push({specialization: query.specialization})
         // if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
         // if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})
-        // if(query.rating) obj.push({avgStars: {$gte: query.rating}})
+        if(query.rating) obj.push({avgStars: {$gte: query.rating}})
 
 
         if(obj.length > 0)
@@ -96,28 +96,28 @@ export const searchMediLabs = async(req, res) => {
             MediLabs[i] = {...MediLabs[i], averageStars: MediLabs[i].avgStars, slotCount: scount}
         }
 
-        // if(query.timerange != undefined && query.timerange != null) {
-        //     let newMediLabs = []
-        //     let currDate = new Date()
-        //     currDate.setHours(0, 0, 0, 0)
+        if(query.timerange != undefined && query.timerange != null) {
+            let newMediLabs = []
+            let currDate = new Date()
+            currDate.setHours(0, 0, 0, 0)
             
-        //     let finalDate
-        //     if(query.timerange == "today")
-        //         finalDate = addDays(currDate, 1)
-        //     else if(query.timerange == "week")
-        //         finalDate = addDays(currDate, 8)
+            let finalDate
+            if(query.timerange == "today")
+                finalDate = addDays(currDate, 1)
+            else if(query.timerange == "week")
+                finalDate = addDays(currDate, 8)
 
-        //     for(let i = 0; i < MediLabs.length; i++) {
-        //         const MediLabSlots = await LabSlot.find({
-        //             MediLab: MediLabs[i]._id,
-        //             date: {$gte: currDate, $lt: finalDate}
-        //         })
-        //         if(MediLabSlots.length > 0)
-        //             newMediLabs.push(MediLabs[i])
-        //     }
+            for(let i = 0; i < MediLabs.length; i++) {
+                const MediLabSlots = await LabSlot.find({
+                    MediLab: MediLabs[i]._id,
+                    date: {$gte: currDate, $lt: finalDate}
+                })
+                if(MediLabSlots.length > 0)
+                    newMediLabs.push(MediLabs[i])
+            }
 
-        //     MediLabs = newMediLabs
-        // }
+            MediLabs = newMediLabs
+        }
         res.status(200).json({success: true, msg: "MediLabs found", data: MediLabs})
     } catch(err) {
         console.log(err)
