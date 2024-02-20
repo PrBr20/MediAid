@@ -54,7 +54,7 @@ const MediLabs = () => {
 
       const res1 = await fetch(`${BASE_URL}/mediLab/search?${queryString}`, {
 
- 
+
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -171,19 +171,41 @@ const MediLabs = () => {
 
       <div className="w-1/6 p-4">
         <div className="flex mt-10 mb-10">
-    
-      <input
-        type="text"
-        placeholder="Search by name"
-        value={search.name}
-        onChange={(e) => handleChange("name", e.target.value)}
-        className="border-b-2 border-black focus:outline-none w-[300px]"
-      />
-      <button  className="rounded-full bg-orange-500 hover:bg-orange-600">
-        <FaSearch />
-      </button>
-        </div>
 
+          <input
+            type="text"
+            placeholder="Search by name"
+            value={search.name}
+            onChange={(e) => handleChange("name", e.target.value)}
+            className="border-b-2 border-black focus:outline-none w-[300px]"
+          />
+          <button className="rounded-full bg-orange-500 hover:bg-orange-600">
+            <FaSearch />
+          </button>
+
+       
+
+        
+        </div>
+        <h1 className="font-bold text-lg">Slot Availability</h1>
+        <RadioGroup
+            defaultValue="comfortable"
+            value={search.timerange}
+            onValueChange={(value) => handleChange("timerange", value)}
+          >
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="all" id="r1" />
+              <Label htmlFor="r1">All</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="today" id="r2" />
+              <Label htmlFor="r2">Today</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="week" id="r3" />
+              <Label htmlFor="r3">This week</Label>
+            </div>
+          </RadioGroup>
       </div>
 
 
