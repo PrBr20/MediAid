@@ -177,26 +177,32 @@ export const updateTimeSlot = async(req, res) => {
 }
 
 export const getTimeSlotsById = async(req, res) => {
-    let id = req.params.id
-    id = new ObjectId(id)
+    let doctorId = req.query.doctor
+    let slotId = req.query.slot
+
+    // id = new ObjectId(id)
     let date = new Date(req.query.date)
     date.setDate(date.getDate() + 1)
     // console.log(date)
     try {
-        let obj = {
-            doctor: id
-        }
+        let obj = {}
+        if(doctorId != undefined && doctorId != null)
+            obj.doctor = doctorId
+        if(slotId != undefined && slotId != null)
+            obj._id = slotId
         if(req.query.date != undefined && req.query.date != null)
             obj.date = date
         const slots = await Slot.find(obj).sort({date: -1})
 
-        for(let i=0; i<slots.length; i++) {
-            const appointments = await Appointment.find({
-                slot: slots[i]._id,
-                status: "approved"
-            })
-            slots[i] = slots[i].toObject()
-            slots[i] = {...slots[i], appointments}
+        if(slotId != undefined && slotId != null) {
+            for(let i=0; i<slots.length; i++) {
+                const appointments = await Appointment.find({
+                    slot: slots[i]._id,
+                    status: "approved"
+                })
+                slots[i] = slots[i].toObject()
+                slots[i] = {...slots[i], appointments}
+            }
         }
 
         res.status(200).json({success: true, msg: "Time slots fetched successfully", data: slots})

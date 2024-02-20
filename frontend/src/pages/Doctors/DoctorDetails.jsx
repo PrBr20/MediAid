@@ -37,7 +37,8 @@ const DoctorDetails = () => {
         },
       });
 
-      const res2 = await fetch(`${BASE_URL}/doctor/timeslots/${id}`, {
+      const queryString = new URLSearchParams({ doctorId: id }).toString();
+      const res2 = await fetch(`${BASE_URL}/doctor/timeslots?${queryString}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
