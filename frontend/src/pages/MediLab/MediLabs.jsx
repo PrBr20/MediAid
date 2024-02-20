@@ -183,29 +183,60 @@ const MediLabs = () => {
             <FaSearch />
           </button>
 
-       
 
-        
+
+
         </div>
         <h1 className="font-bold text-lg">Slot Availability</h1>
         <RadioGroup
-            defaultValue="comfortable"
-            value={search.timerange}
-            onValueChange={(value) => handleChange("timerange", value)}
-          >
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="all" id="r1" />
-              <Label htmlFor="r1">All</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="today" id="r2" />
-              <Label htmlFor="r2">Today</Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="week" id="r3" />
-              <Label htmlFor="r3">This week</Label>
-            </div>
-          </RadioGroup>
+          defaultValue="comfortable"
+          value={search.timerange}
+          onValueChange={(value) => handleChange("timerange", value)}
+        >
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="all" id="r1" />
+            <Label htmlFor="r1">All</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="today" id="r2" />
+            <Label htmlFor="r2">Today</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="week" id="r3" />
+            <Label htmlFor="r3">This week</Label>
+          </div>
+        </RadioGroup>
+        <h1 className="font-bold text-lg">Review</h1>
+        <RadioGroup
+          defaultValue="comfortable"
+          value={search.rating.toString()}
+          onValueChange={(value) => handleChange("rating", value)}
+        >
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="5" id="r1" />
+            <Label htmlFor="r1">5 star</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="4" id="r2" />
+            <Label htmlFor="r2">4+ star</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="3" id="r3" />
+            <Label htmlFor="r3">3+ star</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="2" id="r3" />
+            <Label htmlFor="r3">2+ star</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="1" id="r3" />
+            <Label htmlFor="r3">1+ star</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="0" id="r3" />
+            <Label htmlFor="r3">None</Label>
+          </div>
+        </RadioGroup>
       </div>
 
 
