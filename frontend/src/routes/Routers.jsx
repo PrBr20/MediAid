@@ -53,6 +53,16 @@ const Routers = () => {
           <Route path="settings" element={<Settings />} />
         </Route>
       )}
+      {state?.role == "doctor" && (
+        <Route path="/user" element={<UserDoctorProfile />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="patients" element={<MyPatients />} />
+          <Route path="appointments" element={<MyAppointments />} />
+          <Route path="allslots" element={<AllSlots />} />
+          <Route path="addslots" element={<AddSlots />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      )}
 
      {state?.role == "patient" && (
         <Route path="/user" element={<UserPatientProfile />}>

@@ -10,7 +10,7 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Label } from "@/components/ui/label";
 
-const DoctorSideBar = () => {
+const MediLabSideBar = () => {
   const { state } = useContext(AuthContext);
 
   const [navClass, setNavClass] = useState("dashboard");
@@ -25,7 +25,7 @@ const DoctorSideBar = () => {
         </Avatar>
         <div className="items-center">
           <h1 className="text-md">{state?.user.name}</h1>
-          <p className="text-[12px] text-gray-500">Specialist</p>
+          <p className="text-[12px] text-gray-500">Phone: {state?.user.phone}</p>
         </div>
       </div>
       <NavLink
@@ -83,7 +83,7 @@ const DoctorSideBar = () => {
 
       <hr className="border border-black" />
 
-      <Label className="font-bold text-base text-gray-400 pl-2">My Slots</Label>
+      <Label className="font-bold text-base text-gray-400 pl-2">Tests</Label>
 
       <NavLink
         to="allslots"
@@ -99,7 +99,7 @@ const DoctorSideBar = () => {
           } p-2 rounded-full cursor-pointer`}
         >
           <TbReport className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">All Slots</h1>
+          <h1 className="font-semibold">All Tests</h1>
         </div>
       </NavLink>
 
@@ -117,7 +117,7 @@ const DoctorSideBar = () => {
           } p-2 rounded-full cursor-pointer`}
         >
           <TbReport className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">Add Slots</h1>
+          <h1 className="font-semibold">Add Tests</h1>
         </div>
       </NavLink>
 
@@ -144,4 +144,4 @@ const DoctorSideBar = () => {
   );
 };
 
-export default DoctorSideBar;
+export default MediLabSideBar;
