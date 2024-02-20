@@ -25,7 +25,7 @@ const MediLabSideBar = () => {
         </Avatar>
         <div className="items-center">
           <h1 className="text-md">{state?.user.name}</h1>
-          <p className="text-[12px] text-gray-500">Phone: {state?.user.phone}</p>
+          <p className="text-[12px] text-gray-500">Phone: 0{state?.user.phone}</p>
         </div>
       </div>
       <NavLink

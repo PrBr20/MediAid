@@ -15,6 +15,7 @@ import Dashboard from "@/pages/Profile/Dashboard";
 import MyAppointments from "@/pages/Profile/MyAppointments";
 // import LabDashboard from "@/pages/Profile/LabDashBoard";
 // import MyLabAppointments from "@/pages/Profile/MyLabAppointments";
+import MediLabSettings from "../pages/MediLabProfile/MediLabSettings";
 import Settings from "@/pages/Profile/Settings";
 import MyDoctors from "@/pages/PatientProfile/MyDoctors";
 import MyPatients from "@/pages/DoctorProfile/MyPatients";
@@ -26,7 +27,7 @@ import Overview from "../pages/MediShop/Overview";
 import MedReview from "../pages/MediShop/MedReview";
 import MediLabs from "../pages/MediLab/MediLabs";
 // import MediLabDetails from "../pages/MediLab/MediLabDetails";
-// import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
+import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 // import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
 // import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
 // import AddLabSlots from "@/pages/MediLabProfile/MediAddSlots";
@@ -53,14 +54,14 @@ const Routers = () => {
           <Route path="settings" element={<Settings />} />
         </Route>
       )}
-      {state?.role == "doctor" && (
-        <Route path="/user" element={<UserDoctorProfile />}>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="patients" element={<MyPatients />} />
+      {state?.role == "mediLab" && (
+        <Route path="/user" element={<UserMediLabProfile />}>
+           <Route path="dashboard" element={<Dashboard />} />
+          {/* <Route path="patients" element={<MyPatients />} />
           <Route path="appointments" element={<MyAppointments />} />
           <Route path="allslots" element={<AllSlots />} />
-          <Route path="addslots" element={<AddSlots />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="addslots" element={<AddSlots />} /> */}
+          <Route path="settings" element={<MediLabSettings />} />  
         </Route>
       )}
 

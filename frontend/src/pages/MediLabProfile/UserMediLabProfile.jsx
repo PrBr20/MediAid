@@ -1,7 +1,7 @@
 import React from "react";
 import AuthContext from "@/context/AuthContext";
 import { useContext } from "react";
-import DoctorSideBar from "./DoctorSideBar";
+import DoctorSideBar from "../DoctorProfile/DoctorSideBar";
 import PatientSideBar from "../PatientProfile/PatientSideBar";
 import MediLabSideBar from "../MediLabProfile/MediLabSideBar";
 import { Outlet } from "react-router-dom";
