@@ -30,7 +30,7 @@ import MediLabs from "../pages/MediLab/MediLabs";
 import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 // import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
 // import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
-// import AddLabSlots from "@/pages/MediLabProfile/MediAddSlots";
+import AddLabTests from "@/pages/MediLabProfile/MediAddTests";
 
 
 const Routers = () => {
@@ -59,8 +59,8 @@ const Routers = () => {
            <Route path="dashboard" element={<Dashboard />} />
           {/* <Route path="patients" element={<MyPatients />} />
           <Route path="appointments" element={<MyAppointments />} />
-          <Route path="allslots" element={<AllSlots />} />
-          <Route path="addslots" element={<AddSlots />} /> */}
+          <Route path="allslots" element={<AllSlots />} />*/}
+          <Route path="addslots" element={<AddSlots />} /> 
           <Route path="settings" element={<MediLabSettings />} />  
         </Route>
       )}
