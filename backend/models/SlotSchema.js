@@ -22,6 +22,10 @@ const SlotSchema = new mongoose.Schema({
     done: {
         type: Number,
         default: 0
+    },
+    location: {
+        type: String,
+        default: ""
     }
 },
 { timestamps: true }

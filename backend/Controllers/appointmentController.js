@@ -106,3 +106,58 @@ export const finishAppointment = async (req, res) => {
         res.status(500).json({success: false, msg: "Couldn't finish appointment"})
     }
 }
+
+export const getDoctorGroup = async (req, res) => {
+    const doctorId = req.params.id
+    const group = req.query.group
+    const date = new Date(req.query.date)
+
+    date.setDate(date.getDate() + 1)
+    date.setHours(0, 0, 0, 0)
+
+    try {
+        let query = {doctor: doctorId}
+        if(group == "current")
+            query.date = date
+        else if(group == "upcoming")
+            query.date = {$gte: date}
+        else if(group == "past")
+            query.date = {$lt: date}
+
+        let slots = await Slot.find(query).sort({date: -1})
+        for(let i = 0; i < slots.length; i++) {
+            let appointments = await Appointment.find({slot: slots[i]._id}).populate('user', '-password')
+            slots[i] = slots[i].toObject()
+            slots[i] = {...slots[i], appointments}
+        }
+
+        res.status(200).json({success: true, msg: "Appointments found", data: slots})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
+    }
+}
+
+export const getPatientGroup = async (req, res) => {
+    const patientId = req.params.id
+    const group = req.query.group
+    const date = new Date(req.query.date)
+
+    date.setDate(date.getDate() + 1)
+    date.setHours(0, 0, 0, 0)
+
+    try {
+        let appointments = await Appointment.find({user: patientId}).populate('slot')
+                                            .populate('doctor', '-password').populate('user', '-password')
+        if(group == "current")
+            appointments = appointments.filter(appointment => appointment.slot.date.getTime() == date.getTime())
+        else if(group == "upcoming")
+            appointments = appointments.filter(appointment => appointment.slot.date.getTime() >= date.getTime())
+        else if(group == "past")
+            appointments = appointments.filter(appointment => appointment.slot.date.getTime() < date.getTime())
+        res.status(200).json({success: true, msg: "Appointments found", data: appointments})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
+    }
+}

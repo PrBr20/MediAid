@@ -2267,7 +2267,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"doctor\": \"65955c510d5db82f28dae508\",\n    \"starthr\": 18,\n    \"startmin\": 0,\n    \"endhr\": 21,\n    \"endmin\": 0,\n    \"slotDate\": \"2024-01-28\",\n    \"patientCount\": 10\n}",
+							"raw": "{\n    \"doctor\": \"65955c510d5db82f28dae508\",\n    \"starthr\": 18,\n    \"startmin\": 0,\n    \"endhr\": 21,\n    \"endmin\": 0,\n    \"slotDate\": \"2024-01-28\",\n    \"patientCount\": 10,\n    \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2531,15 +2531,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "903"
+									"value": "1092"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"387-yZdme+CiwwmXVN/s2xLMpBnjDf8\""
+									"value": "W/\"444-rvtVnzq+jpKoSP0s38U1iKZBMvo\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 20 Feb 2024 08:25:36 GMT"
+									"value": "Wed, 21 Feb 2024 09:41:14 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2551,7 +2551,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"Time slots fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65d45cc2c4b35855f15b6f0d\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 30,\n            \"endhr\": 15,\n            \"endmin\": 0,\n            \"date\": \"2024-03-02T18:00:00.000Z\",\n            \"patientCount\": 15,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"createdAt\": \"2024-02-20T08:03:14.917Z\",\n            \"updatedAt\": \"2024-02-20T08:03:14.917Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65d45c8ec4b35855f15b6efd\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 0,\n            \"endhr\": 14,\n            \"endmin\": 0,\n            \"date\": \"2024-02-29T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"createdAt\": \"2024-02-20T08:02:22.892Z\",\n            \"updatedAt\": \"2024-02-20T08:02:22.892Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Time slots fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65d45cc2c4b35855f15b6f0d\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 30,\n            \"endhr\": 15,\n            \"endmin\": 0,\n            \"date\": \"2024-03-02T18:00:00.000Z\",\n            \"patientCount\": 15,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:03:14.917Z\",\n            \"updatedAt\": \"2024-02-20T08:03:14.917Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65d45c8ec4b35855f15b6efd\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 0,\n            \"endhr\": 14,\n            \"endmin\": 0,\n            \"date\": \"2024-02-29T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:02:22.892Z\",\n            \"updatedAt\": \"2024-02-20T08:02:22.892Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0\n        }\n    ]\n}"
 						},
 						{
 							"name": "By slot id, also fetched appointments",
@@ -2605,15 +2605,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1967"
+									"value": "2030"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"7af-Ca8iII8Du1rjGS0gqC4DEy9pDYA\""
+									"value": "W/\"7ee-joED8EIAA7aVpXtsIkGy3SDwYD4\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 20 Feb 2024 08:26:38 GMT"
+									"value": "Wed, 21 Feb 2024 09:41:42 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2625,7 +2625,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"msg\": \"Time slots fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0,\n            \"appointments\": [\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"Napa 500 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                            },\n                            {\n                                \"medicineName\": \"Napa Extend 665 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"0+1+0\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                            }\n                        ],\n                        \"symptoms\": [\n                            \"fever\"\n                        ],\n                        \"diagnosis\": [\n                            \"viral fever\"\n                        ],\n                        \"advice\": [\n                            \"eat more\"\n                        ],\n                        \"tests\": [\n                            \"blood test\"\n                        ]\n                    },\n                    \"_id\": \"65c4dbe082bdab1e48e64e20\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65965da4e6b3eddbc75645ed\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 1,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n                    \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": [],\n                        \"prescribedMeds\": []\n                    },\n                    \"_id\": \"65c9e3db15170e8de25b94c7\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65b7540f4e3ba0d4e505077a\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 2,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"updatedAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"napa\",\n                                \"category\": \"paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c9e81e15170e8de25b96ed\"\n                            }\n                        ],\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": []\n                    },\n                    \"_id\": \"65c9e73515170e8de25b9673\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65b7540f4e3ba0d4e505077a\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 3,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:39:01.141Z\",\n                    \"updatedAt\": \"2024-02-12T09:42:54.185Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Time slots fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0,\n            \"appointments\": [\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"Napa 500 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                            },\n                            {\n                                \"medicineName\": \"Napa Extend 665 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"0+1+0\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                            }\n                        ],\n                        \"symptoms\": [\n                            \"fever\"\n                        ],\n                        \"diagnosis\": [\n                            \"viral fever\"\n                        ],\n                        \"advice\": [\n                            \"eat more\"\n                        ],\n                        \"tests\": [\n                            \"blood test\"\n                        ]\n                    },\n                    \"_id\": \"65c4dbe082bdab1e48e64e20\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65965da4e6b3eddbc75645ed\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 1,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n                    \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": [],\n                        \"prescribedMeds\": []\n                    },\n                    \"_id\": \"65c9e3db15170e8de25b94c7\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65b7540f4e3ba0d4e505077a\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 2,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"updatedAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"napa\",\n                                \"category\": \"paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c9e81e15170e8de25b96ed\"\n                            }\n                        ],\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": []\n                    },\n                    \"_id\": \"65c9e73515170e8de25b9673\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": \"65b7540f4e3ba0d4e505077a\",\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 3,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:39:01.141Z\",\n                    \"updatedAt\": \"2024-02-12T09:42:54.185Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -3645,6 +3645,702 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get doctor slots with appointments by group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/appointment/doctor/:id?group=current&date=2024-02-29",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"appointment",
+								"doctor",
+								":id"
+							],
+							"query": [
+								{
+									"key": "group",
+									"value": "current",
+									"description": "\"current\", \"upcoming\", \"past\", \"all\""
+								},
+								{
+									"key": "date",
+									"value": "2024-02-29",
+									"description": "YYYY-MM-DD"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65b37da6078e72d6a64b7949"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Current",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/doctor/:id?group=current&date=2024-02-29",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"doctor",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "current",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-29",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65b37da6078e72d6a64b7949"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19c-1Fccdp/DH0MWhJ9a47rDVWKmCeA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:08:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"_id\": \"65d45c8ec4b35855f15b6efd\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 0,\n            \"endhr\": 14,\n            \"endmin\": 0,\n            \"date\": \"2024-02-29T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:02:22.892Z\",\n            \"updatedAt\": \"2024-02-20T08:02:22.892Z\",\n            \"__v\": 0,\n            \"appointments\": []\n        }\n    ]\n}"
+						},
+						{
+							"name": "Upcoming",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/doctor/:id?group=upcoming&date=2024-02-29",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"doctor",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "upcoming",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-29",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65b37da6078e72d6a64b7949"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "773"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"305-vMMrJN2xmLa9rizwvnP4/IcQenA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:10:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"_id\": \"65d45cc2c4b35855f15b6f0d\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 30,\n            \"endhr\": 15,\n            \"endmin\": 0,\n            \"date\": \"2024-03-02T18:00:00.000Z\",\n            \"patientCount\": 15,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:03:14.917Z\",\n            \"updatedAt\": \"2024-02-20T08:03:14.917Z\",\n            \"__v\": 0,\n            \"appointments\": []\n        },\n        {\n            \"_id\": \"65d45c8ec4b35855f15b6efd\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 0,\n            \"endhr\": 14,\n            \"endmin\": 0,\n            \"date\": \"2024-02-29T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:02:22.892Z\",\n            \"updatedAt\": \"2024-02-20T08:02:22.892Z\",\n            \"__v\": 0,\n            \"appointments\": []\n        }\n    ]\n}"
+						},
+						{
+							"name": "Past",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/doctor/:id?group=past&date=2024-02-29",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"doctor",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "past",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-29",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65b37da6078e72d6a64b7949"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2594"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a22-6JNFnYgA2kvstjKSpKJJTpVGAv8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:11:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0,\n            \"appointments\": [\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"Napa 500 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                            },\n                            {\n                                \"medicineName\": \"Napa Extend 665 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"0+1+0\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                            }\n                        ],\n                        \"symptoms\": [\n                            \"fever\"\n                        ],\n                        \"diagnosis\": [\n                            \"viral fever\"\n                        ],\n                        \"advice\": [\n                            \"eat more\"\n                        ],\n                        \"tests\": [\n                            \"blood test\"\n                        ]\n                    },\n                    \"_id\": \"65c4dbe082bdab1e48e64e20\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": {\n                        \"_id\": \"65965da4e6b3eddbc75645ed\",\n                        \"email\": \"p1@gmail.com\",\n                        \"name\": \"patient 1\",\n                        \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                        \"role\": \"patient\",\n                        \"gender\": \"male\",\n                        \"__v\": 0\n                    },\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 1,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n                    \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": [],\n                        \"prescribedMeds\": []\n                    },\n                    \"_id\": \"65c9e3db15170e8de25b94c7\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": {\n                        \"_id\": \"65b7540f4e3ba0d4e505077a\",\n                        \"email\": \"lamim34@gmail.com\",\n                        \"name\": \"lamim Tahsim\",\n                        \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706513372/mediaid/jouiu8vwulpkka48lgcw.webp\",\n                        \"role\": \"patient\",\n                        \"gender\": \"female\",\n                        \"__v\": 0\n                    },\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 2,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"updatedAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"napa\",\n                                \"category\": \"paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c9e81e15170e8de25b96ed\"\n                            }\n                        ],\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": []\n                    },\n                    \"_id\": \"65c9e73515170e8de25b9673\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": {\n                        \"_id\": \"65b7540f4e3ba0d4e505077a\",\n                        \"email\": \"lamim34@gmail.com\",\n                        \"name\": \"lamim Tahsim\",\n                        \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706513372/mediaid/jouiu8vwulpkka48lgcw.webp\",\n                        \"role\": \"patient\",\n                        \"gender\": \"female\",\n                        \"__v\": 0\n                    },\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 3,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:39:01.141Z\",\n                    \"updatedAt\": \"2024-02-12T09:42:54.185Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/doctor/:id?group=all&date=2024-02-29",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"doctor",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "all",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-29",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65b37da6078e72d6a64b7949"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf3-+57vCNhH/RB5l84CoDeud7Ux0SM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:12:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"_id\": \"65d45cc2c4b35855f15b6f0d\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 30,\n            \"endhr\": 15,\n            \"endmin\": 0,\n            \"date\": \"2024-03-02T18:00:00.000Z\",\n            \"patientCount\": 15,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:03:14.917Z\",\n            \"updatedAt\": \"2024-02-20T08:03:14.917Z\",\n            \"__v\": 0,\n            \"appointments\": []\n        },\n        {\n            \"_id\": \"65d45c8ec4b35855f15b6efd\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 12,\n            \"startmin\": 0,\n            \"endhr\": 14,\n            \"endmin\": 0,\n            \"date\": \"2024-02-29T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-20T08:02:22.892Z\",\n            \"updatedAt\": \"2024-02-20T08:02:22.892Z\",\n            \"__v\": 0,\n            \"appointments\": []\n        },\n        {\n            \"_id\": \"65c4d73982bdab1e48e64be0\",\n            \"doctor\": \"65b37da6078e72d6a64b7949\",\n            \"starthr\": 18,\n            \"startmin\": 0,\n            \"endhr\": 21,\n            \"endmin\": 0,\n            \"date\": \"2024-02-15T18:00:00.000Z\",\n            \"patientCount\": 10,\n            \"occupied\": 0,\n            \"done\": 0,\n            \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n            \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n            \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n            \"__v\": 0,\n            \"appointments\": [\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"Napa 500 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                            },\n                            {\n                                \"medicineName\": \"Napa Extend 665 mg\",\n                                \"category\": \"Paracetamol\",\n                                \"dosage\": \"0+1+0\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                            }\n                        ],\n                        \"symptoms\": [\n                            \"fever\"\n                        ],\n                        \"diagnosis\": [\n                            \"viral fever\"\n                        ],\n                        \"advice\": [\n                            \"eat more\"\n                        ],\n                        \"tests\": [\n                            \"blood test\"\n                        ]\n                    },\n                    \"_id\": \"65c4dbe082bdab1e48e64e20\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": {\n                        \"_id\": \"65965da4e6b3eddbc75645ed\",\n                        \"email\": \"p1@gmail.com\",\n                        \"name\": \"patient 1\",\n                        \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                        \"role\": \"patient\",\n                        \"gender\": \"male\",\n                        \"__v\": 0\n                    },\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 1,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n                    \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": [],\n                        \"prescribedMeds\": []\n                    },\n                    \"_id\": \"65c9e3db15170e8de25b94c7\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": {\n                        \"_id\": \"65b7540f4e3ba0d4e505077a\",\n                        \"email\": \"lamim34@gmail.com\",\n                        \"name\": \"lamim Tahsim\",\n                        \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706513372/mediaid/jouiu8vwulpkka48lgcw.webp\",\n                        \"role\": \"patient\",\n                        \"gender\": \"female\",\n                        \"__v\": 0\n                    },\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 2,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"updatedAt\": \"2024-02-12T09:24:43.723Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"prescription\": {\n                        \"weight\": 70,\n                        \"prescribedMeds\": [\n                            {\n                                \"medicineName\": \"napa\",\n                                \"category\": \"paracetamol\",\n                                \"dosage\": \"1+0+1\",\n                                \"details\": \"\",\n                                \"type\": \"Tablet\",\n                                \"_id\": \"65c9e81e15170e8de25b96ed\"\n                            }\n                        ],\n                        \"symptoms\": [],\n                        \"diagnosis\": [],\n                        \"advice\": [],\n                        \"tests\": []\n                    },\n                    \"_id\": \"65c9e73515170e8de25b9673\",\n                    \"doctor\": \"65b37da6078e72d6a64b7949\",\n                    \"user\": {\n                        \"_id\": \"65b7540f4e3ba0d4e505077a\",\n                        \"email\": \"lamim34@gmail.com\",\n                        \"name\": \"lamim Tahsim\",\n                        \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706513372/mediaid/jouiu8vwulpkka48lgcw.webp\",\n                        \"role\": \"patient\",\n                        \"gender\": \"female\",\n                        \"__v\": 0\n                    },\n                    \"ticketPrice\": 1000,\n                    \"slot\": \"65c4d73982bdab1e48e64be0\",\n                    \"serial\": 3,\n                    \"status\": \"approved\",\n                    \"isPaid\": false,\n                    \"createdAt\": \"2024-02-12T09:39:01.141Z\",\n                    \"updatedAt\": \"2024-02-12T09:42:54.185Z\",\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get patient appointments by group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/appointment/patient/:id?group=current&date=2024-02-29",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"appointment",
+								"patient",
+								":id"
+							],
+							"query": [
+								{
+									"key": "group",
+									"value": "current",
+									"description": "\"current\", \"upcoming\", \"past\", \"all\""
+								},
+								{
+									"key": "date",
+									"value": "2024-02-29",
+									"description": "YYYY-MM-DD"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65965da4e6b3eddbc75645ed"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/patient/:id?group=all&date=2024-02-29",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"patient",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "all",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-29",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65965da4e6b3eddbc75645ed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1889"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"761-b5nPJcQunE2UmZzmTFBNvBk6KoQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:26:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"prescription\": {\n                \"weight\": 70,\n                \"prescribedMeds\": [\n                    {\n                        \"medicineName\": \"Napa 500 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"1+0+1\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                    },\n                    {\n                        \"medicineName\": \"Napa Extend 665 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"0+1+0\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                    }\n                ],\n                \"symptoms\": [\n                    \"fever\"\n                ],\n                \"diagnosis\": [\n                    \"viral fever\"\n                ],\n                \"advice\": [\n                    \"eat more\"\n                ],\n                \"tests\": [\n                    \"blood test\"\n                ]\n            },\n            \"_id\": \"65c4dbe082bdab1e48e64e20\",\n            \"doctor\": {\n                \"_id\": \"65b37da6078e72d6a64b7949\",\n                \"email\": \"medoctor@gmail.com\",\n                \"name\": \"Yousuf Ali\",\n                \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706261913/mediaid/eigtreeipedmqfgeyqut.jpg\",\n                \"role\": \"doctor\",\n                \"gender\": \"male\",\n                \"qualifications\": [\n                    \"MBBS from Dhaka Medical College\",\n                    \"FCPS from Bangladesh College of Physicians and Surgeons\"\n                ],\n                \"certificates\": [],\n                \"experiences\": [\n                    \"worked as a doctor in Dhaka Medical College Hospital\",\n                    \"worked as a doctor in Square Hospital\"\n                ],\n                \"isApproved\": \"approved\",\n                \"__v\": 0,\n                \"fee\": 700,\n                \"createdAt\": \"2024-01-01T07:40:32.986Z\",\n                \"updatedAt\": \"2024-02-12T09:39:01.346Z\",\n                \"specialization\": \"65b1083c3e5243718ce85b60\",\n                \"avgStars\": 3.45,\n                \"reviewCount\": 10,\n                \"patientCount\": 3\n            },\n            \"user\": {\n                \"_id\": \"65965da4e6b3eddbc75645ed\",\n                \"email\": \"p1@gmail.com\",\n                \"name\": \"patient 1\",\n                \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                \"role\": \"patient\",\n                \"gender\": \"male\",\n                \"__v\": 0\n            },\n            \"ticketPrice\": 1000,\n            \"slot\": {\n                \"_id\": \"65c4d73982bdab1e48e64be0\",\n                \"doctor\": \"65b37da6078e72d6a64b7949\",\n                \"starthr\": 18,\n                \"startmin\": 0,\n                \"endhr\": 21,\n                \"endmin\": 0,\n                \"date\": \"2024-02-15T18:00:00.000Z\",\n                \"patientCount\": 10,\n                \"occupied\": 0,\n                \"done\": 0,\n                \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n                \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n                \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n                \"__v\": 0\n            },\n            \"serial\": 1,\n            \"status\": \"approved\",\n            \"isPaid\": false,\n            \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n            \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "Current",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/patient/:id?group=current&date=2024-02-15",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"patient",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "current",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-15",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65965da4e6b3eddbc75645ed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1889"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"761-b5nPJcQunE2UmZzmTFBNvBk6KoQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:27:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"prescription\": {\n                \"weight\": 70,\n                \"prescribedMeds\": [\n                    {\n                        \"medicineName\": \"Napa 500 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"1+0+1\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                    },\n                    {\n                        \"medicineName\": \"Napa Extend 665 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"0+1+0\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                    }\n                ],\n                \"symptoms\": [\n                    \"fever\"\n                ],\n                \"diagnosis\": [\n                    \"viral fever\"\n                ],\n                \"advice\": [\n                    \"eat more\"\n                ],\n                \"tests\": [\n                    \"blood test\"\n                ]\n            },\n            \"_id\": \"65c4dbe082bdab1e48e64e20\",\n            \"doctor\": {\n                \"_id\": \"65b37da6078e72d6a64b7949\",\n                \"email\": \"medoctor@gmail.com\",\n                \"name\": \"Yousuf Ali\",\n                \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706261913/mediaid/eigtreeipedmqfgeyqut.jpg\",\n                \"role\": \"doctor\",\n                \"gender\": \"male\",\n                \"qualifications\": [\n                    \"MBBS from Dhaka Medical College\",\n                    \"FCPS from Bangladesh College of Physicians and Surgeons\"\n                ],\n                \"certificates\": [],\n                \"experiences\": [\n                    \"worked as a doctor in Dhaka Medical College Hospital\",\n                    \"worked as a doctor in Square Hospital\"\n                ],\n                \"isApproved\": \"approved\",\n                \"__v\": 0,\n                \"fee\": 700,\n                \"createdAt\": \"2024-01-01T07:40:32.986Z\",\n                \"updatedAt\": \"2024-02-12T09:39:01.346Z\",\n                \"specialization\": \"65b1083c3e5243718ce85b60\",\n                \"avgStars\": 3.45,\n                \"reviewCount\": 10,\n                \"patientCount\": 3\n            },\n            \"user\": {\n                \"_id\": \"65965da4e6b3eddbc75645ed\",\n                \"email\": \"p1@gmail.com\",\n                \"name\": \"patient 1\",\n                \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                \"role\": \"patient\",\n                \"gender\": \"male\",\n                \"__v\": 0\n            },\n            \"ticketPrice\": 1000,\n            \"slot\": {\n                \"_id\": \"65c4d73982bdab1e48e64be0\",\n                \"doctor\": \"65b37da6078e72d6a64b7949\",\n                \"starthr\": 18,\n                \"startmin\": 0,\n                \"endhr\": 21,\n                \"endmin\": 0,\n                \"date\": \"2024-02-15T18:00:00.000Z\",\n                \"patientCount\": 10,\n                \"occupied\": 0,\n                \"done\": 0,\n                \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n                \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n                \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n                \"__v\": 0\n            },\n            \"serial\": 1,\n            \"status\": \"approved\",\n            \"isPaid\": false,\n            \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n            \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "Upcoming",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/patient/:id?group=upcoming&date=2024-02-01",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"patient",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "upcoming",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-01",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65965da4e6b3eddbc75645ed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1889"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"761-b5nPJcQunE2UmZzmTFBNvBk6KoQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:28:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"prescription\": {\n                \"weight\": 70,\n                \"prescribedMeds\": [\n                    {\n                        \"medicineName\": \"Napa 500 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"1+0+1\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                    },\n                    {\n                        \"medicineName\": \"Napa Extend 665 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"0+1+0\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                    }\n                ],\n                \"symptoms\": [\n                    \"fever\"\n                ],\n                \"diagnosis\": [\n                    \"viral fever\"\n                ],\n                \"advice\": [\n                    \"eat more\"\n                ],\n                \"tests\": [\n                    \"blood test\"\n                ]\n            },\n            \"_id\": \"65c4dbe082bdab1e48e64e20\",\n            \"doctor\": {\n                \"_id\": \"65b37da6078e72d6a64b7949\",\n                \"email\": \"medoctor@gmail.com\",\n                \"name\": \"Yousuf Ali\",\n                \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706261913/mediaid/eigtreeipedmqfgeyqut.jpg\",\n                \"role\": \"doctor\",\n                \"gender\": \"male\",\n                \"qualifications\": [\n                    \"MBBS from Dhaka Medical College\",\n                    \"FCPS from Bangladesh College of Physicians and Surgeons\"\n                ],\n                \"certificates\": [],\n                \"experiences\": [\n                    \"worked as a doctor in Dhaka Medical College Hospital\",\n                    \"worked as a doctor in Square Hospital\"\n                ],\n                \"isApproved\": \"approved\",\n                \"__v\": 0,\n                \"fee\": 700,\n                \"createdAt\": \"2024-01-01T07:40:32.986Z\",\n                \"updatedAt\": \"2024-02-12T09:39:01.346Z\",\n                \"specialization\": \"65b1083c3e5243718ce85b60\",\n                \"avgStars\": 3.45,\n                \"reviewCount\": 10,\n                \"patientCount\": 3\n            },\n            \"user\": {\n                \"_id\": \"65965da4e6b3eddbc75645ed\",\n                \"email\": \"p1@gmail.com\",\n                \"name\": \"patient 1\",\n                \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                \"role\": \"patient\",\n                \"gender\": \"male\",\n                \"__v\": 0\n            },\n            \"ticketPrice\": 1000,\n            \"slot\": {\n                \"_id\": \"65c4d73982bdab1e48e64be0\",\n                \"doctor\": \"65b37da6078e72d6a64b7949\",\n                \"starthr\": 18,\n                \"startmin\": 0,\n                \"endhr\": 21,\n                \"endmin\": 0,\n                \"date\": \"2024-02-15T18:00:00.000Z\",\n                \"patientCount\": 10,\n                \"occupied\": 0,\n                \"done\": 0,\n                \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n                \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n                \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n                \"__v\": 0\n            },\n            \"serial\": 1,\n            \"status\": \"approved\",\n            \"isPaid\": false,\n            \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n            \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "Past",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/appointment/patient/:id?group=past&date=2024-02-28",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"appointment",
+										"patient",
+										":id"
+									],
+									"query": [
+										{
+											"key": "group",
+											"value": "past",
+											"description": "\"current\", \"upcoming\", \"past\", \"all\""
+										},
+										{
+											"key": "date",
+											"value": "2024-02-28",
+											"description": "YYYY-MM-DD"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65965da4e6b3eddbc75645ed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1889"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"761-b5nPJcQunE2UmZzmTFBNvBk6KoQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 10:28:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"msg\": \"Appointments found\",\n    \"data\": [\n        {\n            \"prescription\": {\n                \"weight\": 70,\n                \"prescribedMeds\": [\n                    {\n                        \"medicineName\": \"Napa 500 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"1+0+1\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e30\"\n                    },\n                    {\n                        \"medicineName\": \"Napa Extend 665 mg\",\n                        \"category\": \"Paracetamol\",\n                        \"dosage\": \"0+1+0\",\n                        \"details\": \"\",\n                        \"type\": \"Tablet\",\n                        \"_id\": \"65c4dc3a82bdab1e48e64e31\"\n                    }\n                ],\n                \"symptoms\": [\n                    \"fever\"\n                ],\n                \"diagnosis\": [\n                    \"viral fever\"\n                ],\n                \"advice\": [\n                    \"eat more\"\n                ],\n                \"tests\": [\n                    \"blood test\"\n                ]\n            },\n            \"_id\": \"65c4dbe082bdab1e48e64e20\",\n            \"doctor\": {\n                \"_id\": \"65b37da6078e72d6a64b7949\",\n                \"email\": \"medoctor@gmail.com\",\n                \"name\": \"Yousuf Ali\",\n                \"photo\": \"http://res.cloudinary.com/rauzaruk/image/upload/v1706261913/mediaid/eigtreeipedmqfgeyqut.jpg\",\n                \"role\": \"doctor\",\n                \"gender\": \"male\",\n                \"qualifications\": [\n                    \"MBBS from Dhaka Medical College\",\n                    \"FCPS from Bangladesh College of Physicians and Surgeons\"\n                ],\n                \"certificates\": [],\n                \"experiences\": [\n                    \"worked as a doctor in Dhaka Medical College Hospital\",\n                    \"worked as a doctor in Square Hospital\"\n                ],\n                \"isApproved\": \"approved\",\n                \"__v\": 0,\n                \"fee\": 700,\n                \"createdAt\": \"2024-01-01T07:40:32.986Z\",\n                \"updatedAt\": \"2024-02-12T09:39:01.346Z\",\n                \"specialization\": \"65b1083c3e5243718ce85b60\",\n                \"avgStars\": 3.45,\n                \"reviewCount\": 10,\n                \"patientCount\": 3\n            },\n            \"user\": {\n                \"_id\": \"65965da4e6b3eddbc75645ed\",\n                \"email\": \"p1@gmail.com\",\n                \"name\": \"patient 1\",\n                \"photo\": \"https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg\",\n                \"role\": \"patient\",\n                \"gender\": \"male\",\n                \"__v\": 0\n            },\n            \"ticketPrice\": 1000,\n            \"slot\": {\n                \"_id\": \"65c4d73982bdab1e48e64be0\",\n                \"doctor\": \"65b37da6078e72d6a64b7949\",\n                \"starthr\": 18,\n                \"startmin\": 0,\n                \"endhr\": 21,\n                \"endmin\": 0,\n                \"date\": \"2024-02-15T18:00:00.000Z\",\n                \"patientCount\": 10,\n                \"occupied\": 0,\n                \"done\": 0,\n                \"location\": \"Popular Diagnostic Center, Shantinagar Mor, Dhaka\",\n                \"createdAt\": \"2024-02-08T13:29:29.590Z\",\n                \"updatedAt\": \"2024-02-08T13:29:29.590Z\",\n                \"__v\": 0\n            },\n            \"serial\": 1,\n            \"status\": \"approved\",\n            \"isPaid\": false,\n            \"createdAt\": \"2024-02-08T13:49:20.382Z\",\n            \"updatedAt\": \"2024-02-08T13:50:50.315Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"description": "The /api/appointment endpoint is used to create and modify appointments.",
@@ -5649,6 +6345,106 @@
 				}
 			],
 			"description": "The /api/transaction endpoint is used to create and fetch transactions."
+		},
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "Fetch doctor dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/info/dashboard/doctor/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"info",
+								"dashboard",
+								"doctor",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65b37da6078e72d6a64b7949"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/api/info/dashboard/doctor/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"info",
+										"dashboard",
+										"doctor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "65b37da6078e72d6a64b7949"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7b-mIatH9F2UykWCqPJ4vrpEBE6RSw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Feb 2024 13:14:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"patientCount\": 3,\n        \"joinDate\": \"2024-01-01T07:40:32.986Z\",\n        \"avgStars\": 3.45,\n        \"reviewCount\": 10,\n        \"fee\": 700\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
