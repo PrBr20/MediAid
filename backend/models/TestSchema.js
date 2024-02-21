@@ -8,10 +8,11 @@ const testSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "Lab"
         },
+        price: {type:Number , required:true},
         name: { type: String, required: true },
         description : { type: String},
         image: {type: String},
-        price: {type: Number, required: true},
+        
     }
 )
 

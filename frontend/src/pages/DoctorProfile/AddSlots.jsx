@@ -14,10 +14,12 @@ import { cn } from "@/lib/utils";
 import AuthContext from "@/context/AuthContext";
 import { addDays } from "date-fns";
 import { BASE_URL } from "@/config";
+import { useToast } from "@/components/ui/use-toast";
 
 const AddSlots = () => {
   const { state } = useContext(AuthContext);
   const id = state?.user._id;
+  const { toast } = useToast();
 
   function formatDate(date) {
     var d = new Date(date),

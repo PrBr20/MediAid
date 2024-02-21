@@ -2,6 +2,7 @@ import MediLab from '../models/MediLabSchemaa.js'
 import LabReview from '../models/LabReview.js'
 import LabSlot from '../models/LabSlot.js'
 import Test_Appointment from '../models/Test_AppoinmentSchema.js'
+import Test from '../models/TestSchema.js'
 import { Int32, ObjectId } from "mongodb"
 import { addDays } from '../helpers/datehelper.js'
 
@@ -125,32 +126,29 @@ export const searchMediLabs = async(req, res) => {
     }
 }
 
-export const addTimeSlot = async(req, res) => {
+export const addTest = async(req, res) => {
     const id = req.userId
-    let {starthr, endhr, startmin, endmin, slotDate, patientCount} = req.body
-    console.log(slotDate)
+    let {name,price,description,image} = req.body
 
     try {
-        slotDate = new Date(slotDate)
-        console.log(slotDate)
-        slotDate.setDate(slotDate.getDate() + 1)
-        slotDate.setHours(0, 0, 0)
-        console.log(slotDate)
+        // slotDate = new Date(slotDate)
+        // console.log(slotDate)
+        // slotDate.setDate(slotDate.getDate() + 1)
+        // slotDate.setHours(0, 0, 0)
+        // console.log(slotDate)
 
-        const newSlot = new LabSlot({
-            MediLab: id,
-            starthr, 
-            endhr, 
-            startmin, 
-            endmin, 
-            date: slotDate,
-            patientCount
+        const newTest = new Test({
+            Lab: id,
+            price,
+            name,
+            description,
+            image
         })
-        newSlot.save()
-        res.status(200).json({success: true, msg: "Time slot added successfully", data: newLabSlot})
+        newTest.save()
+        res.status(200).json({success: true, msg: "Test added successfully", data: newTest})
     } catch(err) {
         console.log(err)
-        res.status(500).json({success: false, msg: "Time slot addition failed", error: err})
+        res.status(500).json({success: false, msg: "Test addition failed", error: err})
     }
 }
 

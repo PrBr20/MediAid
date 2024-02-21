@@ -18,6 +18,7 @@ import {
   import uploadImagetoCloudinary from "@/utils/uploadCloudinary";
   import Loader from "@/assets/gifs/loader.gif";
   import { useToast } from "@/components/ui/use-toast";
+import { Textarea } from "@/components/ui/textarea";
 
 
 
@@ -26,9 +27,10 @@ const AddLabTests = () => {
     const { state } = useContext(AuthContext);
     const id = state?.user._id;
     const [loading, setLoading] = React.useState(false);
+    const { toast } = useToast();
 
 
-    const [test, setTest] = useState({
+    const [test, setTest] = React.useState({
         Lab: id,
         name: "",
         description: "",
@@ -39,7 +41,8 @@ const AddLabTests = () => {
     });
 
     const handleSelectChange = (name, value) => {
-        setTest({ ...signupData, [name]: value });
+        setTest({ ...test , [name]: value });
+        console.log(test);
     };
 
 
@@ -56,16 +59,17 @@ const AddLabTests = () => {
         });
 
         console.log(data.url);
-        setTest({ ...test, photo: data.url });
+        setTest({ ...test, image: data.url });
     };
     const handleAddTest = async (e) => {
         e.preventDefault();
         console.log(test);
     
-        const res = await fetch(`${BASE_URL}/auth/register`, {
+        const res = await fetch(`${BASE_URL}/mediLab/addtests`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${state.token}`,
           },
           body: JSON.stringify(test),
         });
@@ -115,10 +119,10 @@ const AddLabTests = () => {
                 </label>
                 <Input
                     id="price"
-                    type="price"
+                    type="number"
                     className="border-black"
                     value={test.price}
-                    onChange={(e) => handleSelectChange("name", e.target.price)}
+                    onChange={(e) => handleSelectChange("price", e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">
                     Add price.
@@ -129,12 +133,12 @@ const AddLabTests = () => {
                 <label className="font-medium leading-none" htmlFor="">
                     Description :
                 </label>
-                <Input
+                <Textarea
                     id="description"
-                    type="description"
+            
                     className="border-black"
                     value={test.description}
-                    onChange={(e) => handleSelectChange("name", e.target.description)}
+                    onChange={(e) => handleSelectChange("description", e.target.value)}
                 />
                 <p className="text-xs text-muted-foreground">
                     Add Description.
@@ -145,7 +149,7 @@ const AddLabTests = () => {
             <div className="grid w-full max-w-sm items-center gap-1.5">
                 <Label htmlFor="picture">Picture</Label>
                 <Input
-                    id="picture"
+                    id="image"
                     type="file"
                     onChange={handleFileChange}
                 ></Input>
