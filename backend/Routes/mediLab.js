@@ -2,11 +2,11 @@ import{
     updateLab,
     searchMediLabs,
     getSingleMediLab,
-    deleteTimeSlot,
-    updateTimeSlot,
-    getTimeSlotsById,
     deleteLab,
-    addTest
+    addTest,
+    deleteTest,
+    updateTest,
+    getTestsById
 }from '../Controllers/LabController.js'
 import express from 'express'
 import { authenticate,restrict } from '../auth/verifyToken.js'
@@ -18,9 +18,9 @@ router.put('/:id', authenticate, restrict(['mediLab', 'admin']), updateLab)
 router.delete('/:id', authenticate, restrict(['mediLab', 'admin']), deleteLab)
 
 router.post('/addtests', authenticate, restrict(['mediLab']), addTest)
-router.delete('/timeslots/:id', authenticate, restrict(['mediLab']), deleteTimeSlot)
-router.patch('/timeslots/:id', authenticate, restrict(['mediLab']), updateTimeSlot)
-router.get('/timeslots/:id', getTimeSlotsById)
+router.delete('/addtests/:id', authenticate, restrict(['mediLab']), deleteTest)
+router.patch('/addtests/:id', authenticate, restrict(['mediLab']), updateTest)
+router.get('/addtests/:id', getTestsById)
 
 export default router
 

@@ -152,7 +152,7 @@ export const addTest = async(req, res) => {
     }
 }
 
-export const deleteTimeSlot = async(req, res) => {
+export const deleteTest = async(req, res) => {
     const remId = req.params.id
 
     try {
@@ -164,7 +164,7 @@ export const deleteTimeSlot = async(req, res) => {
     }
 }
 
-export const updateTimeSlot = async(req, res) => {
+export const updateTest = async(req, res) => {
     const id = req.params.id
     try {
         const updatedSlot = LabSlot.findByIdAndUpdate(id, {$set: req.body}, {new: true})
@@ -175,7 +175,7 @@ export const updateTimeSlot = async(req, res) => {
     }
 }
 
-export const getTimeSlotsById = async(req, res) => {
+export const getTestsById = async(req, res) => {
     let id = req.params.id
     id = new ObjectId(id)
     let date = new Date(req.query.date)
