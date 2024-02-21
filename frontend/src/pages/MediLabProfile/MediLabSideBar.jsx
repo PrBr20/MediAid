@@ -104,9 +104,9 @@ const MediLabSideBar = () => {
       </NavLink>
 
       <NavLink
-        to="addslots"
+        to="addtests"
         className={(navClass) =>
-          navClass.isActive ? setNavClass("addslots") : null
+          navClass.isActive ? setNavClass("addtests") : null
         }
       >
         <div

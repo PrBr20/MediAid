@@ -2,23 +2,30 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import { Label } from "@/components/ui/label";
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover";
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AuthContext from "@/context/AuthContext";
-import { addDays } from "date-fns";
 import { BASE_URL } from "@/config";
+
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card";
+  import uploadImagetoCloudinary from "@/utils/uploadCloudinary";
+  import Loader from "@/assets/gifs/loader.gif";
+  import { useToast } from "@/components/ui/use-toast";
+
+
+
 
 const AddLabTests = () => {
     const { state } = useContext(AuthContext);
     const id = state?.user._id;
+    const [loading, setLoading] = React.useState(false);
 
 
     const [test, setTest] = useState({

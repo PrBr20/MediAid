@@ -60,7 +60,7 @@ const Routers = () => {
           {/* <Route path="patients" element={<MyPatients />} />
           <Route path="appointments" element={<MyAppointments />} />
           <Route path="allslots" element={<AllSlots />} />*/}
-          <Route path="addslots" element={<AddSlots />} /> 
+          <Route path="addtests" element={<AddLabTests />} /> 
           <Route path="settings" element={<MediLabSettings />} />  
         </Route>
       )}
