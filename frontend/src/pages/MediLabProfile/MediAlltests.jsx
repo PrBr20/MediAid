@@ -15,7 +15,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { set } from "date-fns";
 import AvgStar from "@/assets/images/avgstar.png";
 
-const AllLabTests = () => {
+const AllLabTests = ({mediLab}) => {
   const [loading, setLoading] = useState(false);
   const { state, setState } = useContext(AuthContext);
 
@@ -131,7 +131,7 @@ const AllLabTests = () => {
               <div className="flex justify-between">
                 <h1 className="text-red-500 font-extrabold">
                   {/* Fee: {doctor.fee} Taka */}
-                  Fee: 500 Taka
+                  Fee: {test.price}
                 </h1>
                 <h1 className="font-bold hover:scale-110 transition-transform">
                   {/* <Link to={`/doctors/${doctor._id}`}>View More</Link> */}

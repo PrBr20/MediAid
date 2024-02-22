@@ -11,7 +11,7 @@ import { useToast } from "@/components/ui/use-toast"
 
 
 
-const Reviews = ({ mediLab }) => {
+const LabReviews = ({ mediLab }) => {
   const {toast} = useToast();
   const { state } = useContext(AuthContext);
 
@@ -25,16 +25,17 @@ const Reviews = ({ mediLab }) => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const res = await fetch(`${BASE_URL}/reviewLab?mediLabID=${mediLab._id}`, {
+      const res = await fetch(`${BASE_URL}/reviewLab?mediLabId=${mediLab._id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${state.token}`,
         },
       });
+      console.log(res)
 
       if (!res.ok) {
-        throw new Error(result1.message);
+        throw new Error(result.message);
       }
 
       const result1 = await res.json();
@@ -145,4 +146,4 @@ const Reviews = ({ mediLab }) => {
   );
 };
 
-export default Reviews;
+export default LabReviews;

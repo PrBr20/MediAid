@@ -32,7 +32,7 @@ const Reviews = ({ doctor }) => {
           Authorization: `Bearer ${state.token}`,
         },
       });
-
+      console.log(res)
       if (!res.ok) {
         throw new Error(result.message);
       }

@@ -7,7 +7,7 @@ import { PiClockCountdownFill } from "react-icons/pi";
 import { TbCalendarStats } from "react-icons/tb";
 import { TbDeviceWatchStats2 } from "react-icons/tb";
 import Description from "@/components/MediLabDetails/Description";
-import Reviews from "@/components/MediLabDetails/Reviews";
+import LabReviews from "@/components/MediLabDetails/Reviews";
 // import Appointment from "./Appointment";
 import { set } from "date-fns";
 
@@ -119,7 +119,7 @@ const MediLabDetails = () => {
                 <Description mediLab={mediLab} />
                 
               )}
-              {navClass == "Reviews" && <Reviews mediLab={mediLab} />}
+              {navClass == "Reviews" && <LabReviews mediLab={mediLab} />}
             </div>
           </div>
         </div>

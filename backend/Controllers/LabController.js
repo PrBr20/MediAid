@@ -1,5 +1,5 @@
 import MediLab from '../models/MediLabSchemaa.js'
-import LabReview from '../models/LabReview.js'
+import Lab_Review from '../models/LabReviewSchema.js'
 import LabSlot from '../models/LabSlot.js'
 import Test_Appointment from '../models/Test_AppoinmentSchema.js'
 import Test from '../models/TestSchema.js'
@@ -34,13 +34,13 @@ export const getSingleMediLab = async(req, res) => {
     
     try {
         let foundMediLab = await MediLab.findById(id).select('-password')
-        const MediLabReviews = await LabReview.find({MediLab: id}).populate('user')
+        const MediLab_Reviews = await Lab_Review.find({MediLab: id}).populate('user')
         
         let avgStars = 0
-        for (let i = 0; i < MediLabReviews.length; i++)
-            avgStars += MediLabReviews[i].rating
-        if(MediLabReviews.length > 0)    
-            avgStars /= MediLabReviews.length
+        for (let i = 0; i < MediLab_Reviews.length; i++)
+            avgStars += MediLab_Reviews[i].rating
+        if(MediLab_Reviews.length > 0)    
+            avgStars /= MediLab_Reviews.length
 
         const currDate = new Date()
         const oid = new ObjectId(id)

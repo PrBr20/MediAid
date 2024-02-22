@@ -42,6 +42,7 @@ const Routers = () => {
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/medilabs" element={<MediLabs />} />
       <Route path="/medilabs/:id" element={<MediLabDetails />} />
+      <Route path="/medilabs/allTests/:id" element={<AllLabTests />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
 

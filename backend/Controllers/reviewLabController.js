@@ -1,11 +1,12 @@
-import Review from "../models/ReviewSchema.js"
+import Lab_Review from "../models/ReviewLabSchema.js"
 import MediLab from "../models/MediLabSchemaa.js"
 import { ObjectId } from "mongodb"
 
 const getMediLabReviews = async (mediLabID) => {
     try {
+        console.log("hih")
         const mediLabObjId = new ObjectId(mediLabID)
-        const reviews = await Review.find({ MediLab: mediLabObjId }).populate('user', '-password')
+        const reviews = await Lab_Review.find({ MediLab: mediLabObjId }).populate('user', '-password')
         // console.log(reviews)
         return reviews
     } catch (err) {
@@ -17,7 +18,7 @@ const getMediLabReviews = async (mediLabID) => {
 const getPatientReviews = async(patientId) => {
     try {
         const patientObjId = new ObjectId(patientId)
-        const reviews = await Review.find({user: patientObjId}).populate('user', '-password')
+        const reviews = await Lab_Review.find({user: patientObjId}).populate('user', '-password')
         return reviews
     } catch (err) {
         console.log(err)
@@ -26,7 +27,8 @@ const getPatientReviews = async(patientId) => {
 }
 
 export const getAllReviews = async (req, res) => {
-    const mediLabId = req.query.mediLabID
+    console.log("be good")
+    const mediLabId = req.query.mediLabId
     const patientId = req.userId
     console.log("good")
     // console.log("Doctor id in review: " + doctorId)
@@ -45,7 +47,7 @@ export const getAllReviews = async (req, res) => {
 
 export const getAllReviewsPatient = async (req, res) => {
     try {
-        const reviews = await Review.find()
+        const reviews = await Lab_Review.find()
         res.status(200).json({ success: true, msg: "Succesfully fetched reviews", data: reviews })
     } catch (err) {
         res.status(500).json({ success: false, msg: "Failed to fetch reviews", data: null})
@@ -54,7 +56,7 @@ export const getAllReviewsPatient = async (req, res) => {
 
 export const createReview = async (req, res) => {
     if(!req.body.user) req.body.user = req.userId
-    const newReview = new Review(req.body)
+    const newReview = new Lab_Review(req.body)
     console.log("jibobn ta bedona")
     try {
         const savedReview = await newReview.save()
@@ -76,7 +78,7 @@ export const createReview = async (req, res) => {
 export const deleteReview = async (req, res) => {
     const reviewId = req.params.id
     try {
-        const review = await Review.findOne({_id: reviewId})
+        const review = await Lab_Review.findOne({_id: reviewId})
         const mediLab = await mediLab.findOne({_id: review.mediLab})
         mediLab.reviewCount = mediLab.reviewCount - 1
         if(mediLab.reviewCount > 0)
@@ -84,7 +86,7 @@ export const deleteReview = async (req, res) => {
         else
             mediLab.avgStars = 0
         await mediLab.save()
-        await Review.findByIdAndDelete(reviewId)
+        await Lab_Review.findByIdAndDelete(reviewId)
 
         res.status(200).json({ success: true, msg: "Review deleted"})
     } catch (err) {
