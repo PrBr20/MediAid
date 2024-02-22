@@ -125,7 +125,35 @@ export const searchMediLabs = async(req, res) => {
         res.status(500).json({success: false, msg: "MediLabs not found", error: err})
     }
 }
+export const searchTests = async(req, res) => {
+    try {
+     
+        const query = req.query
+        let Tests
 
+        let obj = {}
+       
+        if(query.name) obj.name=query.name
+        // if(query.Lab) obj.push({Lab:{$gte: query.Lab}})
+        // if(query.specialization) obj.push({specialization: query.specialization})
+        // if(query.feeLower) obj.push({fee: {$gte: query.feeLower}})
+        // if(query.feeUpper) obj.push({fee: {$lte: query.feeUpper}})
+        // if(query.rating) obj.push({avgStars: {$gte: query.rating}})
+
+
+        if(obj.length > 0)
+            Tests = await Test.find(obj)
+        else
+            Tests = await Test.find()
+      
+
+        
+        res.status(200).json({success: true, msg: "Tests found", data: Tests})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Tests not found", error: err})
+    }
+}
 export const addTest = async(req, res) => {
     const id = req.userId
     let {name,price,description,image} = req.body

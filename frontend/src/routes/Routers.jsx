@@ -29,7 +29,7 @@ import MediLabs from "../pages/MediLab/MediLabs";
 // import MediLabDetails from "../pages/MediLab/MediLabDetails";
 import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 // import MyLabPatients from "@/pages/MediLabProfile/MyLabPatient";
-// import AllLabSlots from "@/pages/MediLabProfile/MediAllSlots";
+import AllLabTests from "@/pages/MediLabProfile/MediAlltests";
 import AddLabTests from "@/pages/MediLabProfile/MediAddTests";
 
 
@@ -41,6 +41,7 @@ const Routers = () => {
       <Route path="/about" element={<About />} />
       <Route path="/doctors" element={<Doctors />} />
       <Route path="/medilabs" element={<MediLabs />} />
+      <Route path="/medilabs/:id" element={<MediLabs />} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
 
@@ -58,8 +59,8 @@ const Routers = () => {
         <Route path="/user" element={<UserMediLabProfile />}>
            <Route path="dashboard" element={<Dashboard />} />
           {/* <Route path="patients" element={<MyPatients />} />
-          <Route path="appointments" element={<MyAppointments />} />
-          <Route path="allslots" element={<AllSlots />} />*/}
+          <Route path="appointments" element={<MyAppointments />} />*/}
+          <Route path="alltests" element={<AllLabTests />} />
           <Route path="addtests" element={<AddLabTests />} /> 
           <Route path="settings" element={<MediLabSettings />} />  
         </Route>

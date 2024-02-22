@@ -86,7 +86,7 @@ const MediLabSideBar = () => {
       <Label className="font-bold text-base text-gray-400 pl-2">Tests</Label>
 
       <NavLink
-        to="allslots"
+        to="alltests"
         className={(navClass) =>
           navClass.isActive ? setNavClass("allslots") : null
         }

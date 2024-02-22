@@ -6,7 +6,8 @@ import{
     addTest,
     deleteTest,
     updateTest,
-    getTestsById
+    getTestsById,
+    searchTests
 }from '../Controllers/LabController.js'
 import express from 'express'
 import { authenticate,restrict } from '../auth/verifyToken.js'
@@ -21,6 +22,7 @@ router.post('/addtests', authenticate, restrict(['mediLab']), addTest)
 router.delete('/addtests/:id', authenticate, restrict(['mediLab']), deleteTest)
 router.patch('/addtests/:id', authenticate, restrict(['mediLab']), updateTest)
 router.get('/addtests/:id', getTestsById)
+router.get('/tests/search', authenticate,restrict(['mediLab']), searchTests)
 
 export default router
 
