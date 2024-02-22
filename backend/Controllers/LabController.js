@@ -30,9 +30,10 @@ export const deleteLab = async(req, res) => {
 
 export const getSingleMediLab = async(req, res) => {
     const id = req.params.id
+    // console.log("good")
     
     try {
-        let MediLab = await MediLab.findById(id).select('-password').populate('specialization')
+        let foundMediLab = await MediLab.findById(id).select('-password')
         const MediLabReviews = await LabReview.find({MediLab: id}).populate('user')
         
         let avgStars = 0
@@ -43,20 +44,20 @@ export const getSingleMediLab = async(req, res) => {
 
         const currDate = new Date()
         const oid = new ObjectId(id)
-        const scount = await LabSlot.find({
-            MediLab: oid,
-            date: {$gte: currDate},
-        }).count()
+        // const scount = await LabSlot.find({
+        //     MediLab: oid,
+        //     date: {$gte: currDate},
+        // }).count()
         // const count = slots.length
 
-        const pcount = await Test_Appointment.find({
-            MediLab: oid,
-        }).count()
+        // const pcount = await Test_Appointment.find({
+        //     MediLab: oid,
+        // }).count()
 
-        if(MediLab != null) {
-            MediLab = MediLab.toObject()
-            MediLab = {...MediLab, averageStars: avgStars, slotCount: scount, patientCount: pcount}
-            res.status(200).json({success: true, msg: "MediLab found", data: MediLab})
+        if(foundMediLab != null) {
+            foundMediLab = foundMediLab.toObject()
+            // MediLab = {...MediLab, averageStars: avgStars, slotCount: scount, patientCount: pcount}
+            res.status(200).json({success: true, msg: "MediLab found", data: foundMediLab})
         }
         else
             res.status(404).json({success:false, msg: "MediLab not found", data: null})

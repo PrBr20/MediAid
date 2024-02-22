@@ -25,7 +25,7 @@ const Reviews = ({ mediLab }) => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const res = await fetch(`${BASE_URL}/reviewLab?mediLabID=${doctor._id}`, {
+      const res = await fetch(`${BASE_URL}/reviewLab?mediLabID=${mediLab._id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

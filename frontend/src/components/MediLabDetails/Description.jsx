@@ -12,7 +12,7 @@ const Description = ({ mediLab }) => {
     </div>
       <h1 className="font-bold text-lg">Qualifications</h1>
       <div>
-      {mediLab.qualifications.map((qualif, index) => (
+      {mediLab.certificates.map((qualif, index) => (
         <div className="flex items-center space-x-3">
           <img src={Qualifs} alt="" className="w-[25px] h[25px" />
           <p className="text-sm">{qualif}</p>

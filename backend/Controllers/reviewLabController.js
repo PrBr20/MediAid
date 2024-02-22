@@ -26,14 +26,15 @@ const getPatientReviews = async(patientId) => {
 }
 
 export const getAllReviews = async (req, res) => {
-    const mediLabID = req.query.mediLabID
+    const mediLabId = req.query.mediLabID
     const patientId = req.userId
+    console.log("good")
     // console.log("Doctor id in review: " + doctorId)
     // console.log("User id in review: " + patientId)
     try {
         let reviews
-        if(mediLabID != undefined && mediLabID != null)
-            reviews = await getMediLabReviews(mediLabID)
+        if(mediLabId != undefined && mediLabId!= null)
+            reviews = await getMediLabReviews(mediLabId)
         else
             reviews = await getPatientReviews(patientId)
         res.status(200).json({ success: true, msg: "Succesfully fetched reviews", data: reviews })
@@ -54,7 +55,7 @@ export const getAllReviewsPatient = async (req, res) => {
 export const createReview = async (req, res) => {
     if(!req.body.user) req.body.user = req.userId
     const newReview = new Review(req.body)
-    
+    console.log("jibobn ta bedona")
     try {
         const savedReview = await newReview.save()
 
