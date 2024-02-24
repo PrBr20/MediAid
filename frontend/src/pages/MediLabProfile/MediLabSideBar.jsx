@@ -86,9 +86,12 @@ const MediLabSideBar = () => {
       <Label className="font-bold text-base text-gray-400 pl-2">Tests</Label>
 
       <NavLink
-        to="alltests"
+        to={{
+          pathname: `/medilabs/allTests/${state?.user._id}`,
+          // state: { user: "medilabs" },
+        }}
         className={(navClass) =>
-          navClass.isActive ? setNavClass("allslots") : null
+          navClass.isActive ? setNavClass("alltests") : null
         }
       >
         <div

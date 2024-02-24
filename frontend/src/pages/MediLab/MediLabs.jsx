@@ -158,6 +158,7 @@ const MediLabs = () => {
                 <h1 className="text-red-500 font-extrabold">
                   {/* Fee: {doctor.fee} Taka */}
                   <Link to={`/medilabs/allTests/${mediLab._id}`}>View More</Link>
+                
                 </h1>
                 <h1 className="font-bold hover:scale-110 transition-transform">
                   <Link to={`/medilabs/${mediLab._id}`}>View More</Link>

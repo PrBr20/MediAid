@@ -14,17 +14,20 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { set } from "date-fns";
 import AvgStar from "@/assets/images/avgstar.png";
+import { useParams } from "react-router-dom";
 
-const AllLabTests = ({mediLab}) => {
+const AllLabTests = () => {
   const [loading, setLoading] = useState(false);
   const { state, setState } = useContext(AuthContext);
+  // const id = state?.user._id;
+  const { id } = useParams();
 
   const [tests, setTests] = useState([]);
 
   const [search, setSearch] = useState({
     name: "",
     rating: 0,
-    price:1000,
+    price:0,
   });
 
   useEffect(() => {
@@ -33,6 +36,7 @@ const AllLabTests = ({mediLab}) => {
 
       // Conditionally add parameters to the object
       if (search.name != "") params.name = search.name;
+      params.mediLabId=id
     
 
       const queryString = new URLSearchParams(params).toString();
