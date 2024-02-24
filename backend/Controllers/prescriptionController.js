@@ -15,6 +15,7 @@ export const addPrescription = async (req, res) => {
             advice: data.advice,
             tests: data.tests
         }
+        appointment.status = "finished"
         await appointment.save()
         res.status(200).json({success: true, msg: "Prescription added successfully", data: appointment})
     } catch(err) {

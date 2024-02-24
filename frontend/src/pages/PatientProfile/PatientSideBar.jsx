@@ -8,6 +8,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import AuthContext from "@/context/AuthContext";
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Label } from "@/components/ui/label";
 
 const PatientSideBar = () => {
   const { state } = useContext(AuthContext);
@@ -23,7 +24,9 @@ const PatientSideBar = () => {
         </Avatar>
         <div className="items-center">
           <h1 className="text-md">{state?.user.name}</h1>
-          <p className="text-[12px] text-gray-500">{state?.user?.specialization}</p>
+          <p className="text-[12px] text-gray-500">
+            {state?.user?.specialization}
+          </p>
         </div>
       </div>
       <NavLink
@@ -43,42 +46,86 @@ const PatientSideBar = () => {
           <h1 className="font-semibold">Dashboard</h1>
         </div>
       </NavLink>
-      <NavLink
-        to="doctors"
-        className={(navClass) =>
-          navClass.isActive ? setNavClass("doctors") : null
-        }
-      >
-        <div
-          className={`flex items-center space-x-2   ${
-            navClass == "doctors"
-              ? "bg-orange-500 text-white"
-              : "hover:bg-gray-100"
-          } p-2 rounded-full cursor-pointer`}
-        >
-          <AiOutlineMedicineBox className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">My Doctors</h1>
-        </div>
-      </NavLink>
+
+      <hr className="border border-black" />
+
+      <Label className="font-bold text-base text-gray-400 pl-2">
+        My Appointments
+      </Label>
 
       <NavLink
-        to="appointments"
+        to="appointments/current"
         className={(navClass) =>
-          navClass.isActive ? setNavClass("appointments") : null
+          navClass.isActive ? setNavClass("current") : null
         }
       >
         <div
           className={`flex items-center space-x-2   ${
-            navClass == "appointments"
+            navClass == "current"
               ? "bg-orange-500 text-white"
               : "hover:bg-gray-100"
           } p-2 rounded-full cursor-pointer`}
         >
           <MdOutlineEventNote className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">Appointments</h1>
+          <h1 className="font-semibold">Pending</h1>
         </div>
       </NavLink>
 
+      <NavLink
+        to="appointments/upcoming"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("upcoming") : null
+        }
+      >
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "upcoming"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <MdOutlineEventNote className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">Upcoming</h1>
+        </div>
+      </NavLink>
+
+      <NavLink
+        to="appointments/past"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("past") : null
+        }
+      >
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "past"
+              ? "bg-orange-500 text-white"
+              : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <MdOutlineEventNote className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">Examined</h1>
+        </div>
+      </NavLink>
+
+      <NavLink
+        to="appointments/all"
+        className={(navClass) =>
+          navClass.isActive ? setNavClass("all") : null
+        }
+      >
+        <div
+          className={`flex items-center space-x-2   ${
+            navClass == "all" ? "bg-orange-500 text-white" : "hover:bg-gray-100"
+          } p-2 rounded-full cursor-pointer`}
+        >
+          <MdOutlineEventNote className="w-[25px] h-[25px]" />
+          <h1 className="font-semibold">All</h1>
+        </div>
+      </NavLink>
+
+      <hr className="border border-black" />
+
+    
       <NavLink
         to="reports"
         className={(navClass) =>

@@ -48,116 +48,42 @@ const DoctorSideBar = () => {
       <hr className="border border-black" />
 
       <Label className="font-bold text-base text-gray-400 pl-2">
-        Appointments
+        Medicines
       </Label>
 
       <NavLink
-        to="appointments/current"
+        to="medicines/addmedicine"
         className={(navClass) =>
-          navClass.isActive ? setNavClass("current") : null
+          navClass.isActive ? setNavClass("addmedicine") : null
         }
       >
         <div
           className={`flex items-center space-x-2   ${
-            navClass == "current"
+            navClass == "addmedicine"
               ? "bg-orange-500 text-white"
               : "hover:bg-gray-100"
           } p-2 rounded-full cursor-pointer`}
         >
           <MdOutlineEventNote className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">Pending</h1>
+          <h1 className="font-semibold">Add Medicine</h1>
         </div>
       </NavLink>
 
       <NavLink
-        to="appointments/upcoming"
+        to="medicines/allmedicine"
         className={(navClass) =>
-          navClass.isActive ? setNavClass("upcoming") : null
+          navClass.isActive ? setNavClass("allmedicine") : null
         }
       >
         <div
           className={`flex items-center space-x-2   ${
-            navClass == "upcoming"
+            navClass == "allmedicine"
               ? "bg-orange-500 text-white"
               : "hover:bg-gray-100"
           } p-2 rounded-full cursor-pointer`}
         >
           <MdOutlineEventNote className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">Upcoming</h1>
-        </div>
-      </NavLink>
-
-      <NavLink
-        to="appointments/past"
-        className={(navClass) =>
-          navClass.isActive ? setNavClass("past") : null
-        }
-      >
-        <div
-          className={`flex items-center space-x-2   ${
-            navClass == "past"
-              ? "bg-orange-500 text-white"
-              : "hover:bg-gray-100"
-          } p-2 rounded-full cursor-pointer`}
-        >
-          <MdOutlineEventNote className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">Examined</h1>
-        </div>
-      </NavLink>
-
-      <NavLink
-        to="appointments/all"
-        className={(navClass) =>
-          navClass.isActive ? setNavClass("all") : null
-        }
-      >
-        <div
-          className={`flex items-center space-x-2   ${
-            navClass == "all" ? "bg-orange-500 text-white" : "hover:bg-gray-100"
-          } p-2 rounded-full cursor-pointer`}
-        >
-          <MdOutlineEventNote className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">All</h1>
-        </div>
-      </NavLink>
-
-      <hr className="border border-black" />
-
-      <Label className="font-bold text-base text-gray-400 pl-2">My Slots</Label>
-
-      <NavLink
-        to="allslots"
-        className={(navClass) =>
-          navClass.isActive ? setNavClass("allslots") : null
-        }
-      >
-        <div
-          className={`flex items-center space-x-2   ${
-            navClass == "allslots"
-              ? "bg-orange-500 text-white"
-              : "hover:bg-gray-100"
-          } p-2 rounded-full cursor-pointer`}
-        >
-          <TbReport className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">All Slots</h1>
-        </div>
-      </NavLink>
-
-      <NavLink
-        to="addslots"
-        className={(navClass) =>
-          navClass.isActive ? setNavClass("addslots") : null
-        }
-      >
-        <div
-          className={`flex items-center space-x-2   ${
-            navClass == "addslots"
-              ? "bg-orange-500 text-white"
-              : "hover:bg-gray-100"
-          } p-2 rounded-full cursor-pointer`}
-        >
-          <TbReport className="w-[25px] h-[25px]" />
-          <h1 className="font-semibold">Add Slots</h1>
+          <h1 className="font-semibold">All Medicines</h1>
         </div>
       </NavLink>
 

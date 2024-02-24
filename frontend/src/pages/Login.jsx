@@ -137,7 +137,8 @@ const Login = () => {
 
     setState({ user: result.data, role: result.role, token: result.token });
 
-    navigate("/doctors");
+    if (state.role == "patient" || state.role == "doctor") navigate("/doctors");
+    else if(state.role == "company") navigate('/medishop');
   };
 
   const handleSignup = async (e) => {
@@ -185,7 +186,7 @@ const Login = () => {
             <TabsTrigger value="SignUp">SignUp</TabsTrigger>
           </TabsList>
           <TabsContent value="Login" className="w-full">
-            <Card className="h-[750px]">
+            <Card className="h-[800px]">
               <CardHeader>
                 <CardTitle>Login</CardTitle>
                 <CardDescription>
@@ -223,7 +224,7 @@ const Login = () => {
             </Card>
           </TabsContent>
           <TabsContent value="SignUp" className="w-full">
-            <Card className="h-[750px]">
+            <Card className="h-[800px]">
               <CardHeader>
                 <CardTitle>SignUp</CardTitle>
                 <CardDescription>
@@ -232,7 +233,30 @@ const Login = () => {
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="space-y-1">
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="info">Role</Label>
+                  <Select
+                    name="role"
+                    value={signupData.role}
+                    onValueChange={(value) => handleSelectChange("role", value)}
+                  >
+                    <SelectTrigger className=" border-black">
+                      <SelectValue placeholder="Select your role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="doctor">Doctor</SelectItem>
+                      <SelectItem value="patient">Patient</SelectItem>
+                      <SelectItem value="medilab">Medilab</SelectItem>
+                      <SelectItem value="company">Medicine Manufacturer</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="name">
+                    {signupData.role != "medilab" &&
+                    signupData.role != "medishop"
+                      ? "Name"
+                      : "Company Name"}
+                  </Label>
                   <Input
                     id="name"
                     type="name"
@@ -266,59 +290,53 @@ const Login = () => {
                     }
                   />
                 </div>
-                <Label htmlFor="info">Info</Label>
-                <div className="flex space-x-4">
-                  <Select
-                    name="role"
-                    value={signupData.role}
-                    onValueChange={(value) => handleSelectChange("role", value)}
+                {/* {signupData.role != "medilab" &&
+                  signupData.role != "medishop" && ( */}
+                <div className="space-y-1">
+                  <Label
+                    htmlFor="info"
+                    className={`${
+                      signupData.role != "doctor" &&
+                      signupData.role != "patient"
+                        ? "text-gray-400"
+                        : "text-black"
+                    }`}
                   >
-                    <SelectTrigger className="w-1/2 border-black">
-                      <SelectValue placeholder="Role" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="doctor">Doctor</SelectItem>
-                      <SelectItem value="patient">Patient</SelectItem>
-                      <SelectItem value="mediLab">MediLab</SelectItem>
-                    </SelectContent>
-                  </Select>
-
-                  {signupData.role !== "mediLab" && (
-                    <Select
-                      name="gender"
-                      value={signupData.gender}
-                      onValueChange={(value) => handleSelectChange("gender", value)}
-                    >
-                      <SelectTrigger className="w-1/2 border-black">
-                        <SelectValue placeholder="Gender" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="male">Male</SelectItem>
-                        <SelectItem value="female">Female</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  )}
-                 {signupData.role === "mediLab" && (
-                    <Select>
-                        <Input
-                        type="text"
-                        value={signupData.phone}
-                        onChange={(e) =>
-                          setsignupData({ ...signupData, phone: e.target.value })
-                        }
+                    Gender
+                  </Label>
+                  <Select
+                    name="gender"
+                    value={signupData.gender}
+                    onValueChange={(value) =>
+                      handleSelectChange("gender", value)
+                    }
+                    className={`border ${
+                      signupData.role != "doctor" &&
+                      signupData.role != "patient"
+                        ? "border-gray-400"
+                        : "border-black"
+                    }`}
+                  >
+                    <SelectTrigger>
+                      <SelectValue
                         placeholder={
-                          "Mobile"
+                          signupData.role != "doctor" &&
+                          signupData.role != "patient"
+                            ? ""
+                            : "Select you gender"
                         }
-                        // readOnly={signupData.role === "mediLab"}
-                        className={"border-black"}
                       />
-                      
-
-
-                    </Select>
-                  )} 
-
+                    </SelectTrigger>
+                    {signupData.role != "medilab" &&
+                      signupData.role != "medishop" && (
+                        <SelectContent>
+                          <SelectItem value="male">Male</SelectItem>
+                          <SelectItem value="female">Female</SelectItem>
+                        </SelectContent>
+                      )}
+                  </Select>
                 </div>
+                {/* )} */}
                 <div className="space-y-1">
                   <Label
                     htmlFor="new"
@@ -358,7 +376,10 @@ const Login = () => {
                   <Select
                     name="specialization"
                     onValueChange={(value) =>
-                      setsignupData({ ...signupData, specialization: value._id })
+                      setsignupData({
+                        ...signupData,
+                        specialization: value._id,
+                      })
                     }
                     className={`border ${signupData.role != "doctor"
                       ? "border-gray-400"

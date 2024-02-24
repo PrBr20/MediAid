@@ -1,6 +1,5 @@
 import User from '../models/UserSchema.js'
 import Doctor from '../models/DoctorSchema.js'
-import MediLab from '../models/MediLabSchemaa.js'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
@@ -14,13 +13,12 @@ export const register = async(req, res) => {
             user = await User.findOne({email})
         else if(role === 'doctor')
             user = await Doctor.findOne({email})
-        else if(role== 'mediLab')
-            user = await MediLab.findOne({email})
         if(user)
             return res.status(400).json({success: false, msg: "User already exists"})
 
         const salt = await bcrypt.genSalt(10)
         const hashPassword = await bcrypt.hash(password, salt)
+        if(!photo) photo = ""
 
         if(role === 'patient') {
             user = new User({
@@ -45,18 +43,6 @@ export const register = async(req, res) => {
                 specialization
             })
         }
-        else if(role === 'mediLab')
-        {
-            user= new MediLab({
-                name,
-                email,
-                password: hashPassword,
-                photo,
-                phone,
-                role
-
-            })
-        }
 
         await user.save()
         res.status(200).json({success:true, msg: "User registered successfully"})
@@ -74,11 +60,9 @@ export const login = async(req, res) => {
         let user = null
         const patient = await User.findOne({email})
         const doctor = await Doctor.findOne({email})
-        const mediLab = await MediLab.findOne({email})
 
         if(patient) user = patient
         else if(doctor) user = doctor
-        else if(mediLab) user = mediLab
         else
             return res.status(404).json({success:false, msg: "User not found"})
 

@@ -21,26 +21,17 @@ const AddSlots = () => {
   const id = state?.user._id;
   const { toast } = useToast();
 
-  function formatDate(date) {
-    var d = new Date(date),
-      month = "" + (d.getMonth() + 1),
-      day = "" + d.getDate(),
-      year = d.getFullYear();
-
-    if (month.length < 2) month = "0" + month;
-    if (day.length < 2) day = "0" + day;
-
-    return [year, month, day].join("-");
-  }
+  const { toast } = useToast();
 
   const [slot, setSlot] = useState({
     doctor: id,
     slotDate: "",
-    starthr: 0,
-    startmin: 0,
-    endhr: 0,
-    endmin: 0,
-    patientCount: 0,
+    starthr: "",
+    startmin: "",
+    endhr: "",
+    endmin: "",
+    patientCount: "",
+    location: "",
   });
 
   const handleChange = (name, value) => {
@@ -55,13 +46,11 @@ const AddSlots = () => {
   const handleAddSlot = async (e) => {
     e.preventDefault();
 
-
     for (var d = date.from; d <= date.to; d.setDate(d.getDate() + 1)) {
-
-      const dd = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+      const dd = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
       console.log(dd);
-        
-      const newSlot = ({ ...slot, slotDate: dd });
+
+      const newSlot = { ...slot, slotDate: dd };
 
       console.log(newSlot);
 
@@ -77,21 +66,14 @@ const AddSlots = () => {
       const result = await res.json();
 
       if (!res.ok) {
-        toast({
-          title: "Slot not added",
-          description: "Try again",
-        })
         throw new Error(result.message);
       }
-      else {
-        toast({
-          title: "Slot added",
-          description: "You can view your slots in all slots",
-        })
-      }
-
       console.log(result);
     }
+    toast({
+      title: "Slots added successfully",
+      description: "You can view your slots in all slots",
+    });
   };
 
   return (
@@ -137,6 +119,7 @@ const AddSlots = () => {
                 selected={date}
                 onSelect={setDate}
                 numberOfMonths={2}
+                disabled={{ before: new Date() }}
               />
             </PopoverContent>
           </Popover>
@@ -146,7 +129,7 @@ const AddSlots = () => {
         </p>
       </div>
 
-      <div className="flex space-x-[325px]">
+      <div className="flex justify-between">
         <div className="w-1/4">
           <label className="font-medium leading-none" htmlFor="">
             Enter Starting Time :
@@ -155,13 +138,13 @@ const AddSlots = () => {
             <Input
               value={slot.starthr}
               onChange={(e) => handleChange("starthr", e.target.value)}
-              placeholder="Hour"
+              placeholder="HH"
             ></Input>
             <p className="font-bold">:</p>
             <Input
               value={slot.startmin}
               onChange={(e) => handleChange("startmin", e.target.value)}
-              placeholder="Minute"
+              placeholder="MM"
             ></Input>
           </div>
           <p className="text-xs text-muted-foreground">
@@ -177,13 +160,13 @@ const AddSlots = () => {
             <Input
               value={slot.endhr}
               onChange={(e) => handleChange("endhr", e.target.value)}
-              placeholder="Hour"
+              placeholder="HH"
             ></Input>
             <p className="font-bold">:</p>
             <Input
               value={slot.endmin}
               onChange={(e) => handleChange("endmin", e.target.value)}
-              placeholder="Minute"
+              placeholder="MM"
             ></Input>
           </div>
           <p className="text-xs text-muted-foreground">
@@ -192,17 +175,32 @@ const AddSlots = () => {
         </div>
       </div>
 
-      <div className="space-y-1">
-        <label className="font-medium leading-none" htmlFor="">
-          Patient Count :
-        </label>
-        <Input
-          value={slot.patientCount}
-          onChange={(e) => handleChange("patientCount", e.target.value)}
-          placeholder="Enter number of the patients"
-        ></Input>
+      <div className="flex justify-between">
+        <div className="space-y-1 flex-col">
+          <label className="font-medium leading-none" htmlFor="">
+            Location :
+          </label>
+          <Input
+            value={slot.location}
+            onChange={(e) => handleChange("location", e.target.value)}
+            placeholder="Enter location"
+            className="w-[300px]"
+          ></Input>
+        </div>
+
+        <div className="space-y-1">
+          <label className="font-medium leading-none" htmlFor="">
+            Patient Count :
+          </label>
+          <Input
+            value={slot.patientCount}
+            onChange={(e) => handleChange("patientCount", e.target.value)}
+            placeholder="Enter number"
+            className="w-[190px]"
+          ></Input>
+        </div>
       </div>
- 
+
       <Button onClick={handleAddSlot}>Add Slot</Button>
     </div>
   );

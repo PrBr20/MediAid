@@ -8,9 +8,9 @@ import MedicineDetails from "../pages/MediShop/MedicineDetails";
 
 const Layout = () => {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
-      <main>
+      <main style={{ flex: 1 }}>
         <Routers />
       </main>
       <Toaster />

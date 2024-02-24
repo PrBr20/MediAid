@@ -146,7 +146,7 @@ export const addTimeSlot = async(req, res) => {
             patientCount,
             location
         })
-        newSlot.save()
+        await newSlot.save()
         res.status(200).json({success: true, msg: "Time slot added successfully", data: newSlot})
     } catch(err) {
         console.log(err)
@@ -158,7 +158,7 @@ export const deleteTimeSlot = async(req, res) => {
     const remId = req.params.id
 
     try {
-        Slot.findByIdAndDelete(remId)
+        await Slot.findByIdAndDelete(remId)
         res.status(200).json({success: true, msg: "Time slot deleted successfully"})
     } catch(error) {
         console.log(error)
@@ -169,7 +169,7 @@ export const deleteTimeSlot = async(req, res) => {
 export const updateTimeSlot = async(req, res) => {
     const id = req.params.id
     try {
-        const updatedSlot = Slot.findByIdAndUpdate(id, {$set: req.body}, {new: true})
+        const updatedSlot = await Slot.findByIdAndUpdate(id, {$set: req.body}, {new: true})
         res.status(200).json({success: true, msg: "Time slot updated successfully", data: updatedSlot})
     } catch(err) {
         console.log(err)

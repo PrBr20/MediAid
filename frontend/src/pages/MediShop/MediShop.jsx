@@ -177,11 +177,12 @@ const MediShop = () => {
       }
 
       const result1 = await res1.json();
+      console.log(result1)
 
       setAppointments(result1.appointments);
     };
 
-    if (state.user) {
+    if (state.user && state.role == "patient") {
       fetchAppointments();
     }
   }, []);
@@ -383,7 +384,7 @@ const MediShop = () => {
                 </div>
                 <div className="flex space-x-1">
                   <img src={ShopIcon} className="w-[20px] h-[20px]" alt="" />
-                  <p className="font-bold text-xs pt-1">{med.manufacturer}</p>
+                  <p className="font-bold text-xs pt-1">{med.manufacturer.name}</p>
                 </div>
                 <hr className="border-gray-200" />
                 <div className="flex items-center justify-between my-[10px]">

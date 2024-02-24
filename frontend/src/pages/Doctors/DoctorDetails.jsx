@@ -37,7 +37,7 @@ const DoctorDetails = () => {
         },
       });
 
-      const queryString = new URLSearchParams({ doctorId: id }).toString();
+      const queryString = new URLSearchParams({ doctor: id }).toString();
       const res2 = await fetch(`${BASE_URL}/doctor/timeslots?${queryString}`, {
         method: "GET",
         headers: {

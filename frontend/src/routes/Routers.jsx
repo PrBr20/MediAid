@@ -6,6 +6,7 @@ import DoctorDetails from "../pages/Doctors/DoctorDetails";
 import Login from "../pages/Login";
 import UserDoctorProfile from "../pages/DoctorProfile/UserDoctorProfile";
 import UserPatientProfile from "../pages/PatientProfile/UserPatientProfile";
+import UserMedishopProfile from "../pages/MedishopProfile/UserMedishopProfile";
 import { Routes, Route } from "react-router-dom";
 import AuthContext from "@/context/AuthContext";
 import { useContext } from "react";
@@ -32,6 +33,8 @@ import UserMediLabProfile from "../pages/MediLabProfile/UserMediLabProfile";
 import AllLabTests from "@/pages/MediLabProfile/MediAlltests";
 import AddLabTests from "@/pages/MediLabProfile/MediAddTests";
 
+import AddMedicine from "../pages/MedishopProfile/AddMedicine";
+// import AllMedicine from "../pages/MedishopProfile/AllMedicine"
 
 const Routers = () => {
   const { state } = useContext(AuthContext);
@@ -51,7 +54,7 @@ const Routers = () => {
         <Route path="/user" element={<UserDoctorProfile />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="patients" element={<MyPatients />} />
-          <Route path="appointments" element={<MyAppointments />} />
+          <Route path="appointments/*" element={<MyAppointments />}></Route>
           <Route path="allslots" element={<AllSlots />} />
           <Route path="addslots" element={<AddSlots />} />
           <Route path="settings" element={<Settings />} />
@@ -72,7 +75,7 @@ const Routers = () => {
         <Route path="/user" element={<UserPatientProfile />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="doctors" element={<MyDoctors />} />
-          <Route path="appointments" element={<MyAppointments />} />
+          <Route path="appointments/*" element={<MyAppointments />} />
           <Route path="reports" element={<MyReports />} />
           <Route path="settings" element={<Settings />} />
         </Route>
@@ -90,6 +93,14 @@ const Routers = () => {
       )} */}
       
 
+      {state?.role == "company" && (
+        <Route path="/user" element={<UserMedishopProfile />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="medicines/addmedicine" element={<AddMedicine />} />
+          {/* <Route path="medicines/allmedicine" element={<AllMedicine />} /> */}
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      )}
       <Route path="/prescription" element={<Prescription />} />
       <Route path="/medishop" element={<MediShop />} />
       <Route path="/medicine/:medid" element={<MedicineDetails />}>

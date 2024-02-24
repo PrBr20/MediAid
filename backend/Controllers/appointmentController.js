@@ -16,11 +16,15 @@ export const addAppointment = async (req, res) => {
         const allAppointments = await Appointment.find({doctor: appointment.doctor, slot: appointment.slot})
         appointment.serial = 1
         for(let i = 0; i < allAppointments.length; i++) {
-            if(allAppointments[i].status == "approved")
-                appointment.serial = allAppointments[i].serial + 1
+            if(allAppointments[i].status != "cancelled")
+                appointment.serial = appointment.serial + 1
         }
         appointment.status = "approved"
         await appointment.save()
+
+        const slot = await Slot.findOne({_id: appointment.slot})
+        slot.occupied = slot.occupied + 1
+        await slot.save()
 
         const doctor = await Doctor.findOne({_id: appointment.doctor})
         doctor.patientCount = doctor.patientCount + 1
@@ -120,13 +124,15 @@ export const getDoctorGroup = async (req, res) => {
         if(group == "current")
             query.date = date
         else if(group == "upcoming")
-            query.date = {$gte: date}
-        else if(group == "past")
+            query.date = {$gt: date}
+        else if(group == "past") {
             query.date = {$lt: date}
+            query.status = "finished"
+        }
 
         let slots = await Slot.find(query).sort({date: -1})
         for(let i = 0; i < slots.length; i++) {
-            let appointments = await Appointment.find({slot: slots[i]._id}).populate('user', '-password')
+            let appointments = await Appointment.find({slot: slots[i]._id}).populate('user', '-password').sort({serial: 1})
             slots[i] = slots[i].toObject()
             slots[i] = {...slots[i], appointments}
         }
@@ -152,9 +158,13 @@ export const getPatientGroup = async (req, res) => {
         if(group == "current")
             appointments = appointments.filter(appointment => appointment.slot.date.getTime() == date.getTime())
         else if(group == "upcoming")
-            appointments = appointments.filter(appointment => appointment.slot.date.getTime() >= date.getTime())
-        else if(group == "past")
+            appointments = appointments.filter(appointment => appointment.slot.date.getTime() > date.getTime())
+        else if(group == "past") {
             appointments = appointments.filter(appointment => appointment.slot.date.getTime() < date.getTime())
+            appointments = appointments.filter(appointment => appointment.status == "finished")
+        }
+
+        appointments = appointments.sort((a, b) => b.slot.date - a.slot.date)
         res.status(200).json({success: true, msg: "Appointments found", data: appointments})
     } catch(err) {
         console.log(err)

@@ -1,4 +1,5 @@
-import {updateUser,
+import {
+    updateUser,
     deleteUser, 
     getAllUsers, 
     getSingleUser, 

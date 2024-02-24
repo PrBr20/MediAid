@@ -81,7 +81,7 @@ const MedicineDetails = () => {
           </div>
 
           <div>
-            <p className="text-white font-bold">{medicine.manufacturer}</p>
+            <p className="text-white font-bold">{medicine.manufacturer.name}</p>
           </div>
         </div>
         <img
