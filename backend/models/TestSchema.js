@@ -12,6 +12,9 @@ const testSchema = new mongoose.Schema(
         name: { type: String, required: true },
         description : { type: String},
         image: {type: String},
+        avgStars: { type: Number, default: 0 },
+        reviewCount: { type: Number, default: 0 },
+        patientCount: { type: Number, default: 0 },
         
     }
 )

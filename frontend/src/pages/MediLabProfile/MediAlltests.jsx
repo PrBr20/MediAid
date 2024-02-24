@@ -139,8 +139,7 @@ const AllLabTests = () => {
                   Fee: {test.price}
                 </h1>
                 <h1 className="font-bold hover:scale-110 transition-transform">
-                  {/* <Link to={`/doctors/${doctor._id}`}>View More</Link> */}
-                  View More
+                  <Link to={`/tests/${test._id}`}>View More</Link>
                 </h1>
               </div>
             </div>

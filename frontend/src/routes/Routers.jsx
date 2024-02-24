@@ -34,6 +34,7 @@ import AllLabTests from "@/pages/MediLabProfile/MediAlltests";
 import AddLabTests from "@/pages/MediLabProfile/MediAddTests";
 
 import AddMedicine from "../pages/MedishopProfile/AddMedicine";
+import TestDetails from "@/pages/TestProfile/TestDetails";
 // import AllMedicine from "../pages/MedishopProfile/AllMedicine"
 
 const Routers = () => {
@@ -49,6 +50,7 @@ const Routers = () => {
       <Route path="/user/allTests/:id" element={<AllLabTests/>} />
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
+      <Route path= "/tests/:id" element={<TestDetails/>}/>
 
       {state?.role == "doctor" && (
         <Route path="/user" element={<UserDoctorProfile />}>

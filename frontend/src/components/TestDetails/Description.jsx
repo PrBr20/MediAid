@@ -7,7 +7,7 @@ const Description = ({ test }) => {
     <h1 className="font-bold text-lg">About</h1>
     <div>
         <div className="flex items-center space-x-3">
-          <p className="text-sm">{mediLab.about}</p>
+          <p className="text-sm">{test.description}</p>
         </div>
     </div>
       <h1 className="font-bold text-lg">Qualifications</h1>
