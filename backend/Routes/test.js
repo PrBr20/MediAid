@@ -2,7 +2,6 @@ import{
     updateLab,
     searchMediLabs,
     getSingleMediLab,
-    getSingleMediLabTestbyId,
     deleteLab,
     addTest,
     deleteTest,

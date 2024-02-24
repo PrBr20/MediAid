@@ -21,6 +21,7 @@ const AllLabTests = () => {
   const { state, setState } = useContext(AuthContext);
   // const id = state?.user._id;
   const { id } = useParams();
+  console.log(id)
 
   const [tests, setTests] = useState([]);
 

@@ -21,7 +21,7 @@ const AddSlots = () => {
   const id = state?.user._id;
   const { toast } = useToast();
 
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
   const [slot, setSlot] = useState({
     doctor: id,
