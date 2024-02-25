@@ -6,8 +6,15 @@ import AuthContext from "@/context/AuthContext";
 import { PiClockCountdownFill } from "react-icons/pi";
 import { TbCalendarStats } from "react-icons/tb";
 import { TbDeviceWatchStats2 } from "react-icons/tb";
-import Description from "@/components/TestDetails/Description";
-import Reviews from "@/components/TestDetails/Reviews";
+import TestDescription from "@/components/TestDetails/Description";
+import TestReviews from "@/components/TestDetails/Reviews";
+import { MyContext } from "@/context/MyContext";
+import { Outlet } from "react-router-dom";
+import MedCat from "@/assets/images/medcategory.svg";
+import StarIcon from "@/assets/images/avgstar.png";
+import ReviewIcon from "@/assets/images/reviews.png";
+import { Badge } from "@/components/ui/badge";
+import { NavLink } from "react-router-dom";
 // import Appointment from "./Appointment";
 import { set } from "date-fns";
 // import { Description } from "@radix-ui/react-dialog";
@@ -27,15 +34,15 @@ const TestDetails = () => {
     if (e.target.id == "Des") setNavClass("Description");
     else if (e.target.id == "Rev") setNavClass("Reviews");
   };
- 
+
 
   useEffect(() => {
     const fetchTest = async () => {
-        let params = {};
-        params.testId=id
+      // let params = {};
+      // params.testId=id
 
-        const queryString = new URLSearchParams(params).toString();
-        const res = await fetch(`${BASE_URL}/test/fetch/search?${queryString}`, {
+      // const queryString = new URLSearchParams(params).toString();
+      const res = await fetch(`${BASE_URL}/test/fetch/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -43,28 +50,28 @@ const TestDetails = () => {
         },
       });
 
-    //   const queryString = new URLSearchParams({ test: id }).toString();
-    //   const res2 = await fetch(`${BASE_URL}/test/timeslots?${queryString}`, {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       Authorization: `Bearer ${state.token}`,
-    //     },
-    //   });
+      //   const queryString = new URLSearchParams({ test: id }).toString();
+      //   const res2 = await fetch(`${BASE_URL}/test/timeslots?${queryString}`, {
+      //     method: "GET",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: `Bearer ${state.token}`,
+      //     },
+      //   });
 
       if (!res.ok) {
         throw new Error(result.message);
       }
 
-    //   if (!res2.ok) {
-    //     throw new Error(result.message);
-    //   }
+      //   if (!res2.ok) {
+      //     throw new Error(result.message);
+      //   }
 
       const result1 = await res.json();
-    //   const result2 = await res2.json();
+      //   const result2 = await res2.json();
 
       setTest(result1.data);
-    //   setAppointments(result2.data);
+      //   setAppointments(result2.data);
     };
     fetchTest();
   }, []);
@@ -76,26 +83,26 @@ const TestDetails = () => {
       <div className="flex mx-[180px] mt-[40px] space-x-10">
         <div className="w-2/3 flex-col space-y-3">
           <h1 className="text-3xl font-bold">{test.name}</h1>
-          {/* <h1 className="text-xl font-bold">{test.specialization.name} Specialist</h1> */}
-          <div className="flex my-[10px]">
+          {/* <h1 className="text-xl font-bold">Phone: 0{mediLab.phone}</h1> */}
+          {/* <div className="flex my-[10px]">
             <div className="flex mr-[10px] space-x-1">
               <PiClockCountdownFill className="text-orange-400 " />
-              <p className="text-xs"> {test.patientCount} Patients</p>
+              <p className="text-xs"> {doctor.patientCount} Patients</p>
             </div>
-            {/* <div className="flex mx-[10px] space-x-1">
+            <div className="flex mx-[10px] space-x-1">
               <TbCalendarStats className="text-orange-400 " />
               <p className="text-xs">
                 {" "}
-                Joined on {test.createdAt.split("T")[0]}{" "}
+                Joined on {doctor.createdAt.split("T")[0]}{" "}
               </p>
             </div>
             <div className="flex mx-[10px]">
               <TbDeviceWatchStats2 className="text-orange-400 space-x-1" />
-              <p className="text-xs"> {test.slotCount} slots available</p>
-            </div> */}
-          </div>
+              <p className="text-xs"> {doctor.slotCount} slots available</p>
+            </div>
+          </div> */}
           <div className="border border-black rounded-xl overflow-hidden justify-center flex bg-slate-100">
-            <img src={test.image} alt="test" className="h-[400px]" />
+            <img src={test.image} alt="" className="h-[400px]" />
           </div>
           <div className="navigation border rounded-lg overflow-hidden">
             <ul className="menu flex items-center">
@@ -122,14 +129,15 @@ const TestDetails = () => {
 
             <div>
               {navClass == "Description" && (
-                <Description test={test} />
+                <TestDescription test={test} />
+                
               )}
-              {navClass == "Reviews" && <Reviews test={test} />}
+              {navClass == "Reviews" && <TestReviews test={test} />}
             </div>
           </div>
         </div>
         {/* <div className="w-1/3 ">
-          <Appointment apps={appointments} test={test}></Appointment>
+          <Appointment apps={appointments} doctor={doctor}></Appointment>
         </div> */}
       </div>
     )

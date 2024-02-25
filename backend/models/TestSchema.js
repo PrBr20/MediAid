@@ -6,8 +6,11 @@ const testSchema = new mongoose.Schema(
         // TestId:{type:Number,required:true,unique:true},
         Lab: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Lab"
+            ref: "MediLab",
+            required: true
+            
         },
+        LabName:{type:String},
         price: {type:Number , required:true},
         name: { type: String, required: true },
         description : { type: String},

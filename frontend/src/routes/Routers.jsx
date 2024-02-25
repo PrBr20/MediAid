@@ -11,6 +11,8 @@ import { Routes, Route } from "react-router-dom";
 import AuthContext from "@/context/AuthContext";
 import { useContext } from "react";
 import Prescription from "@/components/Prescription/Prescription";
+import TestReviews from  "@/components/TestDetails/Reviews";
+import TestDescription from "@/components/TestDetails/Description";
 import MediShop from "@/pages/MediShop/MediShop";
 import Dashboard from "@/pages/Profile/Dashboard";
 import MyAppointments from "@/pages/Profile/MyAppointments";
@@ -51,6 +53,7 @@ const Routers = () => {
       <Route path="/doctors/:id" element={<DoctorDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path= "/tests/:id" element={<TestDetails/>}/>
+      <Route path="/tests/reviews/:id" element={<TestReviews/>}/>
 
       {state?.role == "doctor" && (
         <Route path="/user" element={<UserDoctorProfile />}>
