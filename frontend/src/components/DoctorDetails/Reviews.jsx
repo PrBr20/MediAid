@@ -44,6 +44,7 @@ const Reviews = ({ doctor }) => {
       fetchReviews();
     }
   }, []);
+  console.log(reviewList);
 
   const handleSubmitReview = async () => {
     const res = await fetch(`${BASE_URL}/review`, {

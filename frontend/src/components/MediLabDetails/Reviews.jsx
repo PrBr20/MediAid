@@ -16,7 +16,7 @@ const LabReviews = ({ mediLab }) => {
   const { state } = useContext(AuthContext);
 
   const [reviews, setReviews] = useState({
-    mediLab: mediLab._id,
+    Lab: mediLab._id,
     reviewText: "",
     rating: "",
   });
@@ -45,6 +45,7 @@ const LabReviews = ({ mediLab }) => {
       fetchReviews();
     }
   }, []);
+   console.log(setReviewList)
 
   const handleSubmitReview = async () => {
     const res = await fetch(`${BASE_URL}/reviewLab`, {

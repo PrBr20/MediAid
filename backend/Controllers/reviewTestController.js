@@ -1,11 +1,11 @@
-import Review from "../models/ReviewSchema.js"
+import ReviewTest from "../models/ReviewTestSchema.js"
 import Test from "../models/TestSchema.js"
 import { ObjectId } from "mongodb"
 
 const getTestReviews = async (testId) => {
     try {
         const testObjId = new ObjectId(testId)
-        const reviews = await Review.find({ test: testObjId })
+        const reviews = await ReviewTest.find({ test: testObjId })
         // console.log(reviews)
         return reviews
     } catch (err) {
@@ -17,7 +17,7 @@ const getTestReviews = async (testId) => {
 const getPatientReviews = async(patientId) => {
     try {
         const patientObjId = new ObjectId(patientId)
-        const reviews = await Review.find({user: patientObjId}).populate('user', '-password')
+        const reviews = await ReviewTest.find({user: patientObjId}).populate('user', '-password')
         return reviews
     } catch (err) {
         console.log(err)
@@ -44,7 +44,7 @@ export const getAllReviews = async (req, res) => {
 
 export const getAllReviewsPatient = async (req, res) => {
     try {
-        const reviews = await Review.find()
+        const reviews = await ReviewTest.find()
         res.status(200).json({ success: true, msg: "Succesfully fetched reviews", data: reviews })
     } catch (err) {
         res.status(500).json({ success: false, msg: "Failed to fetch reviews", data: null})
@@ -53,7 +53,7 @@ export const getAllReviewsPatient = async (req, res) => {
 
 export const createReview = async (req, res) => {
     if(!req.body.user) req.body.user = req.userId
-    const newReview = new Review(req.body)
+    const newReview = new ReviewTest(req.body)
     
     try {
         const savedReview = await newReview.save()
@@ -75,7 +75,7 @@ export const createReview = async (req, res) => {
 export const deleteReview = async (req, res) => {
     const reviewId = req.params.id
     try {
-        const review = await Review.findOne({_id: reviewId})
+        const review = await ReviewTest.findOne({_id: reviewId})
         const test = await Test.findOne({_id: review.test})
         test.reviewCount = test.reviewCount - 1
         if(test.reviewCount > 0)
@@ -83,7 +83,7 @@ export const deleteReview = async (req, res) => {
         else
             test.avgStars = 0
         await test.save()
-        await Review.findByIdAndDelete(reviewId)
+        await ReviewTest.findByIdAndDelete(reviewId)
 
         res.status(200).json({ success: true, msg: "Review deleted"})
     } catch (err) {

@@ -1,13 +1,13 @@
-import Lab_Review from "../models/ReviewLabSchema.js"
+import ReviewLab from "../models/ReviewLabSchema.js"
 import MediLab from "../models/MediLabSchemaa.js"
 import { ObjectId } from "mongodb"
 
 const getMediLabReviews = async (mediLabID) => {
     try {
-        console.log("hih")
+        //console.log("hih")
         const mediLabObjId = new ObjectId(mediLabID)
-        const reviews = await Lab_Review.find({ MediLab: mediLabObjId }).populate('user', '-password')
-        // console.log(reviews)
+        const reviews = await ReviewLab.find({Lab: mediLabObjId }).populate('user', '-password')
+        console.log(reviews)
         return reviews
     } catch (err) {
         console.log(err)
@@ -18,7 +18,7 @@ const getMediLabReviews = async (mediLabID) => {
 const getPatientReviews = async(patientId) => {
     try {
         const patientObjId = new ObjectId(patientId)
-        const reviews = await Lab_Review.find({user: patientObjId}).populate('user', '-password')
+        const reviews = await ReviewLab.find({user: patientObjId}).populate('user', '-password')
         return reviews
     } catch (err) {
         console.log(err)
@@ -27,11 +27,11 @@ const getPatientReviews = async(patientId) => {
 }
 
 export const getAllReviews = async (req, res) => {
-    console.log("be good")
+    //console.log("be good")
     const mediLabId = req.query.mediLabId
     const patientId = req.userId
-    console.log("good")
-    // console.log("Doctor id in review: " + doctorId)
+    //console.log("good")
+   // console.log("MediLab id in review: " + mediLabId)
     // console.log("User id in review: " + patientId)
     try {
         let reviews
@@ -47,7 +47,7 @@ export const getAllReviews = async (req, res) => {
 
 export const getAllReviewsPatient = async (req, res) => {
     try {
-        const reviews = await Lab_Review.find()
+        const reviews = await ReviewLab.find()
         res.status(200).json({ success: true, msg: "Succesfully fetched reviews", data: reviews })
     } catch (err) {
         res.status(500).json({ success: false, msg: "Failed to fetch reviews", data: null})
@@ -56,10 +56,12 @@ export const getAllReviewsPatient = async (req, res) => {
 
 export const createReview = async (req, res) => {
     if(!req.body.user) req.body.user = req.userId
-    const newReview = new Lab_Review(req.body)
+    const newReview = new ReviewLab(req.body)
     console.log("jibobn ta bedona")
     try {
+        
         const savedReview = await newReview.save()
+        console.log("o hello?")
 
         const mediLab = await MediLab.findOne({_id: newReview.mediLab})
         mediLab.reviewCount = mediLab.reviewCount + 1
@@ -78,7 +80,7 @@ export const createReview = async (req, res) => {
 export const deleteReview = async (req, res) => {
     const reviewId = req.params.id
     try {
-        const review = await Lab_Review.findOne({_id: reviewId})
+        const review = await ReviewLab.findOne({_id: reviewId})
         const mediLab = await mediLab.findOne({_id: review.mediLab})
         mediLab.reviewCount = mediLab.reviewCount - 1
         if(mediLab.reviewCount > 0)
@@ -86,7 +88,7 @@ export const deleteReview = async (req, res) => {
         else
             mediLab.avgStars = 0
         await mediLab.save()
-        await Lab_Review.findByIdAndDelete(reviewId)
+        await ReviewLab.findByIdAndDelete(reviewId)
 
         res.status(200).json({ success: true, msg: "Review deleted"})
     } catch (err) {

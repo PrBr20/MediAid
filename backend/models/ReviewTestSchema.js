@@ -28,4 +28,4 @@ const reviewTestSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Review", reviewTestSchema);
+export default mongoose.model("ReviewTest", reviewTestSchema);
