@@ -1,6 +1,46 @@
 import Appointment from '../models/AppointmentSchema.js';
 import Slot from '../models/SlotSchema.js';
 import Doctor from '../models/DoctorSchema.js';
+import Test from '../models/TestSchema.js';
+import MediLab from '../models/MediLabSchemaa.js';
+
+
+export const addTestAppointment = async (req, res) => {
+    const id = req.userId
+    try {
+        const data = req.body
+        const appointment = new Appointment({
+            test: data.test,
+            user: id,
+            Price: data.Price,
+            Mobile: data.mobile
+        })
+
+        const allAppointments = await Appointment.find({test: appointment.test})
+        appointment.serial = 1
+        for(let i = 0; i < allAppointments.length; i++) {
+            if(allAppointments[i].status != "cancelled")
+                appointment.serial = appointment.serial + 1
+        }
+        appointment.status = "approved"
+        await appointment.save()
+
+        // const slot = await Slot.findOne({_id: appointment.slot})
+        // slot.occupied = slot.occupied + 1
+        // await slot.save()
+
+        const test = await Test.findOne({_id: appointment.test})
+        test.patientCount = test.patientCount + 1
+        test.Lab.patientCount=test.Lab.patientCount+1;
+        await test.save()
+
+        res.status(200).json({success: true, msg: "Appointment added succesfully", appointment})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't add appointment"})
+    }
+}
+
 
 export const addAppointment = async (req, res) => {
     const id = req.userId
@@ -37,6 +77,24 @@ export const addAppointment = async (req, res) => {
     }
 }
 
+export const getTestAppointments = async (req, res) => {
+    const id = req.userId
+    const role = req.role
+    try {
+        let appointments
+        if (role === 'patient')
+            appointments = await Appointment.find({user: id}).populate('test', '-password')
+        else if (role === 'mediLab')
+            appointments = await Appointment.find({test: id})
+        else
+            res.status(401).json({success: false, msg: "Unauthorized"})
+        res.status(200).json({success: true, appointments})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
+    }
+}
+
 export const getAppointments = async (req, res) => {
     const id = req.userId
     const role = req.role
@@ -52,6 +110,32 @@ export const getAppointments = async (req, res) => {
     } catch(err) {
         console.log(err)
         res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
+    }
+}
+
+export const approveTestAppointment = async (req, res) => {
+    const id = req.params.id
+    try {
+        const appointment = await Appointment.findOne({_id: id})
+
+        if(appointment.status == "cancelled")
+            return res.status(200).json({success: false, msg: "Appointment cancelled by patient"})
+
+        if(appointment.status == "approved")
+            return res.status(200).json({success: true, msg: "Appointment approved successfully", data: appointment})
+
+        const allAppointments = await Appointment.find({test: appointment.test})
+        appointment.serial = 1
+        for(let i = 0; i < allAppointments.length; i++) {
+            if(allAppointments[i].status == "approved")
+                appointment.serial = allAppointments[i].serial + 1
+        }
+        appointment.status = "approved"
+        await appointment.save()
+        return res.status(200).json({success: true, msg: "Appointment approved successfully", data: appointment})
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't approve appointment"})
     }
 }
 
@@ -92,7 +176,23 @@ export const getCombo = async (req, res) => {
         res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
     }
 }
+export const finishTestAppointment = async (req, res) => {
+    const appointmentId = req.params.id
+    try {
+        const appointment = await Appointment.findOne({_id: appointmentId})
+        appointment.status = "finished"
+        await appointment.save()
 
+        // const slot = await Slot.findOne({_id: appointment.slot})
+        // slot.done = slot.done + 1
+        // await slot.save()
+
+        res.status(200).json({success: true, msg: "Appointment finished successfully"})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't finish appointment"})
+    }
+}
 export const finishAppointment = async (req, res) => {
     const appointmentId = req.params.id
     try {
@@ -138,6 +238,39 @@ export const getDoctorGroup = async (req, res) => {
         }
 
         res.status(200).json({success: true, msg: "Appointments found", data: slots})
+    } catch(err) {
+        console.log(err)
+        res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
+    }
+}
+
+export const getTestGroup = async (req, res) => {
+    const testId = req.params.id
+    const group = req.query.group
+    const date = new Date(req.query.date)
+
+    date.setDate(date.getDate() + 1)
+    date.setHours(0, 0, 0, 0)
+
+    try {
+        let query = {test: test.Id}
+        if(group == "current")
+            query.date = date
+        else if(group == "upcoming")
+            query.date = {$gt: date}
+        else if(group == "past") {
+            query.date = {$lt: date}
+            query.status = "finished"
+        }
+
+        // let slots = await Slot.find(query).sort({date: -1})
+        // for(let i = 0; i < slots.length; i++) {
+        //     let appointments = await Appointment.find({slot: slots[i]._id}).populate('user', '-password').sort({serial: 1})
+        //     slots[i] = slots[i].toObject()
+        //     slots[i] = {...slots[i], appointments}
+        // }
+
+        res.status(200).json({success: true, msg: "Appointments found"})
     } catch(err) {
         console.log(err)
         res.status(500).json({success: false, msg: "Couldn't fetch appointments"})
