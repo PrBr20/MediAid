@@ -7,7 +7,7 @@ import { authenticate,restrict } from '../auth/verifyToken.js'
 const router = express.Router({mergeParams: true})
 console.log("allah")
 router.get('/fetch/:id', authenticate, getSingleTest)
-router.post('/appointments', authenticate, restrict(['mediLab']), addAppointments)
+// router.post('/appointments', authenticate, restrict(['mediLab']), addAppointments)
 // router.get('/medilabs/alltests/fetch/:id',authenticate,getSingleMediLabTestbyId)
 // router.get('/search', authenticate, searchMediLabs)
 // router.put('/:id', authenticate, restrict(['mediLab', 'admin']), updateLab)

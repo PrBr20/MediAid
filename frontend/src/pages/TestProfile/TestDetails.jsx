@@ -50,28 +50,28 @@ const TestDetails = () => {
         },
       });
 
-        const queryString = new URLSearchParams({ test: id }).toString();
-        const res2 = await fetch(`${BASE_URL}/test/appointments?${queryString}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${state.token}`,
-          },
-        });
+        // const queryString = new URLSearchParams({ test: id }).toString();
+        // const res2 = await fetch(`${BASE_URL}/test/appointments?${queryString}`, {
+        //   method: "GET",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //     Authorization: `Bearer ${state.token}`,
+        //   },
+        // });
 
       if (!res.ok) {
         throw new Error(result.message);
       }
 
-        if (!res2.ok) {
-          throw new Error(result.message);
-        }
+        // if (!res2.ok) {
+        //   throw new Error(result.message);
+        // }
 
       const result1 = await res.json();
-        const result2 = await res2.json();
+        // const result2 = await res2.json();
 
       setTest(result1.data);
-        setAppointments(result2.data);
+        // setAppointments(result2.data);
     };
     fetchTest();
   }, []);
@@ -136,9 +136,9 @@ const TestDetails = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3 ">
+     {/*   <div className="w-1/3 ">
           <TestAppointment apps={appointments} test={test}></TestAppointment>
-        </div>
+        </div> */}
       </div>
     )
   );
