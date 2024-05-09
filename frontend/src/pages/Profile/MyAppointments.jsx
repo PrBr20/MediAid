@@ -22,6 +22,7 @@ const MyAppointments = () => {
   useEffect(() => {
     const fetchSlots = async () => {
       let curdate = new Date().toISOString().split("T")[0];
+      console.log(curdate);
       const res = await fetch(
         `${BASE_URL}/appointment/doctor/${state.user._id}?group=${group}&date=${curdate}`,
         {

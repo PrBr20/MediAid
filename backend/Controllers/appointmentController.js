@@ -131,17 +131,21 @@ export const finishAppointment = async (req, res) => {
 }
 
 export const getDoctorGroup = async (req, res) => {
+    console.log("in doctor gruop")
     const doctorId = req.params.id
     const group = req.query.group
     const date = new Date(req.query.date)
 
     date.setDate(date.getDate() + 1)
     date.setHours(0, 0, 0, 0)
+    console.log(req.query.date)
+    console.log(date)
+
 
     try {
         let query = {doctor: doctorId}
         if(group == "current")
-            query.date = date
+            query.date = {$gte: date}
         else if(group == "upcoming")
             query.date = {$gt: date}
         else if(group == "past") {
@@ -164,6 +168,7 @@ export const getDoctorGroup = async (req, res) => {
 }
 
 export const getPatientGroup = async (req, res) => {
+    console.log("in patient group")
     const patientId = req.params.id
     const group = req.query.group
     const date = new Date(req.query.date)
