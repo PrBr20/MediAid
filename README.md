@@ -6,11 +6,12 @@ It is a web platform for doctors, patients, medicine shops and dignostic labs
 
 ## Features
 
-- Doctor, Medicine, Lab searching and filtering
-- Taking appointment of Doctors and Diagnostic Labs for tests
+- Doctors, Medicines and Tests filtering
+- Taking appointment of Doctors and Diagnostic Labs
+- Live update of the appointment delay and expected time
 - Prescription and Lab Report Management
 - Medicine Buying and Selling
-- Communication between Diagnostic Lab and Doctor
+- Delivering Reports of concerning patient from Labs to Doctors
 
 
 ## Run Locally
