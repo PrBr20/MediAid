@@ -1,8 +1,6 @@
-
 # MediAid
 
 It is a web platform for doctors, patients, medicine shops and dignostic labs
-
 
 ## Features
 
@@ -13,7 +11,6 @@ It is a web platform for doctors, patients, medicine shops and dignostic labs
 - Medicine Buying and Selling
 - Delivering Reports of concerning patient from Labs to Doctors
 
-
 ## Run Locally
 
 Clone the project
@@ -22,46 +19,39 @@ Clone the project
   git clone https://github.com/PrBr20/MediAid.git
 ```
 
-Go to the project directory
+Then you should have some environment variables.
+In the backend, create a .env file and paste the following lines with appropiate tokens.
+
+```bash
+  PORT=*********
+  MONGO_URL=***********
+  JWT_SECRET=**********
+```
+
+Similarly in the frontend, create a .env.local file and paste the following lines with proper tokens.
+
+```bash
+  VITE_CLOUD_NAME=******
+  VITE_UPLOAD_PRESET=*****
+```
+
+Go to the project directory and run the backend
 
 ```bash
   cd MediAid
-```
-
-Go to the backend
-
-```bash
   cd backend
-```
-
-Install dependencies
-
-```bash
   npm install
-```
-
-Start the server
-
-```bash
   npm run start
 ```
-The backend should start at localhost:3000.
-Now go to the frontend directory
+
+The backend should start at localhost:5000. The api documentation file is in the backend directory. You can check using postman whether or not the backend is working correcly.
+
+Now go to the frontend directory and run the frontend
 
 ```bash
   cd ../frontend
-```
-
-Install dependencies
-
-```bash
   npm install
-```
-
-Run the frontend
-
-```bash
   npm run dev
 ```
 
-The frontend should start in localhost:5176
+Now open any browser and paste "localhost:5173". and here you go
