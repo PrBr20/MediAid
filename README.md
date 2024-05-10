@@ -19,6 +19,8 @@ Clone the project
   git clone https://github.com/PrBr20/MediAid.git
 ```
 
+## Environment Variables
+
 Then you should have some environment variables.
 In the backend, create a .env file and paste the following lines with appropiate tokens.
 
