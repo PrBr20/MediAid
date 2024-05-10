@@ -14,6 +14,7 @@ It is a web platform for doctors, patients, medicine shops and dignostic labs
 ## Environment Variables
 
 To run the project, at first you should add some environment variables.
+
 In the backend, create a .env file and paste the following lines with appropiate tokens.
 
 ```bash
@@ -42,8 +43,7 @@ Clone the project
 Go to the project directory and run the backend
 
 ```bash
-  cd MediAid
-  cd backend
+  cd MediAid/backend
   npm install
   npm run start
 ```
